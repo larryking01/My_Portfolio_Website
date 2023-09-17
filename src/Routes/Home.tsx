@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom'
 
 import NavbarComponent from '../MetaFiles/Navbar'
 import Footer from '../MetaFiles/Footer'
+// import GoToTopBtn from '../MetaFiles/GoToTopBtn'
 import { CircularProgressbar } from 'react-circular-progressbar'
 import 'react-circular-progressbar/dist/styles.css'
 
@@ -22,9 +23,6 @@ import hotel_finder_cover2 from '../StaticFiles/hotel_finder_cover2.png'
 
 
 const Home = ( ) => {
-
-    // initializing navigation
-    const navigate = useNavigate()
 
 
     // my skills interface.
@@ -78,12 +76,7 @@ const Home = ( ) => {
     let myServicesArray: myService[] = [
         { serviceType: 'Website development', serviceDetails: 'I pride myself in creating interactive, responsive websites', icon: website1 },
         { serviceType: 'Web-app development', serviceDetails: 'I pride myself in creating interactive, responsive websites', icon: website2 },
-        { serviceType: 'Mobile app development', serviceDetails: 'I pride myself in creating interactive, responsive websites', icon: website1 },
-        { serviceType: 'Website development', serviceDetails: 'I pride myself in creating interactive, responsive websites', icon: website2 },
-        { serviceType: 'Website development', serviceDetails: 'I pride myself in creating interactive, responsive websites', icon: website1 },
-        { serviceType: 'Website development', serviceDetails: 'I pride myself in creating interactive, responsive websites', icon: website2 },
-        { serviceType: 'Website development', serviceDetails: 'I pride myself in creating interactive, responsive websites', icon: website1 },
-    
+        { serviceType: 'Mobile app development', serviceDetails: 'I pride myself in creating interactive, responsive websites', icon: website1 }    
     ]
 
 
@@ -147,20 +140,16 @@ const Home = ( ) => {
             <NavbarComponent />
 
             {/* main page content */}
-            <div className='flex flex-col mt-4 sm:flex-row'>
-
-                <div className='basis-2/5 text-lg text-black-400'>
-                    <h3 className='text-lg font-semibold ml-4 mb-2'>Hey!</h3>
+            <div className='mt-4'>
+                <div>
+                    {/* <h3 className='text-2xl text-[#b1b493] font-bold m-2'>Hi there!</h3> */}
+                    <img className='w-full h-80 opacity-80' src={ pic2 } alt='designer' />
+                    <div className='text-black absolute bottom-36 left-6'>
+                        <h3 className='text-xl font-bold mt-3 text-center animate-pulse'>Hi, I am Larry Nii Nai Williams</h3>
+                        <h3 className='text-md text-center font-bold mt-1 animate-pulse'>I'm a software developer</h3>
+                    </div>
                 </div>
 
-                <div className='basis-3/5'>
-                    <img className='w-full aspect-square' src={ pic2 } alt='designer' />
-                </div>
-
-                <div className=''>
-                    <h3 className='text-xl font-bold mt-3 text-center'>I am Larry Nii Nai Williams</h3>
-                    <h3 className='text-md text-center font-bold mt-3'>I'm a software developer</h3>
-                </div>
 
                 <div className='text-center mt-2'>
                     <p className='text-md'>Free resource that will help nderstand thecv designc process and improve
@@ -174,8 +163,8 @@ const Home = ( ) => {
 
             {/* intro section */} 
             <div>
-                <h3 className='text-slate-400 text-xl ml-5 mt-4 font-semibold'>My Intro</h3>
-                <h2 className='text-2xl font-bold mb-3 ml-5'>About Me</h2>
+                {/* <h3 className='text-[#b1b493] text-xl ml-5 mt-4 font-semibold'>My Intro</h3> */}
+                <h2 className='text-2xl primary-col font-bold mb-3 ml-5 mt-5'>About Me</h2>
             </div>
             <div className='ml-5 mb-3'>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut soluta possimus doloremque non, modi aspernatur natus similique, eligendi consequatur vitae rerum nisi laboriosam quaerat sed harum quidem commodi expedita. Sint!</p>
@@ -188,7 +177,7 @@ const Home = ( ) => {
                                     <h3>{ infoLine.target }</h3>
                                 </div>
                 
-                                <div className='text-slate-500'>
+                                <div className='primary-col'>
                                     <h3>{ infoLine.answer }</h3>
                                 </div>
                             </div>
@@ -202,8 +191,8 @@ const Home = ( ) => {
 
             {/* skills section */ }
             <div>
-                <h3 className='text-slate-400 text-xl ml-5 mt-4 font-semibold'>Skills</h3>
-                <h2 className='text-2xl font-bold mb-3 ml-5'>My Skills</h2>
+                {/* <h3 className='primary-col text-xl ml-5 mt-4 font-semibold'>Skills</h3> */}
+                <h2 className='primary-col text-2xl font-bold mb-3 ml-5 mt-5'>Skills</h2>
             </div>
 
             <div className='grid grid-cols-2 my-4 mx-3 gap-3 hover:cursor-pointer'>
@@ -220,7 +209,7 @@ const Home = ( ) => {
                
                {
                     skillsArray.map( ( skill: skill ) => (
-                        <div className='my-1 py-4 text-center bg-slate-200 rounded-lg transition-all duration-500 hover:skew-y-6'>
+                        <div className='my-1 py-4 text-center bg-slate-100 rounded-lg transition-all duration-500 hover:skew-y-6'>
                             <p className='text-lg font-semibold mb-3'>{ skill.name }</p>
                             <div className='w-14 ml-8'>
                                 <CircularProgressbar value={ skill.proficiency } text={ `${ skill.proficiency }%` } />
@@ -236,14 +225,14 @@ const Home = ( ) => {
 
 
             {/* my software services section */}
-            <div className='m-3'>
-                <h3 className='text-xl font-semibold mb-3'>What services do I provide?</h3>
+            <div className='mx-3 mb-8'>
+                <h3 className='primary-col text-2xl font-bold mb-3'>What services do I provide?</h3>
                 {
                     myServicesArray.map(( service: myService ) => {
-                        return   <div className='border-1 rounded-lg bg-slate-200 pt-2 pb-4 text-center mb-4 
-                                                 transition-all duration-700 hover:bg-slate-300 hover:cursor-pointer
-                                                 hover:shadow-lg hover:skew-y-6'>
-                                    <img className='mb-1 w-16' src={ service.icon } alt='website' />
+                        return   <div className='bg-slate-100 border-0 rounded-lg shadow-lg pt-2 pb-8 text-center mb-4 
+                                                 transition-all duration-700 hover:bg-[#b1b493] hover:text-white hover:cursor-pointer
+                                                 hover:shadow-lg hover:skew-y-3'>
+                                    <img className='mb-2 w-14 ml-4' src={ service.icon } alt='website' />
                                     <h3 className='text-lg font-semibold mb-2'>{ service.serviceType }</h3>
                                     <h3 className='text-md px-1'>{ service.serviceDetails }</h3>
                                  </div>
@@ -256,25 +245,28 @@ const Home = ( ) => {
 
             {/* list of best projects section */ }
             <div>
-                <h3 className='ml-5 text-lg font-bold'>Here are some interesting projects I have built</h3>
+                <h3 className='primary-col ml-5 text-2xl font-bold mt-3'>Have a look at some interesting projects I have built</h3>
                 {
                     myProjectsArray.map(( project: my_projects ) => {
-                        return  <div className='bg-slate-200 my-4 mx-3 py-3 shadow-md hover:cursor-pointer
-                                                transition-all duration-500 hover:skew-y-6'
+                        return  <div className='bg-slate-100 my-4 mx-3 pb-3 shadow-lg hover:cursor-pointer rounded-lg
+                                                transition-all duration-500 hover:bg-[#b1b493] hover:skew-y-3 hover:text-white'
                                                 >
-                                    <img className='' src={ project.projectCoverImage } alt='cover' />
+                                    <img className='h-48' src={ project.projectCoverImage } alt='cover' />
                                     <div className='p-2'>
                                         <h3 className='text-lg font-semibold text-center'>{ project.projectTitle }</h3>
                                         <h3 className='text-sm text-center'>{ project.projectDescription }</h3>
                                         <h3 className='text-sm text-center mb-4'>Built with { project.projectTechnologies }</h3>
                                         <Link to='https://hotel-finder-app-client-react.onrender.com'>
-                                            <button className='bg-slate-700 p-2 text-white rounded-lg ml-24'>View live</button>
+                                            <button className='bg-slate-500 py-2 px-4 text-white rounded-lg ml-16'>View live</button>
                                         </Link>
                                     </div>
                                 </div>
                     })
                 }
             </div>
+
+            {/* go to top button */}
+            {/* <GoToTopBtn /> */}
 
 
             {/* footer section */}

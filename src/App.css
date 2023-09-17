@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* customizing tailwind */
+@layer base {
+    .primary-col {
+        @apply text-[#b1b493];
+        /* @apply text-[#ec5b53]; */
+    }
+}
