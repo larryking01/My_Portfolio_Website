@@ -6,7 +6,12 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: { }
+    extend: {
+       fontFamily: {
+         lora: ['Lora'],
+         loratalic: ['Lora']
+       }
+     }
   },
   plugins: [],
 }

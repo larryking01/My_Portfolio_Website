@@ -1,12 +1,30 @@
+/* google fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+
+/* importing tailwind css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
+
+
 /* customizing tailwind */
 @layer base {
     .primary-col {
-        @apply text-[#b1b493];
+        /* @apply text-[#b1b493]; */
         /* @apply text-[#ec5b53]; */
+        @apply text-[#ec5b53];
     }
+
+    .secondary-col {
+        @apply text-[#10285d];
+    }
+
+    .footer-link-transition {
+        @apply transition-all duration-300 hover:ml-5 hover:text-[#10285d];
+    }
+
+
 }
