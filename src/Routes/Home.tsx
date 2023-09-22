@@ -319,9 +319,9 @@ const Home = ( ) => {
                
                {
                     skillsArray.map( ( skill: skill ) => (
-                        <div className='my-1 py-4 text-center bg-slate-100 rounded-lg transition-all duration-500 hover:skew-y-6'>
+                        <div className='my-1 p-4 text-center bg-slate-100 rounded-lg transition-all duration-500 hover:skew-x-6 hover:shadow-lg'>
                             <p className='text-lg font-lora font-semibold mb-3 secondary-col'>{ skill.name }</p>
-                            <div className='w-14 ml-8'>
+                            <div className='w-14 ml-3'>
                                 <CircularProgressbar value={ skill.proficiency } text={ `${ skill.proficiency }%` } />
                             </div>
                         </div>
@@ -341,7 +341,7 @@ const Home = ( ) => {
                     myServicesArray.map(( service: myService ) => {
                         return   <div className='bg-slate-100 border-0 rounded-lg shadow-lg pt-2 pb-8 text-center mb-4 
                                                  transition-all duration-700 hover:cursor-pointer
-                                                 hover:shadow-lg hover:skew-y-3'>
+                                                 hover:shadow-lg hover:skew-x-6'>
                                     <img className='mb-2 w-14 ml-4' src={ service.icon } alt='website' />
                                     <h3 className='text-lg font-lora secondary-col font-semibold mb-2'>{ service.serviceType }</h3>
                                     <h3 className='text-md px-1'>{ service.serviceDetails }</h3>
@@ -359,7 +359,7 @@ const Home = ( ) => {
                 {
                     myProjectsArray.map(( project: my_projects ) => {
                         return  <div className='bg-slate-100 my-4 mx-3 pb-3 shadow-lg hover:cursor-pointer rounded-lg
-                                                transition-all duration-500 hover:skew-y-3'
+                                                transition-all duration-500 hover:skew-x-3'
                                                 >
                                     <img className='h-48' src={ project.projectCoverImage } alt='cover' />
                                     <div className='p-2'>
