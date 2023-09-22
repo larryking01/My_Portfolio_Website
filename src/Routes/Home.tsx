@@ -375,8 +375,16 @@ const Home = ( ) => {
                 }
             </div>
 
-            {/* go to top button */}
-            {/* <GoToTopBtn /> */}
+
+            {/* if not now, then when? section*/}
+            <div className='ml-5 mr-1 mb-6'>
+                <h3 className='text-2xl font-semibold font-lora primary-col'>If Not Now, When?</h3>
+                <h3 className='text-2xl font-semibold font-lora primary-col mb-1'>Let's Work Together!</h3>
+                <p className='text-md font-semibold font-lora secondary-col'>Get in touch with me and let us bring your wonderful ideas into life!</p>
+                <button className='bg-[#ec5b53] transition-all duration-200 hover:bg-[#c73a32] py-2 px-4 text-white rounded-lg ml-16'>Contact Me</button>
+            </div>
+            {/* end of if not now, then when? */}
+
 
 
             {/* footer section */}
