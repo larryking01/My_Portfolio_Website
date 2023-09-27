@@ -187,7 +187,7 @@ const Home = ( ) => {
             <NavbarComponent />
 
             {/* main page content */}
-            <div className='mt-4'>
+            <div>
                 <div>
                     {/* <h3 className='text-2xl text-[#b1b493] font-bold m-2'>Hi there!</h3> */}
                     <img className='w-full h-80 opacity-80' src={ pic2 } alt='designer' />
@@ -203,9 +203,11 @@ const Home = ( ) => {
                          theroi nderstand the design process andisei impro are of vquality.
                     </p>
                 </div>
-
+                
             </div>
             {/* end of main page content */ }
+
+
 
 
             {/* intro section */} 
@@ -236,6 +238,8 @@ const Home = ( ) => {
 
 
 
+
+
             {/* contact me section */}
             <div className=''>
                 <h2 className='text-2xl primary-col font-lora font-bold mb-2 ml-5 mt-5'>Contact Me</h2>
@@ -259,11 +263,6 @@ const Home = ( ) => {
 
             
             </div>
-
-
-
-
-
 
 
 
@@ -296,6 +295,8 @@ const Home = ( ) => {
 
             </div>
             {/* end of education section */}
+
+
 
 
 
@@ -334,6 +335,7 @@ const Home = ( ) => {
             
 
 
+
             {/* my software services section */}
             <div className='mx-3 mb-8'>
                 <h3 className='primary-col text-2xl font-lora font-bold mb-3'>What services do I provide?</h3>
@@ -350,6 +352,8 @@ const Home = ( ) => {
                     })
                 }
             </div>
+
+
 
 
 
@@ -376,6 +380,9 @@ const Home = ( ) => {
             </div>
 
 
+
+
+
             {/* if not now, then when? section*/}
             <div className='ml-5 mr-1 mb-6'>
                 <h3 className='text-2xl font-semibold font-lora primary-col'>If Not Now, When?</h3>
@@ -384,6 +391,8 @@ const Home = ( ) => {
                 <button className='bg-[#ec5b53] transition-all duration-200 hover:bg-[#c73a32] py-2 px-4 text-white rounded-lg ml-16'>Contact Me</button>
             </div>
             {/* end of if not now, then when? */}
+
+
 
 
 

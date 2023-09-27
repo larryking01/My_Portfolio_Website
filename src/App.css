@@ -26,5 +26,47 @@
         @apply transition-all duration-300 hover:ml-5 hover:text-[#10285d];
     }
 
+    /* navbar styling */
+    .navigation {
+        height: 80px;
+        width: 100%;
+        display: flex;
+        position: relative;
+        padding: 1.2rem 1.3rem
+
+    }
+
+    .navbar-menu {
+        margin-left: auto;
+    }
+
+    .navbar-menu ul {
+        display: flex;
+    }
+
+
+    .navbar-menu li {
+        list-style-type: none;
+        margin: 0rem 1rem;
+    }
+
+
+    .hamburger {
+        position: absolute;
+        right: 25px;
+        display: none;
+        margin-left: 1rem;
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 }
