@@ -63,6 +63,39 @@
 
 
 
+    /* for responsive */
+    @media screen and ( max-width: 768px ) {
+        .hamburger {
+            display: block;
+            cursor: pointer;
+        }
+
+        .navbar-menu ul {
+            display: none;
+        }
+
+        .expanded {
+            flex-direction: column;
+            position: absolute;
+            left: 0;
+            top: 75px;
+            background-color: #eee;
+            color: black;
+            width: 100%;
+            height: calc(100vh - 75px);
+        }
+
+        .expanded li {
+            /* text-align: center; */
+            margin: 0.5rem 1.2rem;
+            cursor: pointer;
+            font-style: italic;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+
+    }
 
 
 

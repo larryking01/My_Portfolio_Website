@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import NavbarComponent from '../MetaFiles/Navbar'
 import Footer from '../MetaFiles/Footer'
@@ -12,9 +12,9 @@ import 'react-circular-progressbar/dist/styles.css'
 
 
 // import pic1 from '../StaticFiles/pic1.jpg'
-import pic2 from '../StaticFiles/pic2.jpg'
+// import pic2 from '../StaticFiles/pic2.jpg'
+// import mobile2 from '../StaticFiles/mobile2.png'
 import mobile1 from '../StaticFiles/mobile1.png'
-import mobile2 from '../StaticFiles/mobile2.png'
 import website1 from '../StaticFiles/website1.png'
 import website2 from '../StaticFiles/website2.png'
 import js_logo from '../StaticFiles/js_logo.png'
@@ -36,6 +36,9 @@ import git_hub from '../StaticFiles/github.png'
 
 
 const Home = ( ) => {
+
+
+
 
 
     // my skills interface.
@@ -189,12 +192,11 @@ const Home = ( ) => {
             {/* main page content */}
             <div>
                 <div>
-                    {/* <h3 className='text-2xl text-[#b1b493] font-bold m-2'>Hi there!</h3> */}
-                    <img className='w-full h-80 opacity-80' src={ pic2 } alt='designer' />
-                    <div className='text-black absolute bottom-36 left-6'>
+                    {/* <img className='w-full h-80 opacity-80' src={ pic2 } alt='designer' /> */}
+                    {/* <div className=''>
                         <h3 className='text-xl font-bold mt-3 text-center animate-pulse'>Hi, I am Larry Nii Nai Williams</h3>
                         <h3 className='text-md text-center font-bold mt-1 animate-pulse'>I'm a software developer</h3>
-                    </div>
+                    </div> */}
                 </div>
 
 

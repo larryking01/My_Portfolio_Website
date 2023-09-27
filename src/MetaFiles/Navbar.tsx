@@ -1,25 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 // static files.
 import html_tag from '../StaticFiles/html_tag.avif'
 
 import hamburgerIcon from '../StaticFiles/hamburger-icon.png'
+import closeIcon from '../StaticFiles/close-icon.png'
+
+
 
 
 
 
 const NavbarComponent = ( ) => {
 
+    // toggling navbar expanded state.
+    const [ expanded, setIsExpanded ] = useState( false )
+
+    const ToggleExpandedState = () => {
+      setIsExpanded( !expanded )
+    }
 
     return (
-      <nav className='navigation'>
-        <a className='navbar-brand font-bold text-2xl italic'>Larry King</a>
+      <nav className='navigation shadow-lg'>
+        <a className='navbar-brand font-bold text-2xl italic'>Larry Williams</a>
 
-        <img className='w-12 h-12 hamburger' src={ hamburgerIcon } alt='navbar-img' />
+        <img className='w-8 h-8 hamburger' src={ expanded === true ? closeIcon : hamburgerIcon } alt='navbar-img'
+             onClick={ ToggleExpandedState } />
 
-        <div className='navbar-menu'>
+        <div className={ expanded === true ? 'expanded' : 'navbar-menu'}>
           <ul>
-            <li><a href='#'>Home</a></li>
+            <li ><a href='#'>Home</a></li>
             <li><a href='#'>About</a></li>
             <li><a href='#'>Contact</a></li>
             <li><a href='#'>Blog</a></li>
