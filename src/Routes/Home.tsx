@@ -92,7 +92,7 @@ const Home = ( ) => {
 
 
     let aboutMeInfoArray: aboutMeInfoSub[ ] = [
-        { target: 'Name:', answer: 'Larry Nii Nai Williams' }, 
+        { target: 'Name:', answer: 'Larry N. N. Williams' }, 
         { target: 'Date of birth:', answer: 'June 19, 1999' },
         { target: 'Address:', answer: 'Lakeside Estate, Accra' },
         { target: 'Email:', answer: 'larryking8118@gmail.com' },

@@ -26,7 +26,7 @@ const NavbarComponent: React.FC<NavbarProp> = ( { expanded, ToggleNavbarExpanded
 
     return (
       <nav className='navigation shadow-lg'>
-        <a className='navbar-brand font-bold text-2xl italic secondary-col'>Larry Williams</a>
+        <a className='navbar-brand font-bold text-xl italic secondary-col'>Larry N. N. Williams</a>
 
         <img className='w-8 h-8 hamburger' src={ expanded === true ? closeIcon : hamburgerIcon } alt='navbar-img'
              onClick={ ToggleNavbarExpanded } />
