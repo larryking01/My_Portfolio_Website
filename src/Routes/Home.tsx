@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import NavbarComponent from '../MetaFiles/Navbar'
@@ -19,7 +19,7 @@ import ts_logo from '../StaticFiles/ts_logo.png'
 import hotel_finder_cover1 from '../StaticFiles/hotel_finder_cover1.png'
 import hotel_finder_cover2 from '../StaticFiles/hotel_finder_cover2.png'
 import grad_cap2 from '../StaticFiles/grad_cap2.png'
-import uni_logo from '../StaticFiles/uni_logo.png'
+// import uni_logo from '../StaticFiles/uni_logo.png'
 import address_icon from '../StaticFiles/address.png'
 import email_icon from '../StaticFiles/email.png'
 import phone_icon from '../StaticFiles/phone.png'
@@ -37,10 +37,10 @@ import git_hub from '../StaticFiles/github.png'
 const Home = ( ) => {
 
     // setting up reference.
-    const home_ref = useRef()
-    const about_ref = useRef()
-    const education_ref = useRef()
-    const projects_ref = useRef()
+    // const home_ref = useRef()
+    // const about_ref = useRef()
+    // const education_ref = useRef()
+    // const projects_ref = useRef()
 
 
 
@@ -64,8 +64,8 @@ const Home = ( ) => {
 
     let skillsArray: skill[] = [
         { name: 'JavaScript', proficiency: 80, skill_logo: js_logo },
-        { name: 'TypeScript', proficiency: 67, skill_logo: ts_logo },
-        { name: 'GraphQL', proficiency: 74 },
+        { name: 'TypeScript', proficiency: 72, skill_logo: ts_logo },
+        { name: 'GraphQL', proficiency: 78 },
         { name: 'PostgreSQL', proficiency: 82 },
         { name: 'ReactJS', proficiency: 88 },
         { name: 'MySQL', proficiency: 80 },
@@ -133,25 +133,8 @@ const Home = ( ) => {
         projectCoverImage: hotel_finder_cover2,
         projectTechnologies: 'JavaScript, ReactJS, MongoDB and REST technology',
         projectLink: 'https://hotel-finder-app-client-react.onrender.com'
-        },
-        { projectTitle: 'Hotel Booking Platform', 
-        projectDescription: 'A simple online application that allows users to find hotels and book their stay',
-        projectCoverImage: hotel_finder_cover1,
-        projectTechnologies: 'JavaScript, ReactJS, MongoDB and REST technology',
-        projectLink: 'https://hotel-finder-app-client-react.onrender.com'
-        },
-        { projectTitle: 'Hotel Booking Platform', 
-        projectDescription: 'A simple online application that allows users to find hotels and book their stay',
-        projectCoverImage: hotel_finder_cover2,
-        projectTechnologies: 'JavaScript, ReactJS, MongoDB and REST technology',
-        projectLink: 'https://hotel-finder-app-client-react.onrender.com'
-        },
-        { projectTitle: 'Hotel Booking Platform', 
-        projectDescription: 'A simple online application that allows users to find hotels and book their stay',
-        projectCoverImage:hotel_finder_cover1,
-        projectTechnologies: 'JavaScript, ReactJS, MongoDB and REST technology',
-        projectLink: 'https://hotel-finder-app-client-react.onrender.com'
         }
+
     ]
 
 
@@ -394,7 +377,7 @@ const Home = ( ) => {
                                         <h3 className='text-sm text-center font-semibold mx-1'>{ project.projectDescription }</h3>
                                         <h3 className='text-sm text-center mb-4 font-semibold'>Built with { project.projectTechnologies }</h3>
                                         <Link to='https://hotel-finder-app-client-react.onrender.com'>
-                                            <button className='bg-[#ec5b53] transition-all duration-200 hover:bg-[#c73a32] py-2 px-4 text-white rounded-lg ml-16'>View live</button>
+                                            <button className='bg-[#ec5b53] transition-all duration-200 hover:bg-[#c73a32] py-2 px-4 text-white rounded-lg ml-24'>View live</button>
                                         </Link>
                                     </div>
                                 </div>
@@ -411,7 +394,7 @@ const Home = ( ) => {
                 <h3 className='text-2xl font-semibold font-lora primary-col'>If Not Now, When?</h3>
                 <h3 className='text-2xl font-semibold font-lora primary-col mb-1'>Let's Work Together!</h3>
                 <p className='text-md font-lora secondary-col mb-3'>Get in touch with me and let us bring your wonderful ideas into life!</p>
-                <button className='bg-[#ec5b53] transition-all duration-200 hover:bg-[#c73a32] py-2 px-4 text-white rounded-lg ml-16'>Contact Me</button>
+                <button className='bg-[#ec5b53] transition-all duration-200 hover:bg-[#c73a32] py-2 px-4 text-white rounded-lg ml-20'>Contact Me</button>
             </div>
             {/* end of if not now, then when? */}
 
