@@ -22,7 +22,7 @@ const NavbarComponent = ( ) => {
 
     return (
       <nav className='navigation shadow-lg'>
-        <a className='navbar-brand font-bold text-2xl italic'>Larry Williams</a>
+        <a className='navbar-brand font-bold text-2xl italic secondary-col'>Larry Williams</a>
 
         <img className='w-8 h-8 hamburger' src={ expanded === true ? closeIcon : hamburgerIcon } alt='navbar-img'
              onClick={ ToggleExpandedState } />

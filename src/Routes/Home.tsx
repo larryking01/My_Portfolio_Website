@@ -12,7 +12,7 @@ import 'react-circular-progressbar/dist/styles.css'
 
 
 // import pic1 from '../StaticFiles/pic1.jpg'
-// import pic2 from '../StaticFiles/pic2.jpg'
+import pic2 from '../StaticFiles/pic2.jpg'
 // import mobile2 from '../StaticFiles/mobile2.png'
 import mobile1 from '../StaticFiles/mobile1.png'
 import website1 from '../StaticFiles/website1.png'
@@ -153,10 +153,7 @@ const Home = ( ) => {
     // my education array.
     let myEducationArray: my_education[] = [
         { school: 'University of Ghana, Legon', programme: 'BSc. Computer Science', study_period: '2017 - 2021', school_icon: grad_cap2 },
-        { school: 'Okuapemman School', programme: 'General Arts', study_period: '2014 - 2017', school_icon: uni_logo },
-        { school: 'University of Ghana, Legon', programme: 'Bachelor of Computer Science', study_period: '2017 - 2021', school_icon: grad_cap1       },
-        { school: 'Okuapemman School', programme: 'General Arts', study_period: '2014 - 2017', school_icon: grad_cap2 },
-    ]
+        { school: 'Okuapemman School', programme: 'General Arts', study_period: '2014 - 2017', school_icon: uni_logo }      ]
 
 
     // contact me interface.
@@ -190,17 +187,22 @@ const Home = ( ) => {
             <NavbarComponent />
 
             {/* main page content */}
-            <div>
-                <div>
-                    {/* <img className='w-full h-80 opacity-80' src={ pic2 } alt='designer' /> */}
-                    {/* <div className=''>
-                        <h3 className='text-xl font-bold mt-3 text-center animate-pulse'>Hi, I am Larry Nii Nai Williams</h3>
-                        <h3 className='text-md text-center font-bold mt-1 animate-pulse'>I'm a software developer</h3>
-                    </div> */}
+            <div className='container-x-margins'>
+                <h3 className='font-bold mt-4 text-xl'>Hiiii!!!</h3>
+                <div className='my-1'>
+                    <div className='bg-slate-200 rounded-full p-2'>
+                        <img className='opacity-80 rounded-full h-80 w-full hover:shadow-lg' src={ pic2 } alt='designer' />
+                    </div>
+
+                    <div className='mt-2'>
+                        <h3 className='text-xl font-bold mt-1 text-center secondary-col'>I am Larry Nii Nai Williams</h3>
+                        <h3 className='text-md text-center mt-1'>I'm a software developer</h3>
+                    </div>
+
                 </div>
 
 
-                <div className='text-center mt-2'>
+                <div className='text-center mt-4'>
                     <p className='text-md'>Free resource that will help nderstand thecv designc process and improve
                          theroi nderstand the design process andisei impro are of vquality.
                     </p>
@@ -213,28 +215,30 @@ const Home = ( ) => {
 
 
             {/* intro section */} 
-            <div>
-                {/* <h3 className='text-[#b1b493] text-xl ml-5 mt-4 font-semibold'>My Intro</h3> */}
-                <h2 className='text-2xl primary-col font-lora font-bold mb-3 ml-5 mt-5'>About Me</h2>
-            </div>
-            <div className='mx-2 mb-3'>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut soluta possimus doloremque non, modi aspernatur natus similique, eligendi consequatur vitae rerum nisi laboriosam quaerat sed harum quidem commodi expedita. Sint!</p>
-            </div>
+            <div className='container-x-margins'>
+                <div>
+                    {/* <h3 className='text-[#b1b493] text-xl ml-5 mt-4 font-semibold'>My Intro</h3> */}
+                    <h2 className='text-2xl primary-col font-lora font-bold mb-3 mt-5'>About Me</h2>
+                </div>
+                <div className='mb-3'>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut soluta possimus doloremque non, modi aspernatur natus similique, eligendi consequatur vitae rerum nisi laboriosam quaerat sed harum quidem commodi expedita. Sint!</p>
+                </div>
 
-            {
-                aboutMeInfoArray.map( ( infoLine: aboutMeInfoSub ) => {
-                    return   <div className='flex flex-row ml-5 my-2 font-semibold pt-3 space-x-8'> 
-                                <div className='secondary-col'>
-                                    <h3>{ infoLine.target }</h3>
+                {
+                    aboutMeInfoArray.map( ( infoLine: aboutMeInfoSub ) => {
+                        return   <div className='flex flex-row my-2 font-semibold pt-3 space-x-8'> 
+                                    <div className='secondary-col'>
+                                        <h3>{ infoLine.target }</h3>
+                                    </div>
+                    
+                                    <div className=''>
+                                        <h3>{ infoLine.answer }</h3>
+                                    </div>
                                 </div>
-                
-                                <div className=''>
-                                    <h3>{ infoLine.answer }</h3>
-                                </div>
-                            </div>
-    
-                })
-            }
+        
+                    })
+                }
+            </div>
 
             {/* end of intro section */}
 
@@ -243,15 +247,15 @@ const Home = ( ) => {
 
 
             {/* contact me section */}
-            <div className=''>
-                <h2 className='text-2xl primary-col font-lora font-bold mb-2 ml-5 mt-5'>Contact Me</h2>
-                <h2 className='text-slate-800 font-lora mb-3 ml-5 mt-2 text-md'>
+            <div className='container-x-margins'>
+                <h2 className='text-2xl primary-col font-lora font-bold mb-2 mt-5'>Contact Me</h2>
+                <h2 className='text-slate-800 font-lora mb-3 mt-2 text-md'>
                     Far far away, behind the word mountains, far from the countries Vokalia and Consonantia
                 </h2>
 
                 {
                     contactMeArray.map(( contact_me: contact_me ) => {
-                        return <div className='mx-3 my-4 shadow-lg py-12'>
+                        return <div className='my-4 shadow-lg py-12'>
                                     <div className='bg-[#ec5b53] w-24 rounded-full p-6 ml-20 mb-3'>
                                         <img className='w-20' src={ contact_me.icon } alt='address' />
                                     </div>
@@ -270,16 +274,16 @@ const Home = ( ) => {
 
 
             {/* education section */}
-            <div>
+            <div className='container-x-margins'>
                 <div>
-                    <h2 className='text-2xl primary-col font-lora font-bold mb-3 ml-5 mt-5'>Education</h2>
+                    <h2 className='text-2xl primary-col font-lora font-bold mb-3 mt-5'>Education</h2>
                 </div>
 
 
                 <div className='mx-1 shadow-lg'>
                     {
                         myEducationArray.map(( education: my_education ) => {
-                            return <div className='flex flex-row ml-5 justify-between mx-3 my-3 divide-y-2'>
+                            return <div className='flex flex-row justify-between mx-3 my-3 divide-y-2'>
                                         <div className='mr-3 mt-2 basis-1/3'>
                                             <img className='w-12' src={ education.school_icon } alt='cover' />
                                         </div>
@@ -303,9 +307,9 @@ const Home = ( ) => {
 
 
             {/* skills section */ }
-            <div>
+            <div className='container-x-margins'>
                 {/* <h3 className='primary-col text-xl ml-5 mt-4 font-semibold'>Skills</h3> */}
-                <h2 className='primary-col text-2xl font-lora font-bold mb-3 ml-5 mt-5'>Skills</h2>
+                <h2 className='primary-col text-2xl font-lora font-bold mb-3 mt-5'>Skills</h2>
             </div>
 
             <div className='grid grid-cols-2 my-4 mx-3 gap-3 hover:cursor-pointer'>
@@ -339,7 +343,7 @@ const Home = ( ) => {
 
 
             {/* my software services section */}
-            <div className='mx-3 mb-8'>
+            <div className='container-x-margins mb-8'>
                 <h3 className='primary-col text-2xl font-lora font-bold mb-3'>What services do I provide?</h3>
                 {
                     myServicesArray.map(( service: myService ) => {
@@ -360,11 +364,11 @@ const Home = ( ) => {
 
 
             {/* list of best projects section */ }
-            <div>
-                <h3 className='primary-col ml-5 text-2xl font-lora font-bold mt-3'>Have a look at some interesting projects I have built</h3>
+            <div className='container-x-margins'>
+                <h3 className='primary-col text-2xl font-lora font-bold mt-3'>Have a look at some interesting projects I have built</h3>
                 {
                     myProjectsArray.map(( project: my_projects ) => {
-                        return  <div className='bg-slate-100 my-4 mx-3 pb-3 shadow-lg hover:cursor-pointer rounded-lg
+                        return  <div className='bg-slate-100 my-4 pb-3 shadow-lg hover:cursor-pointer rounded-lg
                                                 transition-all duration-500 hover:skew-x-3'
                                                 >
                                     <img className='h-48' src={ project.projectCoverImage } alt='cover' />
@@ -386,10 +390,10 @@ const Home = ( ) => {
 
 
             {/* if not now, then when? section*/}
-            <div className='ml-5 mr-1 mb-6'>
+            <div className='container-x-margins mr-1 mb-6'>
                 <h3 className='text-2xl font-semibold font-lora primary-col'>If Not Now, When?</h3>
                 <h3 className='text-2xl font-semibold font-lora primary-col mb-1'>Let's Work Together!</h3>
-                <p className='text-md font-semibold font-lora secondary-col'>Get in touch with me and let us bring your wonderful ideas into life!</p>
+                <p className='text-md font-lora secondary-col mb-3'>Get in touch with me and let us bring your wonderful ideas into life!</p>
                 <button className='bg-[#ec5b53] transition-all duration-200 hover:bg-[#c73a32] py-2 px-4 text-white rounded-lg ml-16'>Contact Me</button>
             </div>
             {/* end of if not now, then when? */}

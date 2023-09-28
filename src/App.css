@@ -26,6 +26,11 @@
         @apply transition-all duration-300 hover:ml-5 hover:text-[#10285d];
     }
 
+    .container-x-margins {  
+        @apply mx-4;
+    }
+
+
     /* navbar styling */
     .navigation {
         height: 80px;
@@ -92,6 +97,7 @@
             font-style: italic;
             font-weight: 700;
             font-size: 1.2rem;
+            
         }
 
 
