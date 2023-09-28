@@ -277,7 +277,7 @@ const Home = ( ) => {
                 {
                     contactMeArray.map(( contact_me: contact_me ) => {
                         return <div className='my-4 shadow-lg py-12'>
-                                    <div className='bg-[#ec5b53] w-24 rounded-full p-6 ml-24 mb-3'>
+                                    <div className='bg-[#ec5b53] w-24 rounded-full p-6 ml-28 mb-3'>
                                         <img className='w-20' src={ contact_me.icon } alt='address' />
                                     </div>
 
