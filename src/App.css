@@ -30,6 +30,10 @@
         @apply mx-4;
     }
 
+    .container-y-margins {
+        @apply my-14;
+    }
+
 
     /* navbar styling */
     .navigation {
@@ -70,6 +74,10 @@
 
     /* for responsive */
     @media screen and ( max-width: 768px ) {
+        /* .no-scroll {
+            overflow: hidden;
+        }
+ */
         .hamburger {
             display: block;
             cursor: pointer;
@@ -99,7 +107,6 @@
             font-weight: 700;
             font-size: 1.2rem;
             color: #10285d;
-            
         }
 
         .remove-cover-pic {

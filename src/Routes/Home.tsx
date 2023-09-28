@@ -181,6 +181,7 @@ const Home = ( ) => {
             <NavbarComponent expanded={ expanded } 
                              ToggleNavbarExpanded={ ToggleExpandedState }/>
 
+        <div>
             {/* main page content */}
             <div className='container-x-margins'>
                 <h3 className='font-bold mt-4 text-xl'>Hiiii!!!</h3>
@@ -210,7 +211,7 @@ const Home = ( ) => {
 
 
             {/* intro section */} 
-            <div className='container-x-margins'>
+            <div className='container-x-margins container-y-margins'>
                 <div>
                     {/* <h3 className='text-[#b1b493] text-xl ml-5 mt-4 font-semibold'>My Intro</h3> */}
                     <h2 className='text-2xl primary-col font-lora font-bold mb-3 mt-5'>About Me</h2>
@@ -246,7 +247,7 @@ const Home = ( ) => {
 
 
             {/* contact me section */}
-            <div className='container-x-margins'>
+            <div className='container-x-margins container-y-margins'>
                 <h2 className='text-2xl primary-col font-lora font-bold mb-2 mt-5'>Contact Me</h2>
                 <h2 className='text-slate-800 font-lora mb-3 mt-2 text-md'>
                     Have any ideas you want to visualize in software?
@@ -274,7 +275,7 @@ const Home = ( ) => {
 
 
             {/* education section */}
-            <div className='container-x-margins'>
+            <div className='container-x-margins container-y-margins'>
                 <div>
                     <h2 className='text-2xl primary-col font-lora font-bold mb-3 mt-5'>Education</h2>
                 </div>
@@ -307,13 +308,13 @@ const Home = ( ) => {
 
 
             {/* skills section */ }
-            <div className='container-x-margins'>
-                <h2 className='primary-col text-2xl font-lora font-bold mb-3 mt-5'>Skills</h2>
+            <div className='container-x-margins container-y-margins'>
+                <h2 className='primary-col text-2xl font-lora font-bold mb-1 mt-5'>Skills</h2>
                 <p>Here are some of the technical skills I have in my arsenal to give you the best software experience possible</p>
             </div>
 
-            <div className='grid grid-cols-2 my-4 mx-3 gap-3 hover:cursor-pointer'>
-                {/*
+            <div className='grid grid-cols-2 mx-3 gap-3 hover:cursor-pointer'>
+                {/*               
                     skillsArray.map( ( skill: skill ) => (
                         <div className='my-1 py-4 text-center bg-slate-200 rounded-lg transition-all duration-500 hover:rotate-12'>
                             <p className='text-lg font-semibold mb-3'>{ skill.name }</p>
@@ -322,13 +323,13 @@ const Home = ( ) => {
                             </div>
                         </div>
                     ))
-                    */}
+                */} 
                
                {
                     skillsArray.map( ( skill: skill ) => (
                         <div className='my-1 p-4 text-center bg-slate-100 rounded-lg transition-all duration-500 hover:skew-x-6 hover:shadow-lg'>
                             <p className='text-lg font-lora font-semibold mb-3 secondary-col'>{ skill.name }</p>
-                            <div className='w-14 ml-3'>
+                            <div className='w-14 ml-6'>
                                 <CircularProgressbar value={ skill.proficiency } text={ `${ skill.proficiency }%` } />
                             </div>
                         </div>
@@ -343,7 +344,7 @@ const Home = ( ) => {
 
 
             {/* my software services section */}
-            <div className='container-x-margins mb-8'>
+            <div className='container-x-margins container-y-margins'>
                 <h3 className='primary-col text-2xl font-lora font-bold mb-3'>What services do I provide?</h3>
                 {
                     myServicesArray.map(( service: myService ) => {
@@ -364,7 +365,7 @@ const Home = ( ) => {
 
 
             {/* list of best projects section */ }
-            <div className='container-x-margins'>
+            <div className='container-x-margins container-y-margins'>
                 <h3 className='primary-col text-2xl font-lora font-bold mt-3'>Have a look at some interesting projects I have built</h3>
                 {
                     myProjectsArray.map(( project: my_projects ) => {
@@ -390,7 +391,7 @@ const Home = ( ) => {
 
 
             {/* if not now, then when? section*/}
-            <div className='container-x-margins mr-1 mb-6'>
+            <div className='container-x-margins container-y-margins mr-1'>
                 <h3 className='text-2xl font-semibold font-lora primary-col'>If Not Now, When?</h3>
                 <h3 className='text-2xl font-semibold font-lora primary-col mb-1'>Let's Work Together!</h3>
                 <p className='text-md font-lora secondary-col mb-3'>Get in touch with me and let us bring your wonderful ideas into life!</p>
@@ -407,6 +408,8 @@ const Home = ( ) => {
 
             {/* footer section */}
             <Footer />
+
+        </div>
 
         </div>
     )
