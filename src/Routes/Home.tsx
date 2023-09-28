@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 
 import NavbarComponent from '../MetaFiles/Navbar'
@@ -35,8 +35,26 @@ import git_hub from '../StaticFiles/github.png'
 
 
 
+
+
+
 const Home = ( ) => {
 
+    // setting up reference.
+    const home_ref = useRef()
+    const about_ref = useRef()
+    const education_ref = useRef()
+    const projects_ref = useRef()
+
+
+
+    // toggling navbar expanded state.
+    const [ expanded, setIsExpanded ] = useState( false )
+
+    const ToggleExpandedState = () => {
+        setIsExpanded( !expanded )
+    }
+    
 
 
 
@@ -74,11 +92,11 @@ const Home = ( ) => {
 
 
     let aboutMeInfoArray: aboutMeInfoSub[ ] = [
-        { target: 'Name:', answer: 'Larry King' }, 
+        { target: 'Name:', answer: 'Larry Nii Nai Williams' }, 
         { target: 'Date of birth:', answer: 'June 19, 1999' },
         { target: 'Address:', answer: 'Lakeside Estate, Accra' },
         { target: 'Email:', answer: 'larryking8118@gmail.com' },
-        { target: 'Phone:', answer: '+(233)-55-253-1004'}
+        { target: 'Phone:', answer: '+(233)-(0)55-253-1004'}
     ]
 
     
@@ -91,9 +109,9 @@ const Home = ( ) => {
 
     // my services array.
     let myServicesArray: myService[] = [
-        { serviceType: 'Website development', serviceDetails: 'I pride myself in creating interactive, responsive websites', icon: website1 },
-        { serviceType: 'Web app development', serviceDetails: 'I pride myself in creating interactive, responsive websites', icon: website2 },
-        { serviceType: 'Mobile app development', serviceDetails: 'I pride myself in creating interactive, responsive websites', icon: mobile1 }    
+        { serviceType: 'Website development', serviceDetails: 'Websites should communicate to your intended audience as you would in-person. That is why I strive to build responsive, interactive websites like they should be in our modern era.', icon: website1 },
+        { serviceType: 'Web app development', serviceDetails: 'You may not be able to reach all your users, but your web app can. Let me give you the best assistant possible for your needs.', icon: website2 },
+        { serviceType: 'Mobile app development', serviceDetails: "Mobile devices come in handy these days and that is why you need your software or project running on one to reach a widerange of users. Don't compromise", icon: mobile1 }    
     ]
 
 
@@ -153,7 +171,8 @@ const Home = ( ) => {
     // my education array.
     let myEducationArray: my_education[] = [
         { school: 'University of Ghana, Legon', programme: 'BSc. Computer Science', study_period: '2017 - 2021', school_icon: grad_cap2 },
-        { school: 'Okuapemman School', programme: 'General Arts', study_period: '2014 - 2017', school_icon: uni_logo }      ]
+        { school: 'Okuapemman School', programme: 'General Arts', study_period: '2014 - 2017', school_icon: uni_logo }      
+    ]
 
 
     // contact me interface.
@@ -178,39 +197,36 @@ const Home = ( ) => {
 
 
 
-
-
-
-
     return (
         <div>
-            <NavbarComponent />
+            <NavbarComponent expanded={ expanded } 
+                             ToggleNavbarExpanded={ ToggleExpandedState }/>
 
             {/* main page content */}
             <div className='container-x-margins'>
                 <h3 className='font-bold mt-4 text-xl'>Hiiii!!!</h3>
                 <div className='my-1'>
-                    <div className='bg-slate-200 rounded-full p-2'>
-                        <img className='opacity-80 rounded-full h-80 w-full hover:shadow-lg' src={ pic2 } alt='designer' />
+                    <div className={ expanded === true? 'remove-cover-pic' : 'bg-slate-200 rounded-full p-2' }>
+                        <img className='opacity-90 rounded-full h-80 w-full hover:shadow-lg' src={ pic2 } alt='designer' />
                     </div>
 
                     <div className='mt-2'>
-                        <h3 className='text-xl font-bold mt-1 text-center secondary-col'>I am Larry Nii Nai Williams</h3>
-                        <h3 className='text-md text-center mt-1'>I'm a software developer</h3>
+                        <h3 className='text-xl font-bold mt-1 text-center secondary-col'>I am Larry N. N. Williams</h3>
+                        <h3 className='text-md text-center mt-1 font-semibold'>I'm a software developer</h3>
                     </div>
 
                 </div>
 
 
                 <div className='text-center mt-4'>
-                    <p className='text-md'>Free resource that will help nderstand thecv designc process and improve
-                         theroi nderstand the design process andisei impro are of vquality.
+                    <p className='text-md font-semibold'>
+                        Software runs the world. In our ever-growing world of technology, we are only limited by
+                        our creativity. As long as you can imagine it, software can bring it to life!
                     </p>
                 </div>
                 
             </div>
             {/* end of main page content */ }
-
 
 
 
@@ -221,7 +237,11 @@ const Home = ( ) => {
                     <h2 className='text-2xl primary-col font-lora font-bold mb-3 mt-5'>About Me</h2>
                 </div>
                 <div className='mb-3'>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut soluta possimus doloremque non, modi aspernatur natus similique, eligendi consequatur vitae rerum nisi laboriosam quaerat sed harum quidem commodi expedita. Sint!</p>
+                    <p>
+                        I am a driven and innovative person who loves to learn by getting my hands dirty.
+                        I believe we grow by solving challenges and learning from them. No problem, however difficult
+                        it may seem, is unsolvable if it is addressed with the right mind, attitude and tools.
+                    </p>
                 </div>
 
                 {
@@ -250,13 +270,14 @@ const Home = ( ) => {
             <div className='container-x-margins'>
                 <h2 className='text-2xl primary-col font-lora font-bold mb-2 mt-5'>Contact Me</h2>
                 <h2 className='text-slate-800 font-lora mb-3 mt-2 text-md'>
-                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia
+                    Have any ideas you want to visualize in software?
+                    Then get in touch with me via any of the platforms below:
                 </h2>
 
                 {
                     contactMeArray.map(( contact_me: contact_me ) => {
                         return <div className='my-4 shadow-lg py-12'>
-                                    <div className='bg-[#ec5b53] w-24 rounded-full p-6 ml-20 mb-3'>
+                                    <div className='bg-[#ec5b53] w-24 rounded-full p-6 ml-24 mb-3'>
                                         <img className='w-20' src={ contact_me.icon } alt='address' />
                                     </div>
 
@@ -308,8 +329,8 @@ const Home = ( ) => {
 
             {/* skills section */ }
             <div className='container-x-margins'>
-                {/* <h3 className='primary-col text-xl ml-5 mt-4 font-semibold'>Skills</h3> */}
                 <h2 className='primary-col text-2xl font-lora font-bold mb-3 mt-5'>Skills</h2>
+                <p>Here are some of the technical skills I have in my arsenal to give you the best software experience possible</p>
             </div>
 
             <div className='grid grid-cols-2 my-4 mx-3 gap-3 hover:cursor-pointer'>
