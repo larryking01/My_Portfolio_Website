@@ -3,17 +3,14 @@ import { Link } from 'react-router-dom'
 
 import NavbarComponent from '../MetaFiles/Navbar'
 import Footer from '../MetaFiles/Footer'
-// import GoToTopBtn from '../MetaFiles/GoToTopBtn'
 import { CircularProgressbar } from 'react-circular-progressbar'
 import 'react-circular-progressbar/dist/styles.css'
-
+// import ScrollToTop from 'react-scroll-to-top'
 // import ProgressBar from 'react-bootstrap/ProgressBar';
 
 
 
-// import pic1 from '../StaticFiles/pic1.jpg'
 import pic2 from '../StaticFiles/pic2.jpg'
-// import mobile2 from '../StaticFiles/mobile2.png'
 import mobile1 from '../StaticFiles/mobile1.png'
 import website1 from '../StaticFiles/website1.png'
 import website2 from '../StaticFiles/website2.png'
@@ -21,7 +18,6 @@ import js_logo from '../StaticFiles/js_logo.png'
 import ts_logo from '../StaticFiles/ts_logo.png'
 import hotel_finder_cover1 from '../StaticFiles/hotel_finder_cover1.png'
 import hotel_finder_cover2 from '../StaticFiles/hotel_finder_cover2.png'
-import grad_cap1 from '../StaticFiles/grad_cap1.png'
 import grad_cap2 from '../StaticFiles/grad_cap2.png'
 import uni_logo from '../StaticFiles/uni_logo.png'
 import address_icon from '../StaticFiles/address.png'
@@ -171,7 +167,7 @@ const Home = ( ) => {
     // my education array.
     let myEducationArray: my_education[] = [
         { school: 'University of Ghana, Legon', programme: 'BSc. Computer Science', study_period: '2017 - 2021', school_icon: grad_cap2 },
-        { school: 'Okuapemman School', programme: 'General Arts', study_period: '2014 - 2017', school_icon: uni_logo }      
+        { school: 'Okuapemman School', programme: 'General Arts', study_period: '2014 - 2017', school_icon: grad_cap2 }      
     ]
 
 
@@ -219,7 +215,7 @@ const Home = ( ) => {
 
 
                 <div className='text-center mt-4'>
-                    <p className='text-md font-semibold'>
+                    <p className='text-md font-semibold italic'>
                         Software runs the world. In our ever-growing world of technology, we are only limited by
                         our creativity. As long as you can imagine it, software can bring it to life!
                     </p>
@@ -420,7 +416,10 @@ const Home = ( ) => {
             {/* end of if not now, then when? */}
 
 
-
+            {/* scroll to top btn */}
+            {/* <div style={{ marginTop: "150vh" }}>
+                <ScrollToTop smooth />
+            </div> */}
 
 
             {/* footer section */}
