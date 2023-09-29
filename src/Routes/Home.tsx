@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 import NavbarComponent from '../MetaFiles/Navbar'
@@ -7,7 +7,6 @@ import { CircularProgressbar } from 'react-circular-progressbar'
 import 'react-circular-progressbar/dist/styles.css'
 // import ScrollToTop from 'react-scroll-to-top'
 // import ProgressBar from 'react-bootstrap/ProgressBar';
-
 
 
 import pic2 from '../StaticFiles/pic2.jpg'
@@ -19,22 +18,27 @@ import ts_logo from '../StaticFiles/ts_logo.png'
 import hotel_finder_cover1 from '../StaticFiles/hotel_finder_cover1.png'
 import hotel_finder_cover2 from '../StaticFiles/hotel_finder_cover2.png'
 import grad_cap2 from '../StaticFiles/grad_cap2.png'
-// import uni_logo from '../StaticFiles/uni_logo.png'
 import address_icon from '../StaticFiles/address.png'
 import email_icon from '../StaticFiles/email.png'
 import phone_icon from '../StaticFiles/phone.png'
 import linked_in from '../StaticFiles/linkedIn.png'
 import git_hub from '../StaticFiles/github.png'
+// import uni_logo from '../StaticFiles/uni_logo.png'
 
 
-
-
+import AOS from 'aos'
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+AOS.init();
 
 
 
 
 
 const Home = ( ) => {
+
+    useEffect(() => {
+        AOS.init()
+    }, [ ])
 
     // setting up reference.
     // const home_ref = useRef()
@@ -184,7 +188,7 @@ const Home = ( ) => {
         <div>
             {/* main page content */}
             <div className='container-x-margins'>
-                <h3 className='font-bold mt-4 text-xl'>Hiiii!!!</h3>
+                <h3 className='font-bold mt-4 text-xl' data-aos='fade'>Hiiii!!!</h3>
                 <div className='my-1'>
                     <div className={ expanded === true? 'remove-cover-pic' : 'bg-slate-200 rounded-full p-2' }>
                         <img className='opacity-90 rounded-full h-80 w-full hover:shadow-lg' src={ pic2 } alt='designer' />
@@ -213,20 +217,21 @@ const Home = ( ) => {
             {/* intro section */} 
             <div className='container-x-margins container-y-margins'>
                 <div>
-                    {/* <h3 className='text-[#b1b493] text-xl ml-5 mt-4 font-semibold'>My Intro</h3> */}
-                    <h2 className='text-2xl primary-col font-lora font-bold mb-3 mt-5'>About Me</h2>
+                    <h2 className='text-2xl primary-col font-lora font-bold mb-3 mt-5' data-aos='fade-right'>About Me</h2>
                 </div>
-                <div className='mb-3'>
+                
+                <div className='mb-3' data-aos='fade'>
                     <p>
                         I am a driven and innovative person who loves to learn by getting my hands dirty.
                         I believe we grow by solving challenges and learning from them. No problem, however difficult
                         it may seem, is unsolvable if it is addressed with the right mind, attitude and tools.
                     </p>
                 </div>
+                
 
                 {
                     aboutMeInfoArray.map( ( infoLine: aboutMeInfoSub ) => {
-                        return   <div className='flex flex-row my-2 font-semibold pt-3 space-x-8'> 
+                        return   <div data-aos='fade' className='flex flex-row my-2 font-semibold pt-3 space-x-8'> 
                                     <div className='secondary-col'>
                                         <h3>{ infoLine.target }</h3>
                                     </div>
@@ -248,7 +253,7 @@ const Home = ( ) => {
 
             {/* contact me section */}
             <div className='container-x-margins container-y-margins'>
-                <h2 className='text-2xl primary-col font-lora font-bold mb-2 mt-5'>Contact Me</h2>
+                <h2 className='text-2xl primary-col font-lora font-bold mb-2 mt-5' data-aos='fade-right'>Contact Me</h2>
                 <h2 className='text-slate-800 font-lora mb-3 mt-2 text-md'>
                     Have any ideas you want to visualize in software?
                     Then get in touch with me via any of the platforms below:
@@ -256,7 +261,7 @@ const Home = ( ) => {
 
                 {
                     contactMeArray.map(( contact_me: contact_me ) => {
-                        return <div className='my-4 shadow-lg py-12'>
+                        return <div className='my-4 shadow-lg py-12' data-aos='fade-right' >
                                     <div className='bg-[#ec5b53] w-24 rounded-full p-6 ml-28 mb-3'>
                                         <img className='w-20' src={ contact_me.icon } alt='address' />
                                     </div>
@@ -277,14 +282,14 @@ const Home = ( ) => {
             {/* education section */}
             <div className='container-x-margins container-y-margins'>
                 <div>
-                    <h2 className='text-2xl primary-col font-lora font-bold mb-3 mt-5'>Education</h2>
+                    <h2 className='text-2xl primary-col font-lora font-bold mb-3 mt-5' data-aos='fade-right'>Education</h2>
                 </div>
 
 
                 <div className='mx-1 shadow-lg'>
                     {
                         myEducationArray.map(( education: my_education ) => {
-                            return <div className='flex flex-row justify-between mx-3 my-3 divide-y-2'>
+                            return <div className='flex flex-row justify-between mx-3 my-3 divide-y-2' data-aos='fade-right'>
                                         <div className='mr-3 mt-2 basis-1/3'>
                                             <img className='w-12' src={ education.school_icon } alt='cover' />
                                         </div>
@@ -309,7 +314,7 @@ const Home = ( ) => {
 
             {/* skills section */ }
             <div className='container-x-margins container-y-margins'>
-                <h2 className='primary-col text-2xl font-lora font-bold mb-1 mt-5'>Skills</h2>
+                <h2 className='primary-col text-2xl font-lora font-bold mb-1 mt-5' data-aos='fade-right'>Skills</h2>
                 <p>Here are some of the technical skills I have in my arsenal to give you the best software experience possible</p>
             </div>
 
@@ -327,7 +332,8 @@ const Home = ( ) => {
                
                {
                     skillsArray.map( ( skill: skill ) => (
-                        <div className='my-1 p-4 text-center bg-slate-100 rounded-lg transition-all duration-500 hover:skew-x-6 hover:shadow-lg'>
+                        <div className='my-1 p-3 text-center bg-slate-100 rounded-lg transition-all 
+                                        duration-500 hover:shadow-lg hover:bg-slate-300' data-aos='fade-right'>
                             <p className='text-lg font-lora font-semibold mb-3 secondary-col'>{ skill.name }</p>
                             <div className='w-14 ml-6'>
                                 <CircularProgressbar value={ skill.proficiency } text={ `${ skill.proficiency }%` } />
@@ -345,12 +351,12 @@ const Home = ( ) => {
 
             {/* my software services section */}
             <div className='container-x-margins container-y-margins'>
-                <h3 className='primary-col text-2xl font-lora font-bold mb-3'>What services do I provide?</h3>
+                <h3 className='primary-col text-2xl font-lora font-bold mb-3' data-aos='fade-right'>What services do I provide?</h3>
                 {
                     myServicesArray.map(( service: myService ) => {
                         return   <div className='bg-slate-100 border-0 rounded-lg shadow-lg pt-2 pb-8 text-center mb-4 
                                                  transition-all duration-700 hover:cursor-pointer
-                                                 hover:shadow-lg hover:skew-x-6'>
+                                                 hover:shadow-lg hover:skew-x-6' data-aos='fade-right'>
                                     <img className='mb-2 w-14 ml-4' src={ service.icon } alt='website' />
                                     <h3 className='text-lg font-lora secondary-col font-semibold mb-2'>{ service.serviceType }</h3>
                                     <h3 className='text-md px-1'>{ service.serviceDetails }</h3>
@@ -366,11 +372,11 @@ const Home = ( ) => {
 
             {/* list of best projects section */ }
             <div className='container-x-margins container-y-margins'>
-                <h3 className='primary-col text-2xl font-lora font-bold mt-3'>Have a look at some interesting projects I have built</h3>
+                <h3 className='primary-col text-2xl font-lora font-bold mt-3' data-aos='fade-right'>Have a look at some interesting projects I have built</h3>
                 {
                     myProjectsArray.map(( project: my_projects ) => {
                         return  <div className='bg-slate-100 my-4 pb-3 shadow-lg hover:cursor-pointer rounded-lg
-                                                transition-all duration-500 hover:skew-x-3'
+                                                transition-all duration-500 hover:skew-x-3' data-aos='fade-right'
                                                 >
                                     <img className='h-48' src={ project.projectCoverImage } alt='cover' />
                                     <div className='p-2'>
@@ -391,7 +397,7 @@ const Home = ( ) => {
 
 
             {/* if not now, then when? section*/}
-            <div className='container-x-margins container-y-margins mr-1'>
+            <div className='container-x-margins container-y-margins mr-1' data-aos='fade-right'>
                 <h3 className='text-2xl font-semibold font-lora primary-col'>If Not Now, When?</h3>
                 <h3 className='text-2xl font-semibold font-lora primary-col mb-1'>Let's Work Together!</h3>
                 <p className='text-md font-lora secondary-col mb-3'>Get in touch with me and let us bring your wonderful ideas into life!</p>
