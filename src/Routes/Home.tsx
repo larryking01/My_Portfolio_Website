@@ -10,11 +10,22 @@ import 'react-circular-progressbar/dist/styles.css'
 
 
 import pic2 from '../StaticFiles/pic2.jpg'
+import pic5 from '../StaticFiles/pic5.jpg'
 import mobile1 from '../StaticFiles/mobile1.png'
 import website1 from '../StaticFiles/website1.png'
 import website2 from '../StaticFiles/website2.png'
 import js_logo from '../StaticFiles/js_logo.png'
 import ts_logo from '../StaticFiles/ts_logo.png'
+import graphql_logo from '../StaticFiles/graphql_logo.png'
+import postgresql_logo from '../StaticFiles/postgresql_logo.png'
+import react_js_logo from '../StaticFiles/react_js_logo.png'
+import my_sql_logo from '../StaticFiles/my_sql_logo.webp'
+import react_bootstrap_logo from '../StaticFiles/react_bootstrap_logo.png'
+import rest_logo from '../StaticFiles/rest_logo.png'
+import tailwind_logo from '../StaticFiles/tailwind_logo.png'
+import mongo_logo from '../StaticFiles/mongo_image.png'
+import firebase_logo from '../StaticFiles/firebase_logo.png'
+import supabase_logo from '../StaticFiles/supabase_logo.png'
 import hotel_finder_cover1 from '../StaticFiles/hotel_finder_cover1.png'
 import hotel_finder_cover2 from '../StaticFiles/hotel_finder_cover2.png'
 import grad_cap2 from '../StaticFiles/grad_cap2.png'
@@ -27,8 +38,8 @@ import git_hub from '../StaticFiles/github.png'
 
 
 import AOS from 'aos'
-import 'aos/dist/aos.css'; // You can also use <link> for styles
-AOS.init();
+import 'aos/dist/aos.css' // You can also use <link> for styles
+AOS.init()
 
 
 
@@ -36,9 +47,9 @@ AOS.init();
 
 const Home = ( ) => {
 
-    useEffect(() => {
-        AOS.init()
-    }, [ ])
+    // useEffect(() => {
+    //     AOS.init()
+    // }, [ ])
 
     // setting up reference.
     // const home_ref = useRef()
@@ -69,17 +80,17 @@ const Home = ( ) => {
     let skillsArray: skill[] = [
         { name: 'JavaScript', proficiency: 80, skill_logo: js_logo },
         { name: 'TypeScript', proficiency: 72, skill_logo: ts_logo },
-        { name: 'GraphQL', proficiency: 78 },
-        { name: 'PostgreSQL', proficiency: 82 },
-        { name: 'ReactJS', proficiency: 88 },
-        { name: 'MySQL', proficiency: 80 },
-        { name: 'React-Bootstrap', proficiency: 87 },
-        { name: 'REST Technology', proficiency: 80 },
-        { name: 'React Native', proficiency: 71 },
-        { name: 'Tailwind CSS', proficiency: 94 },
-        { name: 'MongoDB', proficiency: 72 },
-        { name: 'Firebase', proficiency: 71 },
-        { name: 'Supabase', proficiency: 69 }
+        { name: 'GraphQL', proficiency: 78, skill_logo: graphql_logo },
+        { name: 'PostgreSQL', proficiency: 82, skill_logo: postgresql_logo },
+        { name: 'ReactJS', proficiency: 88, skill_logo: react_js_logo },
+        { name: 'MySQL', proficiency: 80, skill_logo: my_sql_logo },
+        { name: 'React-Bootstrap', proficiency: 87, skill_logo: react_bootstrap_logo },
+        { name: 'R.E.S.T', proficiency: 80, skill_logo: rest_logo },
+        { name: 'React Native', proficiency: 71, skill_logo: react_js_logo },
+        { name: 'Tailwind CSS', proficiency: 94, skill_logo: tailwind_logo },
+        { name: 'MongoDB', proficiency: 72, skill_logo: mongo_logo },
+        { name: 'Firebase', proficiency: 71, skill_logo: firebase_logo },
+        { name: 'Supabase', proficiency: 69, skill_logo: supabase_logo }
 
     ]
 
@@ -178,6 +189,12 @@ const Home = ( ) => {
     ]
 
 
+    // initializing aos features.
+    let parent_animation = 'fade-right'
+    let parent_timer = '500'
+    let child_animation = 'fade-up'
+    let child_timer = '2000'
+
 
 
     return (
@@ -188,10 +205,10 @@ const Home = ( ) => {
         <div>
             {/* main page content */}
             <div className='container-x-margins'>
-                <h3 className='font-bold mt-4 text-xl' data-aos='fade'>Hiiii!!!</h3>
+                <h3 className='font-bold mt-4 text-xl italic'>Hey there!!</h3>
                 <div className='my-1'>
                     <div className={ expanded === true? 'remove-cover-pic' : 'bg-slate-200 rounded-full p-2' }>
-                        <img className='opacity-90 rounded-full h-80 w-full hover:shadow-lg' src={ pic2 } alt='designer' />
+                        <img className='opacity-90 rounded-full h-80 w-full hover:shadow-lg' src={ pic5 } alt='designer' />
                     </div>
 
                     <div className='mt-2'>
@@ -217,32 +234,35 @@ const Home = ( ) => {
             {/* intro section */} 
             <div className='container-x-margins container-y-margins'>
                 <div>
-                    <h2 className='text-2xl primary-col font-lora font-bold mb-3 mt-5' data-aos='fade-right'>About Me</h2>
+                    <h2 className='text-2xl primary-col font-lora font-bold mb-3 mt-5' data-aos={ parent_animation } data-aos-duration={ parent_timer }>About Me</h2>
                 </div>
                 
-                <div className='mb-3' data-aos='fade'>
-                    <p>
-                        I am a driven and innovative person who loves to learn by getting my hands dirty.
-                        I believe we grow by solving challenges and learning from them. No problem, however difficult
-                        it may seem, is unsolvable if it is addressed with the right mind, attitude and tools.
-                    </p>
+                <div className='mb-3' data-aos={ child_animation } data-aos-duration={ child_timer }>
+                    <>
+                        <p>
+                            I am a driven and innovative person who loves to learn by getting my hands dirty.
+                            I believe we grow by solving challenges and learning from them. No problem, however difficult
+                            it may seem, is unsolvable if it is addressed with the right mind, attitude and tools.
+                        </p>
+
+                        {
+                            aboutMeInfoArray.map( ( infoLine: aboutMeInfoSub ) => {
+                                return   <div className='flex flex-row my-2 font-semibold pt-3 space-x-8'> 
+                                            <div className='secondary-col'>
+                                                <h3>{ infoLine.target }</h3>
+                                            </div>
+                            
+                                            <div className='text-black'>
+                                                <h3>{ infoLine.answer }</h3>
+                                            </div>
+                                        </div>
+                
+                            })
+                        }
+                    </>
                 </div>
                 
 
-                {
-                    aboutMeInfoArray.map( ( infoLine: aboutMeInfoSub ) => {
-                        return   <div data-aos='fade' className='flex flex-row my-2 font-semibold pt-3 space-x-8'> 
-                                    <div className='secondary-col'>
-                                        <h3>{ infoLine.target }</h3>
-                                    </div>
-                    
-                                    <div className=''>
-                                        <h3>{ infoLine.answer }</h3>
-                                    </div>
-                                </div>
-        
-                    })
-                }
             </div>
 
             {/* end of intro section */}
@@ -253,22 +273,23 @@ const Home = ( ) => {
 
             {/* contact me section */}
             <div className='container-x-margins container-y-margins'>
-                <h2 className='text-2xl primary-col font-lora font-bold mb-2 mt-5' data-aos='fade-right'>Contact Me</h2>
-                <h2 className='text-slate-800 font-lora mb-3 mt-2 text-md'>
+                <h2 className='text-2xl primary-col font-lora font-bold mb-2 mt-5' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Contact Me</h2>
+                <h2 className='text-slate-800 font-lora mb-3 mt-2 text-md' data-aos={ child_animation } data-aos-duration={ child_timer }>
                     Have any ideas you want to visualize in software?
                     Then get in touch with me via any of the platforms below:
                 </h2>
 
                 {
                     contactMeArray.map(( contact_me: contact_me ) => {
-                        return <div className='my-4 shadow-lg py-12' data-aos='fade-right' >
+                        return <div className='my-4 shadow-lg py-12' data-aos={ child_animation } data-aos-duration={ child_timer } >
                                     <div className='bg-[#ec5b53] w-24 rounded-full p-6 ml-28 mb-3'>
                                         <img className='w-20' src={ contact_me.icon } alt='address' />
                                     </div>
 
                                     <h3 className='font-lora text-[#10285d] font-semibold text-xl text-center mb-2'>{ contact_me.title }</h3>
-                                    <h3 className='font-md text-center text-[#ec5b53] font-semibold cursor-pointer'>{ contact_me.detail }</h3>
-
+                                    <Link to={ contact_me.detail }>
+                                        <h3 className='font-md text-center text-[#ec5b53] font-semibold cursor-pointer'>{ contact_me.detail }</h3>
+                                    </Link>
                                </div>
                     })
                 }
@@ -282,14 +303,14 @@ const Home = ( ) => {
             {/* education section */}
             <div className='container-x-margins container-y-margins'>
                 <div>
-                    <h2 className='text-2xl primary-col font-lora font-bold mb-3 mt-5' data-aos='fade-right'>Education</h2>
+                    <h2 className='text-2xl primary-col font-lora font-bold mb-3 mt-5' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Education</h2>
                 </div>
 
 
                 <div className='mx-1 shadow-lg'>
                     {
                         myEducationArray.map(( education: my_education ) => {
-                            return <div className='flex flex-row justify-between mx-3 my-3 divide-y-2' data-aos='fade-right'>
+                            return <div className='flex flex-row justify-between mx-3 my-3 divide-y-2' data-aos={ child_animation } data-aos-duration={ child_timer }>
                                         <div className='mr-3 mt-2 basis-1/3'>
                                             <img className='w-12' src={ education.school_icon } alt='cover' />
                                         </div>
@@ -314,29 +335,20 @@ const Home = ( ) => {
 
             {/* skills section */ }
             <div className='container-x-margins container-y-margins'>
-                <h2 className='primary-col text-2xl font-lora font-bold mb-1 mt-5' data-aos='fade-right'>Skills</h2>
+                <h2 className='primary-col text-2xl font-lora font-bold mb-1 mt-5' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Skills</h2>
                 <p>Here are some of the technical skills I have in my arsenal to give you the best software experience possible</p>
             </div>
 
             <div className='grid grid-cols-2 mx-3 gap-3 hover:cursor-pointer'>
-                {/*               
-                    skillsArray.map( ( skill: skill ) => (
-                        <div className='my-1 py-4 text-center bg-slate-200 rounded-lg transition-all duration-500 hover:rotate-12'>
-                            <p className='text-lg font-semibold mb-3'>{ skill.name }</p>
-                            <div className='w-14 ml-8'>
-                                <ProgressBar animated now={ skill.proficiency } label={`${ skill.proficiency }%`} />
-                            </div>
-                        </div>
-                    ))
-                */} 
                
                {
                     skillsArray.map( ( skill: skill ) => (
-                        <div className='my-1 p-3 text-center bg-slate-100 rounded-lg transition-all 
-                                        duration-500 hover:shadow-lg hover:bg-slate-300' data-aos='fade-right'>
+                        <div className='my-1 p-3 text-center bg-slate-200 rounded-lg transition-all 
+                                        duration-500 hover:shadow-lg hover:bg-slate-300' data-aos={ child_animation } data-aos-duration={ child_timer }>
                             <p className='text-lg font-lora font-semibold mb-3 secondary-col'>{ skill.name }</p>
-                            <div className='w-14 ml-6'>
-                                <CircularProgressbar value={ skill.proficiency } text={ `${ skill.proficiency }%` } />
+                            <div className='w-14 ml-8'>
+                                {/* <CircularProgressbar value={ skill.proficiency } text={ `${ skill.proficiency }%` } /> */}
+                                <img src={ skill.skill_logo } className='rounded-none' />
                             </div>
                         </div>
                     ))
@@ -351,12 +363,13 @@ const Home = ( ) => {
 
             {/* my software services section */}
             <div className='container-x-margins container-y-margins'>
-                <h3 className='primary-col text-2xl font-lora font-bold mb-3' data-aos='fade-right'>What services do I provide?</h3>
+                <h3 className='primary-col text-2xl font-lora font-bold mb-3' data-aos={ parent_animation } data-aos-duration={ parent_timer }>What services do I provide?</h3>
                 {
                     myServicesArray.map(( service: myService ) => {
                         return   <div className='bg-slate-100 border-0 rounded-lg shadow-lg pt-2 pb-8 text-center mb-4 
                                                  transition-all duration-700 hover:cursor-pointer
-                                                 hover:shadow-lg hover:skew-x-6' data-aos='fade-right'>
+                                                 hover:shadow-lg hover:skew-x-6' 
+                                       data-aos={ child_animation } data-aos-duration={ child_timer }>
                                     <img className='mb-2 w-14 ml-4' src={ service.icon } alt='website' />
                                     <h3 className='text-lg font-lora secondary-col font-semibold mb-2'>{ service.serviceType }</h3>
                                     <h3 className='text-md px-1'>{ service.serviceDetails }</h3>
@@ -372,11 +385,12 @@ const Home = ( ) => {
 
             {/* list of best projects section */ }
             <div className='container-x-margins container-y-margins'>
-                <h3 className='primary-col text-2xl font-lora font-bold mt-3' data-aos='fade-right'>Have a look at some interesting projects I have built</h3>
+                <h3 className='primary-col text-2xl font-lora font-bold mt-3' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Have a look at some interesting projects I have built</h3>
                 {
                     myProjectsArray.map(( project: my_projects ) => {
                         return  <div className='bg-slate-100 my-4 pb-3 shadow-lg hover:cursor-pointer rounded-lg
-                                                transition-all duration-500 hover:skew-x-3' data-aos='fade-right'
+                                                transition-all duration-500 hover:skew-x-3' 
+                                                data-aos={ child_animation } data-aos-duration={ child_timer }
                                                 >
                                     <img className='h-48' src={ project.projectCoverImage } alt='cover' />
                                     <div className='p-2'>
@@ -397,19 +411,13 @@ const Home = ( ) => {
 
 
             {/* if not now, then when? section*/}
-            <div className='container-x-margins container-y-margins mr-1' data-aos='fade-right'>
+            <div className='container-x-margins container-y-margins mr-1' data-aos={ parent_animation } data-aos-duration={ parent_timer }>
                 <h3 className='text-2xl font-semibold font-lora primary-col'>If Not Now, When?</h3>
                 <h3 className='text-2xl font-semibold font-lora primary-col mb-1'>Let's Work Together!</h3>
                 <p className='text-md font-lora secondary-col mb-3'>Get in touch with me and let us bring your wonderful ideas into life!</p>
                 <button className='bg-[#ec5b53] transition-all duration-200 hover:bg-[#c73a32] py-2 px-4 text-white rounded-lg ml-20'>Contact Me</button>
             </div>
             {/* end of if not now, then when? */}
-
-
-            {/* scroll to top btn */}
-            {/* <div style={{ marginTop: "150vh" }}>
-                <ScrollToTop smooth />
-            </div> */}
 
 
             {/* footer section */}
