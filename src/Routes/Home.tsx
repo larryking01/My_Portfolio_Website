@@ -14,14 +14,15 @@ import pic5 from '../StaticFiles/pic5.jpg'
 import mobile1 from '../StaticFiles/mobile1.png'
 import website1 from '../StaticFiles/website1.png'
 import website2 from '../StaticFiles/website2.png'
+import cover1 from '../StaticFiles/cover1.jpg'
 import js_logo from '../StaticFiles/js_logo.png'
 import ts_logo from '../StaticFiles/ts_logo.png'
 import graphql_logo from '../StaticFiles/graphql_logo.png'
 import postgresql_logo from '../StaticFiles/postgresql_logo.png'
 import react_js_logo from '../StaticFiles/react_js_logo.png'
-import my_sql_logo from '../StaticFiles/my_sql_logo.webp'
+import my_sql_logo from '../StaticFiles/my_sql_logo.png'
 import react_bootstrap_logo from '../StaticFiles/react_bootstrap_logo.png'
-import rest_logo from '../StaticFiles/rest_logo.png'
+import express_js_logo from '../StaticFiles/express_js_logo.png'
 import tailwind_logo from '../StaticFiles/tailwind_logo.png'
 import mongo_logo from '../StaticFiles/mongo_image.png'
 import firebase_logo from '../StaticFiles/firebase_logo.png'
@@ -85,7 +86,7 @@ const Home = ( ) => {
         { name: 'ReactJS', proficiency: 88, skill_logo: react_js_logo },
         { name: 'MySQL', proficiency: 80, skill_logo: my_sql_logo },
         { name: 'React-Bootstrap', proficiency: 87, skill_logo: react_bootstrap_logo },
-        { name: 'R.E.S.T', proficiency: 80, skill_logo: rest_logo },
+        { name: 'Express JS', proficiency: 80, skill_logo: express_js_logo },
         { name: 'React Native', proficiency: 71, skill_logo: react_js_logo },
         { name: 'Tailwind CSS', proficiency: 94, skill_logo: tailwind_logo },
         { name: 'MongoDB', proficiency: 72, skill_logo: mongo_logo },
@@ -207,8 +208,8 @@ const Home = ( ) => {
             <div className='container-x-margins'>
                 <h3 className='font-bold mt-4 text-xl italic'>Hey there!!</h3>
                 <div className='my-1'>
-                    <div className={ expanded === true? 'remove-cover-pic' : 'bg-slate-200 rounded-full p-2' }>
-                        <img className='opacity-90 rounded-full h-80 w-full hover:shadow-lg' src={ pic5 } alt='designer' />
+                    <div className={ expanded === true? 'remove-cover-pic' : 'bg-slate-200 rounded-full' }>
+                        <img className='opacity-100 rounded-full w-full h-70 hover:shadow-lg' src={ cover1 } alt='designer' />
                     </div>
 
                     <div className='mt-2'>
