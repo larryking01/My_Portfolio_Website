@@ -3,10 +3,7 @@ import { Link } from 'react-router-dom'
 
 import NavbarComponent from '../MetaFiles/Navbar'
 import Footer from '../MetaFiles/Footer'
-import { CircularProgressbar } from 'react-circular-progressbar'
-import 'react-circular-progressbar/dist/styles.css'
-// import ScrollToTop from 'react-scroll-to-top'
-// import ProgressBar from 'react-bootstrap/ProgressBar';
+import GoToTopBtn from '../MetaFiles/GoToTopBtn'
 
 
 import pic2 from '../StaticFiles/pic2.jpg'
@@ -208,8 +205,8 @@ const Home = ( ) => {
             <div className='container-x-margins'>
                 <h3 className='font-bold mt-4 text-xl italic'>Hey there!!</h3>
                 <div className='my-1'>
-                    <div className={ expanded === true? 'remove-cover-pic' : 'bg-slate-200 rounded-full' }>
-                        <img className='opacity-100 rounded-full w-full h-70 hover:shadow-lg' src={ cover1 } alt='designer' />
+                    <div className={ expanded === true? 'remove-cover-pic' : 'bg-slate-200 rounded-full ' }>
+                        <img className='brightness-105 opacity-100 rounded-full w-full h-70 hover:shadow-lg' src={ cover1 } alt='designer' />
                     </div>
 
                     <div className='mt-2'>
@@ -420,6 +417,9 @@ const Home = ( ) => {
             </div>
             {/* end of if not now, then when? */}
 
+
+            { /* go to top button */ }
+            <GoToTopBtn />
 
             {/* footer section */}
             <Footer />
