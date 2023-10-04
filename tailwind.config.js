@@ -9,7 +9,10 @@ module.exports = {
     extend: {
        fontFamily: {
          lora: ['Lora'],
-         loratalic: ['Lora']
+         heebo: ['Heebo'],
+         roboto: ['Roboto'],
+         poppins: ['Poppins'],
+         playfair: ['Playfair Display']
        }
      }
   },

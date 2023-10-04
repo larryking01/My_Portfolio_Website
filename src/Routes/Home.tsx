@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 
 import NavbarComponent from '../MetaFiles/Navbar'
@@ -6,12 +6,16 @@ import Footer from '../MetaFiles/Footer'
 import GoToTopBtn from '../MetaFiles/GoToTopBtn'
 
 
-import pic2 from '../StaticFiles/pic2.jpg'
-import pic5 from '../StaticFiles/pic5.jpg'
 import mobile1 from '../StaticFiles/mobile1.png'
 import website1 from '../StaticFiles/website1.png'
 import website2 from '../StaticFiles/website2.png'
-import cover1 from '../StaticFiles/cover1.jpg'
+// import cover1 from '../StaticFiles/cover1.jpg'
+// import cover2 from '../StaticFiles/cover2.jpg'
+// import cover3 from '../StaticFiles/cover3.jpg'
+// import cover4 from '../StaticFiles/cover4.jpg'
+// import cover5 from '../StaticFiles/cover5.jpg'
+import cover6 from '../StaticFiles/cover6.jpg'
+// import cover7 from '../StaticFiles/cover7.jpg'
 import js_logo from '../StaticFiles/js_logo.png'
 import ts_logo from '../StaticFiles/ts_logo.png'
 import graphql_logo from '../StaticFiles/graphql_logo.png'
@@ -32,7 +36,6 @@ import email_icon from '../StaticFiles/email.png'
 import phone_icon from '../StaticFiles/phone.png'
 import linked_in from '../StaticFiles/linkedIn.png'
 import git_hub from '../StaticFiles/github.png'
-// import uni_logo from '../StaticFiles/uni_logo.png'
 
 
 import AOS from 'aos'
@@ -45,16 +48,22 @@ AOS.init()
 
 const Home = ( ) => {
 
-    // useEffect(() => {
-    //     AOS.init()
-    // }, [ ])
 
     // setting up reference.
-    // const home_ref = useRef()
-    // const about_ref = useRef()
-    // const education_ref = useRef()
-    // const projects_ref = useRef()
+    // const home_ref = useRef(null)
+    // const about_ref = useRef(null)
+    // const education_ref = useRef( null )
+    // const projects_ref = useRef( null )
+    // const contact_me_ref = useRef( null )
+    // const skills_ref = useRef( null )
 
+
+    // google fonts.
+    // let lora = 'lora'
+    // let heebo = 'heebo'
+    // let roboto = 'roboto'
+    // let poppins = 'poppins'
+    // let playfair = 'playfair'
 
 
     // toggling navbar expanded state.
@@ -64,9 +73,6 @@ const Home = ( ) => {
         setIsExpanded( !expanded )
     }
     
-
-
-
 
     // my skills interface.
     interface skill {
@@ -191,38 +197,45 @@ const Home = ( ) => {
     let parent_animation = 'fade-right'
     let parent_timer = '500'
     let child_animation = 'fade-up'
-    let child_timer = '2000'
+    let child_timer = '1100'
 
 
 
     return (
         <div>
             <NavbarComponent expanded={ expanded } 
-                             ToggleNavbarExpanded={ ToggleExpandedState }/>
+                             ToggleNavbarExpanded={ ToggleExpandedState }
+                             />
 
         <div>
             {/* main page content */}
-            <div className='container-x-margins'>
-                <h3 className='font-bold mt-4 text-xl italic'>Hey there!!</h3>
-                <div className='my-1'>
-                    <div className={ expanded === true? 'remove-cover-pic' : 'bg-slate-200 rounded-full ' }>
-                        <img className='brightness-105 opacity-100 rounded-full w-full h-70 hover:shadow-lg' src={ cover1 } alt='designer' />
+            <div className='bg-[#F5F5F5]'>
+                {/* <h3 className='font-bold mt-4 text-xl italic'>Hey there!!</h3> */}
+                <div className='my-1 sm:mx-16 sm:flex sm:flex-row sm:justify-evenly '>
+                    <div className={ expanded === true? 'remove-cover-pic' : 'p-4 rounded-full basis-1/4 sm:py-16 sm:w-full sm:h-64' }>
+                        <img className='rounded-full w-full  brightness-90 shadow-md sm:w-full
+                                        hover:shadow-lg sm:rounded-lg' src={ cover6 } alt='designer' />
                     </div>
 
-                    <div className='mt-2'>
-                        <h3 className='text-xl font-bold mt-1 text-center secondary-col'>I am Larry N. N. Williams</h3>
-                        <h3 className='text-md text-center mt-1 font-semibold'>I'm a software developer</h3>
+                    <div className='mt-2 sm:pt-52 basis-2/3'>
+                        <h3 className='text-xl font-bold mt-1 text-center secondary-col sm:text-4xl sm:font-playfair'>Hi, I am Larry N. N. Williams</h3>
+                        <h3 className='text-md text-center mt-2 font-semibold sm:text-lg'>I'm a software developer</h3>
+
+                        <h3 className='container-x-margins container-y-margins text-md font-semibold italic'>
+                            Software runs the world. In our ever-growing world of technology, we are only limited by
+                            our creativity. As long as you can imagine it, software can bring it to life!
+                        </h3>
                     </div>
 
                 </div>
 
 
-                <div className='text-center mt-4'>
+                {/* <div className='container-x-margins container-y-margins text-center mt-4'>
                     <p className='text-md font-semibold italic'>
                         Software runs the world. In our ever-growing world of technology, we are only limited by
                         our creativity. As long as you can imagine it, software can bring it to life!
                     </p>
-                </div>
+                </div> */}
                 
             </div>
             {/* end of main page content */ }
@@ -230,14 +243,14 @@ const Home = ( ) => {
 
 
             {/* intro section */} 
-            <div className='container-x-margins container-y-margins'>
+            <div className='container-x-margins container-y-margins sm:mx-28'>
                 <div>
                     <h2 className='text-2xl primary-col font-lora font-bold mb-3 mt-5' data-aos={ parent_animation } data-aos-duration={ parent_timer }>About Me</h2>
                 </div>
                 
                 <div className='mb-3' data-aos={ child_animation } data-aos-duration={ child_timer }>
                     <>
-                        <p>
+                        <p className='font-heebo'>
                             I am a driven and innovative person who loves to learn by getting my hands dirty.
                             I believe we grow by solving challenges and learning from them. No problem, however difficult
                             it may seem, is unsolvable if it is addressed with the right mind, attitude and tools.
@@ -270,17 +283,18 @@ const Home = ( ) => {
 
 
             {/* contact me section */}
-            <div className='container-x-margins container-y-margins'>
+            <div className='container-x-margins container-y-margins sm:mx-28'>
                 <h2 className='text-2xl primary-col font-lora font-bold mb-2 mt-5' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Contact Me</h2>
-                <h2 className='text-slate-800 font-lora mb-3 mt-2 text-md' data-aos={ child_animation } data-aos-duration={ child_timer }>
+                <h2 className='text-slate-800 font-lora mb-3 mt-2 text-md' /*data-aos={ child_animation } data-aos-duration={ child_timer }*/>
                     Have any ideas you want to visualize in software?
                     Then get in touch with me via any of the platforms below:
                 </h2>
 
+                <div className='sm:grid sm:grid-cols-3 sm:gap-5 sm:mx-6'>
                 {
                     contactMeArray.map(( contact_me: contact_me ) => {
-                        return <div className='my-4 shadow-lg py-12' data-aos={ child_animation } data-aos-duration={ child_timer } >
-                                    <div className='bg-[#ec5b53] w-24 rounded-full p-6 ml-28 mb-3'>
+                        return  <div className='bg-[#F5F5F5] my-4 shadow-lg py-12' data-aos={ child_animation } data-aos-duration={ child_timer }>
+                                    <div className='bg-[#ec5b53] w-24 rounded-full p-6 ml-28 sm:ml-32 mb-3'>
                                         <img className='w-20' src={ contact_me.icon } alt='address' />
                                     </div>
 
@@ -291,6 +305,7 @@ const Home = ( ) => {
                                </div>
                     })
                 }
+                </div>
 
             
             </div>
@@ -299,16 +314,16 @@ const Home = ( ) => {
 
 
             {/* education section */}
-            <div className='container-x-margins container-y-margins'>
+            <div className='container-x-margins container-y-margins sm:mx-28'>
                 <div>
                     <h2 className='text-2xl primary-col font-lora font-bold mb-3 mt-5' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Education</h2>
                 </div>
 
 
-                <div className='mx-1 shadow-lg'>
+                <div className='bg-[#F5F5F5] mx-1 shadow-lg sm:p-3'>
                     {
                         myEducationArray.map(( education: my_education ) => {
-                            return <div className='flex flex-row justify-between mx-3 my-3 divide-y-2' data-aos={ child_animation } data-aos-duration={ child_timer }>
+                            return <div className=' flex flex-row justify-between mx-3 my-3 divide-y-2' data-aos={ child_animation } data-aos-duration={ child_timer }>
                                         <div className='mr-3 mt-2 basis-1/3'>
                                             <img className='w-12' src={ education.school_icon } alt='cover' />
                                         </div>
@@ -332,19 +347,20 @@ const Home = ( ) => {
 
 
             {/* skills section */ }
-            <div className='container-x-margins container-y-margins'>
+            <div  className='container-x-margins container-y-margins sm:mx-28'>
                 <h2 className='primary-col text-2xl font-lora font-bold mb-1 mt-5' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Skills</h2>
                 <p>Here are some of the technical skills I have in my arsenal to give you the best software experience possible</p>
             </div>
 
-            <div className='grid grid-cols-2 mx-3 gap-3 hover:cursor-pointer'>
+            <div className='grid grid-cols-2 mx-3 gap-3 hover:cursor-pointer
+                            sm:mx-28 sm:grid-cols-4 '>
                
                {
                     skillsArray.map( ( skill: skill ) => (
                         <div className='my-1 p-3 text-center bg-slate-200 rounded-lg transition-all 
                                         duration-500 hover:shadow-lg hover:bg-slate-300' data-aos={ child_animation } data-aos-duration={ child_timer }>
                             <p className='text-lg font-lora font-semibold mb-3 secondary-col'>{ skill.name }</p>
-                            <div className='w-14 ml-8'>
+                            <div className='w-14 ml-8 sm:ml-24'>
                                 {/* <CircularProgressbar value={ skill.proficiency } text={ `${ skill.proficiency }%` } /> */}
                                 <img src={ skill.skill_logo } className='rounded-none' />
                             </div>
@@ -360,11 +376,12 @@ const Home = ( ) => {
 
 
             {/* my software services section */}
-            <div className='container-x-margins container-y-margins'>
+            <div className='container-x-margins container-y-margins sm:mx-28'>
                 <h3 className='primary-col text-2xl font-lora font-bold mb-3' data-aos={ parent_animation } data-aos-duration={ parent_timer }>What services do I provide?</h3>
+                <div className='sm:grid sm:grid-flow-row sm:grid-cols-3 sm:gap-5'>
                 {
                     myServicesArray.map(( service: myService ) => {
-                        return   <div className='bg-slate-100 border-0 rounded-lg shadow-lg pt-2 pb-8 text-center mb-4 
+                        return   <div className='bg-[#F5F5F5] border-0 rounded-lg shadow-lg pt-2 pb-8 text-center mb-4 
                                                  transition-all duration-700 hover:cursor-pointer
                                                  hover:shadow-lg hover:skew-x-6' 
                                        data-aos={ child_animation } data-aos-duration={ child_timer }>
@@ -375,6 +392,7 @@ const Home = ( ) => {
 
                     })
                 }
+                </div>
             </div>
 
 
@@ -382,12 +400,13 @@ const Home = ( ) => {
 
 
             {/* list of best projects section */ }
-            <div className='container-x-margins container-y-margins'>
+            <div  className='container-x-margins container-y-margins sm:mx-28'>
                 <h3 className='primary-col text-2xl font-lora font-bold mt-3' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Have a look at some interesting projects I have built</h3>
+                <div className='sm:grid sm:grid-flow-row sm:grid-cols-3 sm:gap-5'>
                 {
                     myProjectsArray.map(( project: my_projects ) => {
-                        return  <div className='bg-slate-100 my-4 pb-3 shadow-lg hover:cursor-pointer rounded-lg
-                                                transition-all duration-500 hover:skew-x-3' 
+                        return  <div className='bg-[#F5F5F5] my-4 pb-3 shadow-lg hover:cursor-pointer rounded-lg
+                                                transition-all duration-500 ' 
                                                 data-aos={ child_animation } data-aos-duration={ child_timer }
                                                 >
                                     <img className='h-48' src={ project.projectCoverImage } alt='cover' />
@@ -396,12 +415,13 @@ const Home = ( ) => {
                                         <h3 className='text-sm text-center font-semibold mx-1'>{ project.projectDescription }</h3>
                                         <h3 className='text-sm text-center mb-4 font-semibold'>Built with { project.projectTechnologies }</h3>
                                         <Link to='https://hotel-finder-app-client-react.onrender.com'>
-                                            <button className='bg-[#ec5b53] transition-all duration-200 hover:bg-[#c73a32] py-2 px-4 text-white rounded-lg ml-24'>View live</button>
+                                            <button className='bg-[#ec5b53] transition-all duration-200 hover:bg-[#c73a32] py-2 px-4 text-white rounded-lg ml-24'>Demo</button>
                                         </Link>
                                     </div>
                                 </div>
                     })
                 }
+                </div>
             </div>
 
 
@@ -409,11 +429,11 @@ const Home = ( ) => {
 
 
             {/* if not now, then when? section*/}
-            <div className='container-x-margins container-y-margins mr-1' data-aos={ parent_animation } data-aos-duration={ parent_timer }>
+            <div className='container-x-margins container-y-margins mr-1 sm:mx-28' data-aos={ parent_animation } data-aos-duration={ parent_timer }>
                 <h3 className='text-2xl font-semibold font-lora primary-col'>If Not Now, When?</h3>
                 <h3 className='text-2xl font-semibold font-lora primary-col mb-1'>Let's Work Together!</h3>
                 <p className='text-md font-lora secondary-col mb-3'>Get in touch with me and let us bring your wonderful ideas into life!</p>
-                <button className='bg-[#ec5b53] transition-all duration-200 hover:bg-[#c73a32] py-2 px-4 text-white rounded-lg ml-20'>Contact Me</button>
+                <button className='bg-[#ec5b53] transition-all duration-200 hover:bg-[#c73a32] py-2 px-4 text-white rounded-lg ml-20 sm:ml-0'>Contact Me</button>
             </div>
             {/* end of if not now, then when? */}
 
