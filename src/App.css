@@ -4,6 +4,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 
 
 
@@ -26,6 +29,22 @@
 
     .secondary-col {
         @apply text-[#10285d];
+    }
+
+    .font_roboto_slab {
+        @apply font-robotoslab;
+    }
+
+    .font_poppins {
+        @apply font-poppins;
+    }
+
+    .font_merriweather {
+        @apply font-merriweather;
+    }
+
+    .font_lora {
+        @apply font-lora;
     }
 
     .footer-link-transition {

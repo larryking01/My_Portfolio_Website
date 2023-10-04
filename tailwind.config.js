@@ -12,7 +12,11 @@ module.exports = {
          heebo: ['Heebo'],
          roboto: ['Roboto'],
          poppins: ['Poppins'],
-         playfair: ['Playfair Display']
+         playfair: ['Playfair Display'],
+         lato: ['Lato'],
+         inter: ['Inter'],
+         robotoslab: ['Roboto Slab'],
+         merriweather: ['Merriweather']
        }
      }
   },

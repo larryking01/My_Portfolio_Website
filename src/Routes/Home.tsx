@@ -9,13 +9,13 @@ import GoToTopBtn from '../MetaFiles/GoToTopBtn'
 import mobile1 from '../StaticFiles/mobile1.png'
 import website1 from '../StaticFiles/website1.png'
 import website2 from '../StaticFiles/website2.png'
-// import cover1 from '../StaticFiles/cover1.jpg'
-// import cover2 from '../StaticFiles/cover2.jpg'
-// import cover3 from '../StaticFiles/cover3.jpg'
-// import cover4 from '../StaticFiles/cover4.jpg'
-// import cover5 from '../StaticFiles/cover5.jpg'
+import cover1 from '../StaticFiles/cover1.jpg'
+import cover2 from '../StaticFiles/cover2.jpg'
+import cover3 from '../StaticFiles/cover3.jpg'
+import cover4 from '../StaticFiles/cover4.jpg'
+import cover5 from '../StaticFiles/cover5.jpg'
 import cover6 from '../StaticFiles/cover6.jpg'
-// import cover7 from '../StaticFiles/cover7.jpg'
+import cover7 from '../StaticFiles/cover7.jpg'
 import js_logo from '../StaticFiles/js_logo.png'
 import ts_logo from '../StaticFiles/ts_logo.png'
 import graphql_logo from '../StaticFiles/graphql_logo.png'
@@ -56,14 +56,6 @@ const Home = ( ) => {
     // const projects_ref = useRef( null )
     // const contact_me_ref = useRef( null )
     // const skills_ref = useRef( null )
-
-
-    // google fonts.
-    // let lora = 'lora'
-    // let heebo = 'heebo'
-    // let roboto = 'roboto'
-    // let poppins = 'poppins'
-    // let playfair = 'playfair'
 
 
     // toggling navbar expanded state.
@@ -126,7 +118,7 @@ const Home = ( ) => {
     let myServicesArray: myService[] = [
         { serviceType: 'Website development', serviceDetails: 'Websites should communicate to your intended audience as you would in-person. That is why I strive to build responsive, interactive websites like they should be in our modern era.', icon: website1 },
         { serviceType: 'Web app development', serviceDetails: 'You may not be able to reach all your users, but your web app can. Let me give you the best assistant possible for your needs.', icon: website2 },
-        { serviceType: 'Mobile app development', serviceDetails: "Mobile devices come in handy these days and that is why you need your software or project running on one to reach a widerange of users. Don't compromise", icon: mobile1 }    
+        { serviceType: 'Mobile app development', serviceDetails: "Mobile devices come in handy these days and that is why you need your software or project running on one to reach a wide range of users. Don't compromise", icon: mobile1 }    
     ]
 
 
@@ -201,6 +193,7 @@ const Home = ( ) => {
 
 
 
+
     return (
         <div>
             <NavbarComponent expanded={ expanded } 
@@ -219,7 +212,7 @@ const Home = ( ) => {
 
                     <div className='mt-2 sm:pt-52 basis-2/3'>
                         <h3 className='text-xl font-bold mt-1 text-center secondary-col sm:text-4xl sm:font-playfair'>Hi, I am Larry N. N. Williams</h3>
-                        <h3 className='text-md text-center mt-2 font-semibold sm:text-lg'>I'm a software developer</h3>
+                        <h3 className='text-md text-center mt-3 sm:mt-5 font-merriweather font-semibold sm:text-lg'>I'm a software developer</h3>
 
                         <h3 className='container-x-margins container-y-margins text-md font-semibold italic'>
                             Software runs the world. In our ever-growing world of technology, we are only limited by
@@ -245,12 +238,12 @@ const Home = ( ) => {
             {/* intro section */} 
             <div className='container-x-margins container-y-margins sm:mx-28'>
                 <div>
-                    <h2 className='text-2xl primary-col font-lora font-bold mb-3 mt-5' data-aos={ parent_animation } data-aos-duration={ parent_timer }>About Me</h2>
+                    <h2 className='text-2xl primary-col font_lora font-bold mb-3 mt-5' data-aos={ parent_animation } data-aos-duration={ parent_timer }>About Me</h2>
                 </div>
                 
                 <div className='mb-3' data-aos={ child_animation } data-aos-duration={ child_timer }>
                     <>
-                        <p className='font-heebo'>
+                        <p className='font_merriweather'>
                             I am a driven and innovative person who loves to learn by getting my hands dirty.
                             I believe we grow by solving challenges and learning from them. No problem, however difficult
                             it may seem, is unsolvable if it is addressed with the right mind, attitude and tools.
@@ -260,11 +253,11 @@ const Home = ( ) => {
                             aboutMeInfoArray.map( ( infoLine: aboutMeInfoSub ) => {
                                 return   <div className='flex flex-row my-2 font-semibold pt-3 space-x-8'> 
                                             <div className='secondary-col'>
-                                                <h3>{ infoLine.target }</h3>
+                                                <h3 className='font_lora'>{ infoLine.target }</h3>
                                             </div>
                             
                                             <div className='text-black'>
-                                                <h3>{ infoLine.answer }</h3>
+                                                <h3 className='font_roboto_slabs'>{ infoLine.answer }</h3>
                                             </div>
                                         </div>
                 
@@ -284,8 +277,8 @@ const Home = ( ) => {
 
             {/* contact me section */}
             <div className='container-x-margins container-y-margins sm:mx-28'>
-                <h2 className='text-2xl primary-col font-lora font-bold mb-2 mt-5' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Contact Me</h2>
-                <h2 className='text-slate-800 font-lora mb-3 mt-2 text-md' /*data-aos={ child_animation } data-aos-duration={ child_timer }*/>
+                <h2 className='text-2xl primary-col font_lora font-bold mb-2 mt-5' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Contact Me</h2>
+                <h2 className='text-slate-800 font_merriweather mb-3 mt-2 text-md' /*data-aos={ child_animation } data-aos-duration={ child_timer }*/>
                     Have any ideas you want to visualize in software?
                     Then get in touch with me via any of the platforms below:
                 </h2>
@@ -298,7 +291,7 @@ const Home = ( ) => {
                                         <img className='w-20' src={ contact_me.icon } alt='address' />
                                     </div>
 
-                                    <h3 className='font-lora text-[#10285d] font-semibold text-xl text-center mb-2'>{ contact_me.title }</h3>
+                                    <h3 className='font_lora text-[#10285d] font-semibold text-xl text-center mb-2'>{ contact_me.title }</h3>
                                     <Link to={ contact_me.detail }>
                                         <h3 className='font-md text-center text-[#ec5b53] font-semibold cursor-pointer'>{ contact_me.detail }</h3>
                                     </Link>
@@ -316,7 +309,7 @@ const Home = ( ) => {
             {/* education section */}
             <div className='container-x-margins container-y-margins sm:mx-28'>
                 <div>
-                    <h2 className='text-2xl primary-col font-lora font-bold mb-3 mt-5' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Education</h2>
+                    <h2 className='text-2xl primary-col font_lora font-bold mb-3 mt-5' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Education</h2>
                 </div>
 
 
@@ -329,9 +322,9 @@ const Home = ( ) => {
                                         </div>
 
                                         <div className='basis-2/3'>
-                                            <h3 className='secondary-col font-lora font-bold text-lg mb-1'>{ education.programme }</h3>
-                                            <h3 className='font-semibold text-lg mb-1'>{ education.school }</h3>
-                                            <h3 className='font-semibold text-md mb-2'>{ education.study_period }</h3>
+                                            <h3 className='secondary-col font_lora font-bold text-lg mb-1'>{ education.school }</h3>
+                                            <h3 className='font_merriweather font-semibold text-md mb-1'>{ education.programme }</h3>
+                                            <h3 className='font-semibold text-md mb-2 font_merriweather'>{ education.study_period }</h3>
                                         </div>
                                     </div> 
                         })
@@ -348,8 +341,8 @@ const Home = ( ) => {
 
             {/* skills section */ }
             <div  className='container-x-margins container-y-margins sm:mx-28'>
-                <h2 className='primary-col text-2xl font-lora font-bold mb-1 mt-5' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Skills</h2>
-                <p>Here are some of the technical skills I have in my arsenal to give you the best software experience possible</p>
+                <h2 className='primary-col text-2xl font_lora font-bold mb-1 mt-5' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Skills</h2>
+                <p className='font_merriweather'>Here are some of the technical skills I have in my arsenal to give you the best software experience possible</p>
             </div>
 
             <div className='grid grid-cols-2 mx-3 gap-3 hover:cursor-pointer
@@ -359,7 +352,7 @@ const Home = ( ) => {
                     skillsArray.map( ( skill: skill ) => (
                         <div className='my-1 p-3 text-center bg-slate-200 rounded-lg transition-all 
                                         duration-500 hover:shadow-lg hover:bg-slate-300' data-aos={ child_animation } data-aos-duration={ child_timer }>
-                            <p className='text-lg font-lora font-semibold mb-3 secondary-col'>{ skill.name }</p>
+                            <p className='text-lg font_lora font-semibold mb-3 secondary-col'>{ skill.name }</p>
                             <div className='w-14 ml-8 sm:ml-24'>
                                 {/* <CircularProgressbar value={ skill.proficiency } text={ `${ skill.proficiency }%` } /> */}
                                 <img src={ skill.skill_logo } className='rounded-none' />
@@ -377,7 +370,7 @@ const Home = ( ) => {
 
             {/* my software services section */}
             <div className='container-x-margins container-y-margins sm:mx-28'>
-                <h3 className='primary-col text-2xl font-lora font-bold mb-3' data-aos={ parent_animation } data-aos-duration={ parent_timer }>What services do I provide?</h3>
+                <h3 className='primary-col text-2xl font_lora font-bold mb-3' data-aos={ parent_animation } data-aos-duration={ parent_timer }>What services do I provide?</h3>
                 <div className='sm:grid sm:grid-flow-row sm:grid-cols-3 sm:gap-5'>
                 {
                     myServicesArray.map(( service: myService ) => {
@@ -386,8 +379,8 @@ const Home = ( ) => {
                                                  hover:shadow-lg hover:skew-x-6' 
                                        data-aos={ child_animation } data-aos-duration={ child_timer }>
                                     <img className='mb-2 w-14 ml-4' src={ service.icon } alt='website' />
-                                    <h3 className='text-lg font-lora secondary-col font-semibold mb-2'>{ service.serviceType }</h3>
-                                    <h3 className='text-md px-1'>{ service.serviceDetails }</h3>
+                                    <h3 className='text-lg font_lora secondary-col font-semibold mb-2'>{ service.serviceType }</h3>
+                                    <h3 className='text-sm sm:text-md px-3 font_merriweather'>{ service.serviceDetails }</h3>
                                  </div>
 
                     })
@@ -401,7 +394,7 @@ const Home = ( ) => {
 
             {/* list of best projects section */ }
             <div  className='container-x-margins container-y-margins sm:mx-28'>
-                <h3 className='primary-col text-2xl font-lora font-bold mt-3' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Have a look at some interesting projects I have built</h3>
+                <h3 className='primary-col text-2xl font_lora font-bold mt-3 mb-2' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Have a look at some interesting projects I have built</h3>
                 <div className='sm:grid sm:grid-flow-row sm:grid-cols-3 sm:gap-5'>
                 {
                     myProjectsArray.map(( project: my_projects ) => {
@@ -411,11 +404,12 @@ const Home = ( ) => {
                                                 >
                                     <img className='h-48' src={ project.projectCoverImage } alt='cover' />
                                     <div className='p-2'>
-                                        <h3 className='text-lg primary-col font-lora font-semibold text-center secondary-col'>{ project.projectTitle }</h3>
-                                        <h3 className='text-sm text-center font-semibold mx-1'>{ project.projectDescription }</h3>
-                                        <h3 className='text-sm text-center mb-4 font-semibold'>Built with { project.projectTechnologies }</h3>
+                                        <h3 className='text-lg primary-col font_lora font-semibold text-center secondary-col mb-2 sm:mb-3'>{ project.projectTitle }</h3>
+                                        <h3 className='text-sm text-center font_merriweather mx-1'>{ project.projectDescription }</h3>
+                                        <h3 className='text-sm text-center mb-4 font_merriweather'>Built with { project.projectTechnologies }</h3>
                                         <Link to='https://hotel-finder-app-client-react.onrender.com'>
-                                            <button className='bg-[#ec5b53] transition-all duration-200 hover:bg-[#c73a32] py-2 px-4 text-white rounded-lg ml-24'>Demo</button>
+                                            <button className='bg-[#ec5b53] transition-all duration-200 hover:bg-[#c73a32] 
+                                                               py-2 px-6 text-white rounded-lg ml-24 sm:ml-28'>See Demo</button>
                                         </Link>
                                     </div>
                                 </div>
@@ -430,9 +424,11 @@ const Home = ( ) => {
 
             {/* if not now, then when? section*/}
             <div className='container-x-margins container-y-margins mr-1 sm:mx-28' data-aos={ parent_animation } data-aos-duration={ parent_timer }>
-                <h3 className='text-2xl font-semibold font-lora primary-col'>If Not Now, When?</h3>
-                <h3 className='text-2xl font-semibold font-lora primary-col mb-1'>Let's Work Together!</h3>
-                <p className='text-md font-lora secondary-col mb-3'>Get in touch with me and let us bring your wonderful ideas into life!</p>
+                <div className='sm:flex sm:flex-row'>
+                    <h3 className='text-2xl font-semibold font_lora primary-col sm:mr-4'>If Not Now, When?</h3>
+                    <h3 className='text-2xl font-semibold font_lora primary-col mb-1'>Let's Work Together!</h3>
+                </div>
+                <p className='text-md font_merriweather secondary-col mb-3'>Get in touch with me and let us bring your wonderful ideas into life!</p>
                 <button className='bg-[#ec5b53] transition-all duration-200 hover:bg-[#c73a32] py-2 px-4 text-white rounded-lg ml-20 sm:ml-0'>Contact Me</button>
             </div>
             {/* end of if not now, then when? */}
