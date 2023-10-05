@@ -64,6 +64,14 @@ const Home = ( ) => {
     const ToggleExpandedState = () => {
         setIsExpanded( !expanded )
     }
+
+
+    // toggling darkmode.
+    const [ darkMode, setDarkMode ] = useState( false )
+
+    const ToggleDarkModeState = ( ) => {
+        setDarkMode( !darkMode )
+    }
     
 
     // my skills interface.
@@ -195,30 +203,34 @@ const Home = ( ) => {
 
 
     return (
-        <div>
+        <div className={ darkMode? 'dark': '' }>
+            <div className='dark:dark-bg-col'>
             <NavbarComponent expanded={ expanded } 
+                             darkMode={ darkMode }
                              ToggleNavbarExpanded={ ToggleExpandedState }
+                             ToggleDarkModeState={ ToggleDarkModeState }
                              />
+
 
         <div>
             {/* main page content */}
-            <div className='bg-[#F5F5F5]'>
-                {/* <h3 className='font-bold mt-4 text-xl italic'>Hey there!!</h3> */}
-                <div className='my-1 sm:mx-16 sm:flex sm:flex-row sm:justify-evenly '>
+            <div className='bg-[#F5F5F5] dark:dark-bg-col'>
+                <div className='my-1 sm:mx-16 sm:flex sm:flex-row sm:justify-evenly'>
                     <div className={ expanded === true? 'remove-cover-pic' : 'p-4 rounded-full basis-1/4 sm:py-16 sm:w-full sm:h-64' }>
                         <img className='rounded-full w-full  brightness-90 shadow-md sm:w-full
                                         hover:shadow-lg sm:rounded-lg' src={ cover6 } alt='designer' />
                     </div>
 
                     <div className='mt-2 sm:pt-52 basis-2/3'>
-                        <h3 className='text-xl font-bold mt-1 text-center secondary-col sm:text-4xl sm:font-playfair'>Hi, I am Larry N. N. Williams</h3>
-                        <h3 className='text-md text-center mt-3 sm:mt-5 font-merriweather font-semibold sm:text-lg'>I'm a software developer</h3>
+                        <h3 className='text-xl font-bold mt-1 text-center secondary-col sm:text-5xl font-playfair dark:dark-primary-text-col'>Hi, I am Larry N. N. Williams</h3>
+                        <h3 className='text-md text-center mt-3 sm:mt-5 font-merriweather font-semibold sm:text-lg dark:dark-primary-text-col'>I'm a software developer</h3>
 
-                        <h3 className='container-x-margins container-y-margins text-md font-semibold italic'>
+                        <h3 className='container-x-margins container-y-margins text-md font-semibold italic dark:dark-secondary-text-col'>
                             Software runs the world. In our ever-growing world of technology, we are only limited by
                             our creativity. As long as you can imagine it, software can bring it to life!
                         </h3>
                     </div>
+
 
                 </div>
 
@@ -238,12 +250,12 @@ const Home = ( ) => {
             {/* intro section */} 
             <div className='container-x-margins container-y-margins sm:mx-28'>
                 <div>
-                    <h2 className='text-2xl primary-col font_lora font-bold mb-3 mt-5' data-aos={ parent_animation } data-aos-duration={ parent_timer }>About Me</h2>
+                    <h2 className='text-2xl primary-col font_lora font-bold mb-3 mt-5 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>About Me</h2>
                 </div>
                 
                 <div className='mb-3' data-aos={ child_animation } data-aos-duration={ child_timer }>
                     <>
-                        <p className='font_merriweather'>
+                        <p className='font_merriweather dark:dark-secondary-text-col'>
                             I am a driven and innovative person who loves to learn by getting my hands dirty.
                             I believe we grow by solving challenges and learning from them. No problem, however difficult
                             it may seem, is unsolvable if it is addressed with the right mind, attitude and tools.
@@ -253,11 +265,11 @@ const Home = ( ) => {
                             aboutMeInfoArray.map( ( infoLine: aboutMeInfoSub ) => {
                                 return   <div className='flex flex-row my-2 font-semibold pt-3 space-x-8'> 
                                             <div className='secondary-col'>
-                                                <h3 className='font_lora'>{ infoLine.target }</h3>
+                                                <h3 className='font_lora dark:dark-primary-text-col'>{ infoLine.target }</h3>
                                             </div>
                             
                                             <div className='text-black'>
-                                                <h3 className='font_roboto_slabs'>{ infoLine.answer }</h3>
+                                                <h3 className='font_roboto_slabs dark:dark-secondary-text-col'>{ infoLine.answer }</h3>
                                             </div>
                                         </div>
                 
@@ -277,8 +289,8 @@ const Home = ( ) => {
 
             {/* contact me section */}
             <div className='container-x-margins container-y-margins sm:mx-28'>
-                <h2 className='text-2xl primary-col font_lora font-bold mb-2 mt-5' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Contact Me</h2>
-                <h2 className='text-slate-800 font_merriweather mb-3 mt-2 text-md' /*data-aos={ child_animation } data-aos-duration={ child_timer }*/>
+                <h2 className='text-2xl primary-col font_lora font-bold mb-2 mt-5 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Contact Me</h2>
+                <h2 className='text-slate-800 font_merriweather mb-3 mt-2 text-md dark:dark-secondary-text-col' /*data-aos={ child_animation } data-aos-duration={ child_timer }*/>
                     Have any ideas you want to visualize in software?
                     Then get in touch with me via any of the platforms below:
                 </h2>
@@ -286,14 +298,14 @@ const Home = ( ) => {
                 <div className='sm:grid sm:grid-cols-3 sm:gap-5 sm:mx-6'>
                 {
                     contactMeArray.map(( contact_me: contact_me ) => {
-                        return  <div className='bg-[#F5F5F5] my-4 shadow-lg py-12' data-aos={ child_animation } data-aos-duration={ child_timer }>
+                        return  <div className='bg-[#F5F5F5] my-4 shadow-lg py-12 dark:rounded-lg dark:dark-card-bg-col' data-aos={ child_animation } data-aos-duration={ child_timer }>
                                     <div className='bg-[#ec5b53] w-24 rounded-full p-6 ml-28 sm:ml-32 mb-3'>
                                         <img className='w-20' src={ contact_me.icon } alt='address' />
                                     </div>
 
                                     <h3 className='font_lora text-[#10285d] font-semibold text-xl text-center mb-2'>{ contact_me.title }</h3>
                                     <Link to={ contact_me.detail }>
-                                        <h3 className='font-md text-center text-[#ec5b53] font-semibold cursor-pointer'>{ contact_me.detail }</h3>
+                                        <h3 className='font-md text-center text-[#ec5b53] font-semibold cursor-pointer dark:text-black'>{ contact_me.detail }</h3>
                                     </Link>
                                </div>
                     })
@@ -309,14 +321,14 @@ const Home = ( ) => {
             {/* education section */}
             <div className='container-x-margins container-y-margins sm:mx-28'>
                 <div>
-                    <h2 className='text-2xl primary-col font_lora font-bold mb-3 mt-5' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Education</h2>
+                    <h2 className='text-2xl primary-col font_lora font-bold mb-3 mt-5 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Education</h2>
                 </div>
 
 
-                <div className='bg-[#F5F5F5] mx-1 shadow-lg sm:p-3'>
+                <div className='bg-[#F5F5F5] mx-1 shadow-lg sm:p-3 dark:dark-card-bg-col sm:rounded-lg'>
                     {
                         myEducationArray.map(( education: my_education ) => {
-                            return <div className=' flex flex-row justify-between mx-3 my-3 divide-y-2' data-aos={ child_animation } data-aos-duration={ child_timer }>
+                            return <div className='flex flex-row justify-between mx-3 my-3 divide-y-2' data-aos={ child_animation } data-aos-duration={ child_timer }>
                                         <div className='mr-3 mt-2 basis-1/3'>
                                             <img className='w-12' src={ education.school_icon } alt='cover' />
                                         </div>
@@ -341,8 +353,8 @@ const Home = ( ) => {
 
             {/* skills section */ }
             <div  className='container-x-margins container-y-margins sm:mx-28'>
-                <h2 className='primary-col text-2xl font_lora font-bold mb-1 mt-5' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Skills</h2>
-                <p className='font_merriweather'>Here are some of the technical skills I have in my arsenal to give you the best software experience possible</p>
+                <h2 className='primary-col text-2xl font_lora font-bold mb-1 mt-5 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Skills</h2>
+                <p className='font_merriweather dark:dark-secondary-text-col'>Here are some of the technical skills I have in my arsenal to give you the best software experience possible</p>
             </div>
 
             <div className='grid grid-cols-2 mx-3 gap-3 hover:cursor-pointer
@@ -351,7 +363,7 @@ const Home = ( ) => {
                {
                     skillsArray.map( ( skill: skill ) => (
                         <div className='my-1 p-3 text-center bg-slate-200 rounded-lg transition-all 
-                                        duration-500 hover:shadow-lg hover:bg-slate-300' data-aos={ child_animation } data-aos-duration={ child_timer }>
+                                        duration-500 hover:shadow-lg hover:bg-slate-300 dark:dark-card-bg-col' data-aos={ child_animation } data-aos-duration={ child_timer }>
                             <p className='text-lg font_lora font-semibold mb-3 secondary-col'>{ skill.name }</p>
                             <div className='w-14 ml-8 sm:ml-24'>
                                 {/* <CircularProgressbar value={ skill.proficiency } text={ `${ skill.proficiency }%` } /> */}
@@ -370,13 +382,13 @@ const Home = ( ) => {
 
             {/* my software services section */}
             <div className='container-x-margins container-y-margins sm:mx-28'>
-                <h3 className='primary-col text-2xl font_lora font-bold mb-3' data-aos={ parent_animation } data-aos-duration={ parent_timer }>What services do I provide?</h3>
+                <h3 className='primary-col text-2xl font_lora font-bold mb-3 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>What services do I provide?</h3>
                 <div className='sm:grid sm:grid-flow-row sm:grid-cols-3 sm:gap-5'>
                 {
                     myServicesArray.map(( service: myService ) => {
                         return   <div className='bg-[#F5F5F5] border-0 rounded-lg shadow-lg pt-2 pb-8 text-center mb-4 
                                                  transition-all duration-700 hover:cursor-pointer
-                                                 hover:shadow-lg hover:skew-x-6' 
+                                                 hover:shadow-lg hover:skew-x-6 dark:dark-card-bg-col' 
                                        data-aos={ child_animation } data-aos-duration={ child_timer }>
                                     <img className='mb-2 w-14 ml-4' src={ service.icon } alt='website' />
                                     <h3 className='text-lg font_lora secondary-col font-semibold mb-2'>{ service.serviceType }</h3>
@@ -394,12 +406,12 @@ const Home = ( ) => {
 
             {/* list of best projects section */ }
             <div  className='container-x-margins container-y-margins sm:mx-28'>
-                <h3 className='primary-col text-2xl font_lora font-bold mt-3 mb-2' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Have a look at some interesting projects I have built</h3>
+                <h3 className='primary-col text-2xl font_lora font-bold mt-3 mb-2 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Have a look at some interesting projects I have built</h3>
                 <div className='sm:grid sm:grid-flow-row sm:grid-cols-3 sm:gap-5'>
                 {
                     myProjectsArray.map(( project: my_projects ) => {
                         return  <div className='bg-[#F5F5F5] my-4 pb-3 shadow-lg hover:cursor-pointer rounded-lg
-                                                transition-all duration-500 ' 
+                                                transition-all duration-500 dark:dark-card-bg-col' 
                                                 data-aos={ child_animation } data-aos-duration={ child_timer }
                                                 >
                                     <img className='h-48' src={ project.projectCoverImage } alt='cover' />
@@ -425,10 +437,10 @@ const Home = ( ) => {
             {/* if not now, then when? section*/}
             <div className='container-x-margins container-y-margins mr-1 sm:mx-28' data-aos={ parent_animation } data-aos-duration={ parent_timer }>
                 <div className='sm:flex sm:flex-row'>
-                    <h3 className='text-2xl font-semibold font_lora primary-col sm:mr-4'>If Not Now, When?</h3>
-                    <h3 className='text-2xl font-semibold font_lora primary-col mb-1'>Let's Work Together!</h3>
+                    <h3 className='text-2xl font-semibold font_lora primary-col sm:mr-4 dark:dark-primary-text-col'>If Not Now, When?</h3>
+                    <h3 className='text-2xl font-semibold font_lora primary-col mb-1 dark:dark-primary-text-col'>Let's Work Together!</h3>
                 </div>
-                <p className='text-md font_merriweather secondary-col mb-3'>Get in touch with me and let us bring your wonderful ideas into life!</p>
+                <p className='text-md font_merriweather secondary-col mb-3 dark-secondary-text-col'>Get in touch with me and let us bring your wonderful ideas into life!</p>
                 <button className='bg-[#ec5b53] transition-all duration-200 hover:bg-[#c73a32] py-2 px-4 text-white rounded-lg ml-20 sm:ml-0'>Contact Me</button>
             </div>
             {/* end of if not now, then when? */}
@@ -440,6 +452,7 @@ const Home = ( ) => {
             {/* footer section */}
             <Footer />
 
+            </div>
         </div>
 
         </div>

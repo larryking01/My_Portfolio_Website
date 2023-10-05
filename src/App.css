@@ -59,6 +59,26 @@
         @apply my-14;
     }
 
+    /* dark mode themes */
+    .dark-bg-col {
+        /* @apply bg-black; */
+        @apply bg-slate-950;
+        /* @apply bg-[#63e]; */
+    }
+
+    .dark-primary-text-col {
+        @apply text-[#63e];
+    }
+
+    .dark-secondary-text-col {
+        @apply text-slate-300;
+        /* @apply text-slate-400; */
+    }
+
+    .dark-card-bg-col {
+        @apply bg-slate-400;
+    }
+
 
     /* navbar styling */
     .navigation {
