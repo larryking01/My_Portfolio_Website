@@ -9,13 +9,13 @@ import GoToTopBtn from '../MetaFiles/GoToTopBtn'
 import mobile1 from '../StaticFiles/mobile1.png'
 import website1 from '../StaticFiles/website1.png'
 import website2 from '../StaticFiles/website2.png'
-import cover1 from '../StaticFiles/cover1.jpg'
-import cover2 from '../StaticFiles/cover2.jpg'
-import cover3 from '../StaticFiles/cover3.jpg'
-import cover4 from '../StaticFiles/cover4.jpg'
-import cover5 from '../StaticFiles/cover5.jpg'
+// import cover1 from '../StaticFiles/cover1.jpg'
+// import cover2 from '../StaticFiles/cover2.jpg'
+// import cover3 from '../StaticFiles/cover3.jpg'
+// import cover4 from '../StaticFiles/cover4.jpg'
+// import cover5 from '../StaticFiles/cover5.jpg'
 import cover6 from '../StaticFiles/cover6.jpg'
-import cover7 from '../StaticFiles/cover7.jpg'
+// import cover7 from '../StaticFiles/cover7.jpg'
 import js_logo from '../StaticFiles/js_logo.png'
 import ts_logo from '../StaticFiles/ts_logo.png'
 import graphql_logo from '../StaticFiles/graphql_logo.png'
@@ -108,7 +108,7 @@ const Home = ( ) => {
 
     let aboutMeInfoArray: aboutMeInfoSub[ ] = [
         { target: 'Name:', answer: 'Larry N. N. Williams' }, 
-        { target: 'Date of birth:', answer: 'June 19, 1999' },
+        // { target: 'Date of birth:', answer: 'June 19, 1999' },
         { target: 'Address:', answer: 'Lakeside Estate, Accra' },
         { target: 'Email:', answer: 'larryking8118@gmail.com' },
         { target: 'Phone:', answer: '+(233)-(0)55-253-1004'}
@@ -233,21 +233,13 @@ const Home = ( ) => {
 
 
                 </div>
-
-
-                {/* <div className='container-x-margins container-y-margins text-center mt-4'>
-                    <p className='text-md font-semibold italic'>
-                        Software runs the world. In our ever-growing world of technology, we are only limited by
-                        our creativity. As long as you can imagine it, software can bring it to life!
-                    </p>
-                </div> */}
                 
             </div>
             {/* end of main page content */ }
 
 
 
-            {/* intro section */} 
+            {/* about me section */} 
             <div className='container-x-margins container-y-margins sm:mx-28'>
                 <div>
                     <h2 className='text-2xl primary-col font_lora font-bold mb-3 mt-5 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>About Me</h2>
@@ -277,11 +269,10 @@ const Home = ( ) => {
                         }
                     </>
                 </div>
-                
-
+    
             </div>
 
-            {/* end of intro section */}
+            {/* end of about section */}
 
 
 

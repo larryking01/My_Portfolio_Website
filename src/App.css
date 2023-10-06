@@ -121,8 +121,16 @@
     @media screen and ( max-width: 768px ) {
         /* .no-scroll {
             overflow: hidden;
+        } */
+
+        .dark-moon-icon {
+            margin-left: 42%;
         }
- */
+
+        .light-sun-icon {
+            margin-left: 42%;
+        }
+ 
         .hamburger {
             display: block;
             cursor: pointer;
@@ -133,29 +141,31 @@
         }
 
         .expanded {
-            @apply bg-slate-200;
+            @apply bg-slate-400;
             flex-direction: column;
             position: absolute;
             left: 0;
             top: 75px;
-            /* background-color: #eee; */
             color: black;
             width: 100%;
             height: calc(100vh - 75px);
+            /* overflow-y: hidden; */
         }
 
         .expanded li {
             text-align: center;
-            margin: 2rem 1.2rem;
+            margin: 1.7rem 1.2rem;
             cursor: pointer;
             font-style: italic;
             font-weight: 700;
             font-size: 1.2rem;
             color: #10285d;
+            text-decoration: underline;
         }
 
         .remove-cover-pic {
-            display: none;
+            /* display: none; */
+            visibility: hidden;
         }
 
 

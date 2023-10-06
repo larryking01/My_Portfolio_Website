@@ -42,9 +42,9 @@ const NavbarComponent: React.FC<NavbarProp> = ( { expanded, ToggleNavbarExpanded
             <li onClick={ expanded === true ? ToggleNavbarExpanded : () => {} }><a href='#'>Projects</a></li>
             {
               darkMode === true?  
-                <li onClick={ ToggleDarkModeState }><img src={ sun_filled } className='w-6 cursor-pointer' alt='' /></li>
+                <li onClick={ ToggleDarkModeState }><img src={ sun_filled } className='w-7 sm:w-6 cursor-pointer light-sun-icon' alt='' /></li>
                   :
-                <li onClick={ ToggleDarkModeState }><img src={ moon } className='w-6 cursor-pointer' alt='' /></li>
+                <li onClick={ ToggleDarkModeState }><img src={ moon } className='w-7 sm:w-6 cursor-pointer dark-moon-icon' alt='' /></li>
             }
           </ul>
         </div>
