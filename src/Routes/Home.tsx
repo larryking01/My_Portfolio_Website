@@ -71,6 +71,7 @@ const Home = ( ) => {
 
     const ToggleDarkModeState = ( ) => {
         setDarkMode( !darkMode )
+        setIsExpanded( false )
     }
     
 
