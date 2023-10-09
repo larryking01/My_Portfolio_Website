@@ -4,9 +4,24 @@ import footer_mobile from '../StaticFiles/footer-mobile.png'
 import footer_linkedin from '../StaticFiles/footer-linkedin.png'
 
 
+// typing the props.
+interface FooterProp {
+    ScrollHomeDivIntoView: () => void,
+    ScrollAboutDivIntoView: () => void,
+    ScrollContactDivIntoView: () => void,
+    ScrollEducationDivIntoView: () => void,
+    ScrollSkillsDivIntoVIew: () => void,
+    ScrollServicesDivIntoVIew: () => void,
+    ScrollProjectsDivIntoView: () => void
+  
+  }
+  
 
 
-const Footer = () => {
+const Footer: React.FC<FooterProp> = ({ ScrollHomeDivIntoView, ScrollAboutDivIntoView, 
+                                        ScrollContactDivIntoView, ScrollSkillsDivIntoVIew,
+                                        ScrollEducationDivIntoView, ScrollProjectsDivIntoView,
+                                        ScrollServicesDivIntoVIew}) => {
 
 
     return (
@@ -19,14 +34,14 @@ const Footer = () => {
                     </h3>
                 </div>
 
-                <div className='sm:flex sm:flex-row sm:justify-around'>
+                <div className='sm:flex sm:flex-row sm:justify-evenly'>
                     <div className='ml-5 mb-5'>
                         <ul className='text-xl font_merriweather font-bold mb-3 secondary-col dark:dark-primary-text-col'>About</ul>
-                        <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col'>Home</li>
-                        <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col'>About</li>
-                        <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col'>Services</li>
-                        <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col'>Contact</li>
-                        <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col'>Projects</li>
+                        <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col' onClick={ ScrollHomeDivIntoView }>Home</li>
+                        <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col' onClick={ ScrollAboutDivIntoView }>About</li>
+                        <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col' onClick={ ScrollServicesDivIntoVIew }>Services</li>
+                        <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col' onClick={ ScrollContactDivIntoView }>Contact</li>
+                        <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col' onClick={ ScrollProjectsDivIntoView }>Projects</li>
                     </div>
 
 
@@ -60,24 +75,22 @@ const Footer = () => {
                     </div>
 
 
-                    <div className='ml-5 mb-5'>
+                    {/* <div className='ml-5 mb-5'>
                         <ul className='font_merriweather text-xl font-lora font-bold mb-3 secondary-col dark:dark-primary-text-col'>Services</ul>
                         <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col'>Website development</li>
                         <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col'>Mobile development</li>
                         <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col'>Web app development</li>
-                        {/* <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition'>Contact</li>
-                        <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition'>Projects</li> */}
-                    </div>
+                    </div> */}
 
 
-                    <div className='ml-5 mb-5'>
+                    {/* <div className='ml-5 mb-5'>
                         <ul className='font_merriweather text-xl font-lora font-bold mb-3 secondary-col dark:dark-primary-text-col'>Projects</ul>
                         <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col'>Home</li>
                         <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col'>About</li>
                         <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col'>Services</li>
                         <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col'>Contact</li>
                         <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col'>Projects</li>
-                    </div>
+                    </div> */}
 
                 </div>
 

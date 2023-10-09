@@ -46,16 +46,18 @@ AOS.init()
 
 
 
-const Home = ( ) => {
+const Home: React.FC = ( ) => {
 
 
     // setting up reference.
-    // const home_ref = useRef(null)
-    // const about_ref = useRef(null)
-    // const education_ref = useRef( null )
-    // const projects_ref = useRef( null )
-    // const contact_me_ref = useRef( null )
-    // const skills_ref = useRef( null )
+    const home_ref = useRef<HTMLDivElement | null>(null)
+    const about_ref = useRef<HTMLDivElement | null>(null)
+    const education_ref = useRef<HTMLDivElement | null>(null)
+    const projects_ref = useRef<HTMLDivElement | null>(null)
+    const contact_me_ref = useRef<HTMLDivElement | null>(null)
+    const skills_ref = useRef<HTMLDivElement | null>(null)
+    const services_ref = useRef<HTMLDivElement | null>(null)
+
 
 
     // toggling navbar expanded state.
@@ -64,6 +66,74 @@ const Home = ( ) => {
     const ToggleExpandedState = () => {
         setIsExpanded( !expanded )
     }
+
+    const ScrollHomeDivIntoView = ( ) => {
+        setIsExpanded( false )
+        setTimeout(() => {
+            home_ref.current?.scrollIntoView({
+                behavior: 'smooth'
+            })
+        }, 300 )
+    }
+
+    const ScrollAboutDivIntoView = ( ) => {
+        setIsExpanded( false )
+        setTimeout(() => {
+            about_ref.current?.scrollIntoView({
+                behavior: 'smooth'
+            })
+        }, 300 )
+    }
+
+    const ScrollContactDivIntoView = ( ) => {
+        setIsExpanded( false )
+        setTimeout(() => {
+            contact_me_ref.current?.scrollIntoView({
+                behavior: 'smooth'
+            })
+        }, 300 )
+    }
+
+    const ScrollEducationDivIntoView = ( ) => {
+        setIsExpanded( false )
+        setTimeout(() => {
+            education_ref.current?.scrollIntoView({
+                behavior: 'smooth'
+            })
+        }, 300 )
+    }
+
+    const ScrollSkillsDivIntoView = ( ) => {
+        setIsExpanded( false )
+        setTimeout(() => {
+            skills_ref.current?.scrollIntoView({
+                behavior: 'smooth'
+            })
+        }, 300 )
+    }
+
+
+    const ScrollServicesDivIntoView = ( ) => {
+        setIsExpanded( false )
+        setTimeout(() => {
+            services_ref.current?.scrollIntoView({
+                behavior: 'smooth'
+            })
+        }, 300 )
+    }
+
+    const ScrollProjectsDivIntoView = ( ) => {
+        setIsExpanded( false )
+        setTimeout(() => {
+            projects_ref.current?.scrollIntoView({
+                behavior: 'smooth'
+            })
+        }, 300 )
+    }
+
+
+
+
 
 
     // toggling darkmode.
@@ -148,12 +218,12 @@ const Home = ( ) => {
           projectTechnologies: 'JavaScript, ReactJS, MongoDB and REST technology',
           projectLink: 'https://hotel-finder-app-client-react.onrender.com'
         },
-        { projectTitle: 'Sneakerzone e-commerce website', 
-        projectDescription: 'A simple online application that allows users to find hotels and book their stay',
-        projectCoverImage: hotel_finder_cover2,
-        projectTechnologies: 'JavaScript, ReactJS, MongoDB and REST technology',
-        projectLink: 'https://hotel-finder-app-client-react.onrender.com'
-        }
+        // { projectTitle: 'Sneakerzone e-commerce website', 
+        // projectDescription: 'A simple online application that allows users to find hotels and book their stay',
+        // projectCoverImage: hotel_finder_cover2,
+        // projectTechnologies: 'JavaScript, ReactJS, MongoDB and REST technology',
+        // projectLink: 'https://hotel-finder-app-client-react.onrender.com'
+        // }
 
     ]
 
@@ -170,7 +240,7 @@ const Home = ( ) => {
     // my education array.
     let myEducationArray: my_education[] = [
         { school: 'University of Ghana, Legon', programme: 'BSc. Computer Science', study_period: '2017 - 2021', school_icon: grad_cap2 },
-        { school: 'Okuapemman School', programme: 'General Arts', study_period: '2014 - 2017', school_icon: grad_cap2 }      
+        // { school: 'Okuapemman School', programme: 'General Arts', study_period: '2014 - 2017', school_icon: grad_cap2 }      
     ]
 
 
@@ -210,12 +280,19 @@ const Home = ( ) => {
                              darkMode={ darkMode }
                              ToggleNavbarExpanded={ ToggleExpandedState }
                              ToggleDarkModeState={ ToggleDarkModeState }
+                             ScrollHomeDivIntoView={ ScrollHomeDivIntoView }
+                             ScrollAboutDivIntoView={ ScrollAboutDivIntoView }
+                             ScrollContactDivIntoView={ ScrollContactDivIntoView }
+                             ScrollEducationDivIntoView={ ScrollEducationDivIntoView }
+                             ScrollSkillsDivIntoVIew={ ScrollSkillsDivIntoView }
+                             ScrollProjectsDivIntoView={ ScrollProjectsDivIntoView }
+                             ScrollServicesDivIntoVIew={ ScrollServicesDivIntoView }
                              />
 
 
         <div>
             {/* main page content */}
-            <div className='bg-[#F5F5F5] dark:dark-bg-col'>
+            <div className='bg-[#F5F5F5] dark:dark-bg-col' ref={ home_ref }>
                 <div className='my-1 sm:mx-16 sm:flex sm:flex-row sm:justify-evenly'>
                     <div className={ expanded === true? 'remove-cover-pic' : 'p-4 rounded-full basis-1/4 sm:py-16 sm:w-full sm:h-64' }>
                         <img className='rounded-full w-full  brightness-90 shadow-md sm:w-full
@@ -241,7 +318,7 @@ const Home = ( ) => {
 
 
             {/* about me section */} 
-            <div className='container-x-margins container-y-margins sm:mx-28'>
+            <div className='container-x-margins container-y-margins sm:mx-28' ref={ about_ref }>
                 <div>
                     <h2 className='text-2xl primary-col font_lora font-bold mb-3 mt-5 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>About Me</h2>
                 </div>
@@ -280,7 +357,7 @@ const Home = ( ) => {
 
 
             {/* contact me section */}
-            <div className='container-x-margins container-y-margins sm:mx-28'>
+            <div className='container-x-margins container-y-margins sm:mx-28' ref={ contact_me_ref }>
                 <h2 className='text-2xl primary-col font_lora font-bold mb-2 mt-5 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Contact Me</h2>
                 <h2 className='text-slate-800 font_merriweather mb-3 mt-2 text-md dark:dark-secondary-text-col' /*data-aos={ child_animation } data-aos-duration={ child_timer }*/>
                     Have any ideas you want to visualize in software?
@@ -311,7 +388,7 @@ const Home = ( ) => {
 
 
             {/* education section */}
-            <div className='container-x-margins container-y-margins sm:mx-28'>
+            <div className='container-x-margins container-y-margins sm:mx-28' ref={ education_ref }>
                 <div>
                     <h2 className='text-2xl primary-col font_lora font-bold mb-3 mt-5 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Education</h2>
                 </div>
@@ -344,7 +421,7 @@ const Home = ( ) => {
 
 
             {/* skills section */ }
-            <div  className='container-x-margins container-y-margins sm:mx-28'>
+            <div  className='container-x-margins container-y-margins sm:mx-28' ref={ skills_ref }>
                 <h2 className='primary-col text-2xl font_lora font-bold mb-1 mt-5 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Skills</h2>
                 <p className='font_merriweather dark:dark-secondary-text-col'>Here are some of the technical skills I have in my arsenal to give you the best software experience possible</p>
             </div>
@@ -373,7 +450,7 @@ const Home = ( ) => {
 
 
             {/* my software services section */}
-            <div className='container-x-margins container-y-margins sm:mx-28'>
+            <div className='container-x-margins container-y-margins sm:mx-28' ref={ services_ref }>
                 <h3 className='primary-col text-2xl font_lora font-bold mb-3 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>What services do I provide?</h3>
                 <div className='sm:grid sm:grid-flow-row sm:grid-cols-3 sm:gap-5'>
                 {
@@ -397,7 +474,7 @@ const Home = ( ) => {
 
 
             {/* list of best projects section */ }
-            <div  className='container-x-margins container-y-margins sm:mx-28'>
+            <div  className='container-x-margins container-y-margins sm:mx-28' ref={ projects_ref }>
                 <h3 className='primary-col text-2xl font_lora font-bold mt-3 mb-2 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Have a look at some interesting projects I have built</h3>
                 <div className='sm:grid sm:grid-flow-row sm:grid-cols-3 sm:gap-5'>
                 {
@@ -432,7 +509,7 @@ const Home = ( ) => {
                     <h3 className='text-2xl font-semibold font_lora primary-col sm:mr-4 dark:dark-primary-text-col'>If Not Now, When?</h3>
                     <h3 className='text-2xl font-semibold font_lora primary-col mb-1 dark:dark-primary-text-col'>Let's Work Together!</h3>
                 </div>
-                <p className='text-md font_merriweather secondary-col mb-3 dark-secondary-text-col'>Get in touch with me and let us bring your wonderful ideas into life!</p>
+                <p className='text-md font_merriweather dark:dark-secondary-text-col mb-3'>Get in touch with me and let us bring your wonderful ideas into life!</p>
                 <button className='bg-[#ec5b53] transition-all duration-200 hover:bg-[#c73a32] py-2 px-4 text-white rounded-lg ml-20 sm:ml-0'>Contact Me</button>
             </div>
             {/* end of if not now, then when? */}
@@ -442,7 +519,14 @@ const Home = ( ) => {
             <GoToTopBtn />
 
             {/* footer section */}
-            <Footer />
+            <Footer 
+                ScrollHomeDivIntoView={ ScrollHomeDivIntoView }
+                ScrollAboutDivIntoView={ ScrollAboutDivIntoView }
+                ScrollContactDivIntoView={ ScrollContactDivIntoView }
+                ScrollEducationDivIntoView={ ScrollEducationDivIntoView }
+                ScrollSkillsDivIntoVIew={ ScrollSkillsDivIntoView }
+                ScrollServicesDivIntoVIew={ ScrollServicesDivIntoView }
+                ScrollProjectsDivIntoView={ ScrollProjectsDivIntoView } />
 
             </div>
         </div>

@@ -12,7 +12,15 @@ interface NavbarProp {
   darkMode: boolean,
   expanded: boolean,
   ToggleNavbarExpanded: () => any,
-  ToggleDarkModeState: () => void
+  ToggleDarkModeState: () => void,
+  ScrollHomeDivIntoView: () => void,
+  ScrollAboutDivIntoView: () => void,
+  ScrollContactDivIntoView: () => void,
+  ScrollEducationDivIntoView: () => void,
+  ScrollSkillsDivIntoVIew: () => void,
+  ScrollServicesDivIntoVIew: () => void,
+  ScrollProjectsDivIntoView: () => void
+  // about_ref: React.RefObject<HTMLDivElement | null>
 
 }
 
@@ -21,7 +29,11 @@ interface NavbarProp {
 
 
 
-const NavbarComponent: React.FC<NavbarProp> = ( { expanded, ToggleNavbarExpanded, ToggleDarkModeState, darkMode } ) => {
+const NavbarComponent: React.FC<NavbarProp> = ( { expanded, ToggleNavbarExpanded, ToggleDarkModeState, darkMode, 
+                                                  ScrollHomeDivIntoView, ScrollAboutDivIntoView,
+                                                  ScrollContactDivIntoView, ScrollEducationDivIntoView,
+                                                  ScrollSkillsDivIntoVIew, ScrollProjectsDivIntoView,
+                                                  ScrollServicesDivIntoVIew } ) => {
 
 
     return (
@@ -45,13 +57,13 @@ const NavbarComponent: React.FC<NavbarProp> = ( { expanded, ToggleNavbarExpanded
                   <img src={ moon } className='w-5 h-5 mt-2 sm:mt-1 sm:w-7 cursor-pointer dark-moon-icon' alt='' />
                 </li>
             } */}
-            <li onClick={ expanded === true ? ToggleNavbarExpanded : () => {} }><a href='#'>Home</a></li>
-            <li onClick={ expanded === true ? ToggleNavbarExpanded : () => {} }><a href='#'>About</a></li>
-            <li onClick={ expanded === true ? ToggleNavbarExpanded : () => {} }><a href='#'>Contact</a></li>
-            <li onClick={ expanded === true ? ToggleNavbarExpanded : () => {} }><a href='#'>Education</a></li>
-            <li onClick={ expanded === true ? ToggleNavbarExpanded : () => {} }><a href='#'>Skills</a></li>
-            <li onClick={ expanded === true ? ToggleNavbarExpanded : () => {} }><a href='#'>Services</a></li>
-            <li onClick={ expanded === true ? ToggleNavbarExpanded : () => {} }><a href='#'>Projects</a></li>
+            <li onClick={ ScrollHomeDivIntoView }><a href='#'>Home</a></li>
+            <li onClick={ ScrollAboutDivIntoView }><a href='#'>About</a></li>
+            <li onClick={ ScrollContactDivIntoView }><a href='#'>Contact</a></li>
+            <li onClick={ ScrollEducationDivIntoView }><a href='#'>Education</a></li>
+            <li onClick={ ScrollSkillsDivIntoVIew }><a href='#'>Skills</a></li>
+            <li onClick={ ScrollServicesDivIntoVIew }><a href='#'>Services</a></li>
+            <li onClick={ ScrollProjectsDivIntoView }><a href='#'>Projects</a></li>
             {
               darkMode === true?  
                 <li onClick={ ToggleDarkModeState } className='flex flex-row bg-[#63e] justify-center rounded-lg p-2'>
