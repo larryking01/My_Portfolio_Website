@@ -63,6 +63,7 @@ const Home: React.FC = ( ) => {
     const skills_ref = useRef<HTMLDivElement | null>(null)
     const services_ref = useRef<HTMLDivElement | null>(null)
 
+    // typed js setup
     const job_title_ref = useRef( null )
     const name_ref = useRef( null )
 
