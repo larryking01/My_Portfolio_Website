@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 import NavbarComponent from '../MetaFiles/Navbar'
@@ -37,10 +37,15 @@ import phone_icon from '../StaticFiles/phone.png'
 import linked_in from '../StaticFiles/linkedIn.png'
 import git_hub from '../StaticFiles/github.png'
 
+// for typed js
+import Typed from 'typed.js'
+
 
 import AOS from 'aos'
 import 'aos/dist/aos.css' // You can also use <link> for styles
 AOS.init()
+
+
 
 
 
@@ -57,6 +62,37 @@ const Home: React.FC = ( ) => {
     const contact_me_ref = useRef<HTMLDivElement | null>(null)
     const skills_ref = useRef<HTMLDivElement | null>(null)
     const services_ref = useRef<HTMLDivElement | null>(null)
+
+    const job_title_ref = useRef( null )
+    const name_ref = useRef( null )
+
+
+    useEffect(() => {
+        const typed = new Typed( job_title_ref.current, {
+            strings: ['I am a software developer'],
+            typeSpeed: 70,
+            backDelay: 1000,
+            loop: true,
+            
+        })
+
+        return () => {
+            typed.destroy()
+        }
+    }, [])
+
+
+    useEffect(() => {
+        const typed = new Typed( name_ref.current, {
+            strings: ['Hi, I am Larry N. N. Williams'],
+            typeSpeed: 70,
+            loop: false,
+        })
+
+        return () => {
+            typed.destroy()
+        }
+    }, [])
 
 
 
@@ -130,9 +166,6 @@ const Home: React.FC = ( ) => {
             })
         }, 300 )
     }
-
-
-
 
 
 
@@ -300,11 +333,16 @@ const Home: React.FC = ( ) => {
                     </div>
 
                     <div className='mt-2 sm:pt-52 basis-2/3'>
-                        <h3 className='text-xl font-bold mt-1 text-center secondary-col sm:text-5xl font-playfair dark:dark-primary-text-col'>Hi, I am Larry N. N. Williams</h3>
-                        <h3 className='text-md text-center mt-3 sm:mt-5 font-merriweather font-semibold sm:text-lg dark:dark-primary-text-col'>I'm a software developer</h3>
+                        <div>
+                            <span ref={ name_ref } className='text-xl font-bold mt-1 ml-3 text-center secondary-col sm:text-5xl font-playfair dark:dark-primary-text-col'></span>
+                        </div>
+
+                        <div>
+                            <span ref={ job_title_ref } className='text-md text-center mt-3 ml-5 sm:ml-12 sm:mt-5 font-merriweather font-semibold sm:text-lg dark:dark-primary-text-col'></span>
+                        </div>
 
                         <h3 className='container-x-margins container-y-margins text-md font-semibold italic dark:dark-secondary-text-col'>
-                            Software runs the world. In our ever-growing world of technology, we are only limited by
+                            In our ever-growing world of technology, we are only limited by
                             our creativity. As long as you can imagine it, software can bring it to life!
                         </h3>
                     </div>
