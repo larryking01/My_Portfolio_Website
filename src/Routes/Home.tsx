@@ -67,13 +67,27 @@ const Home: React.FC = ( ) => {
     const job_title_ref = useRef( null )
     const name_ref = useRef( null )
 
+    useEffect(() => {
+        const typed = new Typed( name_ref.current, {
+            strings: ['Hi, I am Larry N. N. Williams'],
+            typeSpeed: 40,
+            loop: false,
+            showCursor: false
+        })
+
+        return () => {
+            typed.destroy()
+        }
+    }, [])
+
 
     useEffect(() => {
         const typed = new Typed( job_title_ref.current, {
             strings: ['I am a software developer'],
-            typeSpeed: 70,
+            typeSpeed: 80,
             backDelay: 1000,
-            loop: true,
+            loop: false,
+            showCursor: false
             
         })
 
@@ -83,17 +97,6 @@ const Home: React.FC = ( ) => {
     }, [])
 
 
-    useEffect(() => {
-        const typed = new Typed( name_ref.current, {
-            strings: ['Hi, I am Larry N. N. Williams'],
-            typeSpeed: 70,
-            loop: false,
-        })
-
-        return () => {
-            typed.destroy()
-        }
-    }, [])
 
 
 
@@ -338,7 +341,7 @@ const Home: React.FC = ( ) => {
                             <span ref={ name_ref } className='text-xl font-bold mt-1 ml-3 text-center secondary-col sm:text-5xl font-playfair dark:dark-primary-text-col'></span>
                         </div>
 
-                        <div>
+                        <div className='mt-1 sm:mt-4'>
                             <span ref={ job_title_ref } className='text-md text-center mt-3 ml-5 sm:ml-12 sm:mt-5 font-merriweather font-semibold sm:text-lg dark:dark-primary-text-col'></span>
                         </div>
 
