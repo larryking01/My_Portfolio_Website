@@ -63,7 +63,7 @@ const NavbarComponent: React.FC<NavbarProp> = ( { expanded, ToggleNavbarExpanded
             <li onClick={ ScrollEducationDivIntoView }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>Education</a></li>
             <li onClick={ ScrollSkillsDivIntoVIew }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>Skills</a></li>
             <li onClick={ ScrollServicesDivIntoVIew }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>Services</a></li>
-            <li onClick={ ScrollProjectsDivIntoView }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>Projects</a></li>
+            <li onClick={ ScrollProjectsDivIntoView }><a href='#' className='transition-all duration-201 hover:font-semibold hover:secondary-col'>Projects</a></li>
             {
               darkMode === true?  
                 <li onClick={ ToggleDarkModeState } className='flex flex-row bg-[#63e] justify-center rounded-lg p-2'>
