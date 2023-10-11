@@ -29,7 +29,7 @@ import mongo_logo from '../StaticFiles/mongo_image.png'
 import firebase_logo from '../StaticFiles/firebase_logo.png'
 import supabase_logo from '../StaticFiles/supabase_logo.png'
 import hotel_finder_cover1 from '../StaticFiles/hotel_finder_cover1.png'
-import hotel_finder_cover2 from '../StaticFiles/hotel_finder_cover2.png'
+// import hotel_finder_cover2 from '../StaticFiles/hotel_finder_cover2.png'
 import grad_cap2 from '../StaticFiles/grad_cap2.png'
 import address_icon from '../StaticFiles/address.png'
 import email_icon from '../StaticFiles/email.png'
@@ -215,11 +215,10 @@ const Home: React.FC = ( ) => {
 
 
     let aboutMeInfoArray: aboutMeInfoSub[ ] = [
-        { target: 'Name:', answer: 'Larry N. N. Williams' }, 
-        // { target: 'Date of birth:', answer: 'June 19, 1999' },
-        { target: 'Address:', answer: 'Lakeside Estate, Accra' },
-        { target: 'Email:', answer: 'larryking8118@gmail.com' },
-        { target: 'Phone:', answer: '+(233)-(0)55-253-1004'}
+        { target: 'I am a technology enthusiast. I love to explore the limitless possibilities in technology.', answer: 'Larry N. N. Williams' }, 
+        { target: 'I am flexible and I can adapt to various roles as is required.', answer: 'Larry N. N. Williams' }, 
+        { target: 'I am a great team player.', answer: 'Lakeside Estate, Accra' },
+        { target: 'I also pride myself in giving my utmost best to whatever task I am assigned.', answer: 'larryking8118@gmail.com' },
     ]
 
     
@@ -252,15 +251,9 @@ const Home: React.FC = ( ) => {
         { projectTitle: 'Skyscanner hotel booking platform', 
           projectDescription: 'A simple online application that allows users to find hotels and book their stay',
           projectCoverImage: hotel_finder_cover1,
-          projectTechnologies: 'JavaScript, ReactJS, MongoDB and REST technology',
+          projectTechnologies: 'JavaScript, ReactJS, MongoDB, React-Bootstrap',
           projectLink: 'https://hotel-finder-app-client-react.onrender.com'
-        },
-        // { projectTitle: 'Sneakerzone e-commerce website', 
-        // projectDescription: 'A simple online application that allows users to find hotels and book their stay',
-        // projectCoverImage: hotel_finder_cover2,
-        // projectTechnologies: 'JavaScript, ReactJS, MongoDB and REST technology',
-        // projectLink: 'https://hotel-finder-app-client-react.onrender.com'
-        // }
+        }
 
     ]
 
@@ -373,9 +366,14 @@ const Home: React.FC = ( ) => {
                             it may seem, is unsolvable if it is addressed with the right mind, attitude and tools.
                         </p>
 
-                        {
+                        <p className='font_merriweather dark:dark-secondary-text-col mt-2'>
+                            Here are a few extra information about myself:
+                        </p>
+
+
+                        {/*
                             aboutMeInfoArray.map( ( infoLine: aboutMeInfoSub ) => {
-                                return   <div className='flex flex-row my-2 font-semibold pt-3 space-x-8'> 
+                                return   <div className='my-2 font-semibold pt-3 space-x-8'> 
                                             <div className='secondary-col'>
                                                 <h3 className='font_lora dark:dark-primary-text-col'>{ infoLine.target }</h3>
                                             </div>
@@ -386,7 +384,19 @@ const Home: React.FC = ( ) => {
                                         </div>
                 
                             })
+                        */}
+
+
+                        <ul>
+                        {
+                            aboutMeInfoArray.map( ( infoLine: aboutMeInfoSub ) => {
+                                return   <li className='secondary-col my-2 font_merriweather font-normal pt-3 space-x-8 dark:dark-primary-text-col'>
+                                            - { infoLine.target }
+                                         </li>
+                            })
                         }
+                        </ul>
+
                     </>
                 </div>
     
@@ -499,7 +509,7 @@ const Home: React.FC = ( ) => {
                     myServicesArray.map(( service: myService ) => {
                         return   <div className='bg-[#F5F5F5] border-0 rounded-lg shadow-lg pt-2 pb-8 text-center mb-4 
                                                  transition-all duration-700 hover:cursor-pointer
-                                                 hover:shadow-lg hover:skew-x-6 dark:dark-card-bg-col' 
+                                                 hover:shadow-lg hover:skew-x-6 hover:bg-slate-300 dark:dark-card-bg-col' 
                                        data-aos={ child_animation } data-aos-duration={ child_timer }>
                                     <img className='mb-2 w-14 ml-4' src={ service.icon } alt='website' />
                                     <h3 className='text-lg font_lora secondary-col font-semibold mb-2'>{ service.serviceType }</h3>
@@ -521,15 +531,16 @@ const Home: React.FC = ( ) => {
                 <div className='sm:grid sm:grid-flow-row sm:grid-cols-3 sm:gap-5'>
                 {
                     myProjectsArray.map(( project: my_projects ) => {
-                        return  <div className='bg-[#F5F5F5] my-4 pb-3 shadow-lg hover:cursor-pointer rounded-lg
-                                                transition-all duration-500 dark:dark-card-bg-col' 
+                        return  <div className='bg-[#F5F5F5] my-4 pb-3 shadow-lg transition-all duration-500 
+                                                    hover:cursor-pointer rounded-lg hover:bg-slate-300 
+                                                    dark:dark-card-bg-col' 
                                                 data-aos={ child_animation } data-aos-duration={ child_timer }
                                                 >
                                     <img className='h-48' src={ project.projectCoverImage } alt='cover' />
                                     <div className='p-2'>
                                         <h3 className='text-lg primary-col font_lora font-semibold text-center secondary-col mb-2 sm:mb-3'>{ project.projectTitle }</h3>
-                                        <h3 className='text-sm text-center font_merriweather mx-1'>{ project.projectDescription }</h3>
-                                        <h3 className='text-sm text-center mb-4 font_merriweather'>Built with { project.projectTechnologies }</h3>
+                                        <h3 className='text-sm text-center font_merriweather mx-1 mb-2'>{ project.projectDescription }</h3>
+                                        <h3 className='text-sm text-center mb-4'>Built with { project.projectTechnologies }</h3>
                                         <Link to='https://hotel-finder-app-client-react.onrender.com'>
                                             <button className='bg-[#ec5b53] transition-all duration-200 hover:bg-[#c73a32] 
                                                                py-2 px-6 text-white rounded-lg ml-24 sm:ml-28'>See Demo</button>

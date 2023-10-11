@@ -47,6 +47,10 @@
         @apply font-lora;
     }
 
+    .font_inter {
+        @apply font-inter;
+    }
+
     .footer-link-transition {
         @apply transition-all duration-300 hover:ml-5 hover:text-[#10285d];
     }

@@ -57,13 +57,13 @@ const NavbarComponent: React.FC<NavbarProp> = ( { expanded, ToggleNavbarExpanded
                   <img src={ moon } className='w-5 h-5 mt-2 sm:mt-1 sm:w-7 cursor-pointer dark-moon-icon' alt='' />
                 </li>
             } */}
-            <li onClick={ ScrollHomeDivIntoView }><a href='#'>Home</a></li>
-            <li onClick={ ScrollAboutDivIntoView }><a href='#'>About</a></li>
-            <li onClick={ ScrollContactDivIntoView }><a href='#'>Contact</a></li>
-            <li onClick={ ScrollEducationDivIntoView }><a href='#'>Education</a></li>
-            <li onClick={ ScrollSkillsDivIntoVIew }><a href='#'>Skills</a></li>
-            <li onClick={ ScrollServicesDivIntoVIew }><a href='#'>Services</a></li>
-            <li onClick={ ScrollProjectsDivIntoView }><a href='#'>Projects</a></li>
+            <li onClick={ ScrollHomeDivIntoView }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>Home</a></li>
+            <li onClick={ ScrollAboutDivIntoView }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>About</a></li>
+            <li onClick={ ScrollContactDivIntoView }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>Contact</a></li>
+            <li onClick={ ScrollEducationDivIntoView }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>Education</a></li>
+            <li onClick={ ScrollSkillsDivIntoVIew }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>Skills</a></li>
+            <li onClick={ ScrollServicesDivIntoVIew }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>Services</a></li>
+            <li onClick={ ScrollProjectsDivIntoView }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>Projects</a></li>
             {
               darkMode === true?  
                 <li onClick={ ToggleDarkModeState } className='flex flex-row bg-[#63e] justify-center rounded-lg p-2'>

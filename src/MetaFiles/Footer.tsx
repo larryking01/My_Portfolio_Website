@@ -47,54 +47,17 @@ const Footer: React.FC<FooterProp> = ({ ScrollHomeDivIntoView, ScrollAboutDivInt
 
                     <div className='ml-5 mb-5'>
                         <ul className='text-xl font_merriweather font-bold mb-3 secondary-col dark:dark-primary-text-col'>Contact</ul>
-                            <li className='dark:dark-secondary-text-col flex flex-row text-md ml-3 font-semibold hover:cursor-pointer my-2 footer-link-transition'>
-                                {/* <img src={ footer_mobile } alt='' className='w-4 mx-1' /> */}
-                                +233-(0)55-253-1004
-                            </li>
-
-                            <li className='dark:dark-secondary-text-col flex flex-row text-md ml-3 font-semibold hover:cursor-pointer my-2 footer-link-transition'>
-                                {/* <img src={ footer_mobile } alt='' className='w-4 mx-1' /> */}
-                                larryking8118@gmail.com
-                            </li>
-                            
-                            <li className='dark:dark-secondary-text-col flex flex-row text-md ml-3 font-semibold hover:cursor-pointer my-2 footer-link-transition'>
-                                {/* <img src={ footer_mobile } alt='' className='w-4 mx-1' /> */}
-                                https://github.com/larryking01
-                            </li>
-
-                            <li className='dark:dark-secondary-text-col flex flex-row text-md ml-3 font-semibold hover:cursor-pointer my-2 footer-link-transition'>
-                                {/* <img src={ footer_linkedin } alt='' className='w-6 mx-1' /> */}
-                                www.linkedin.com/in/larry-williams8118
-                            </li>
-
-
-                        {/* <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition'>Email</li>
-                        <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition'>Github</li>
-                        <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition'>LinkedIn</li> */}
-                        {/* <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition'>Projects</li> */}
+                        <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col' >+233-(0)55-253-1004</li>
+                        <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col' >larryking8118@gmail.com</li>
+                        <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col' >https://github.com/larryking01</li>
+                        <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col' >www.linkedin.com/in/larry-williams8118</li>
                     </div>
-
-
-                    {/* <div className='ml-5 mb-5'>
-                        <ul className='font_merriweather text-xl font-lora font-bold mb-3 secondary-col dark:dark-primary-text-col'>Services</ul>
-                        <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col'>Website development</li>
-                        <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col'>Mobile development</li>
-                        <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col'>Web app development</li>
-                    </div> */}
-
-
-                    {/* <div className='ml-5 mb-5'>
-                        <ul className='font_merriweather text-xl font-lora font-bold mb-3 secondary-col dark:dark-primary-text-col'>Projects</ul>
-                        <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col'>Home</li>
-                        <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col'>About</li>
-                        <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col'>Services</li>
-                        <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col'>Contact</li>
-                        <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col'>Projects</li>
-                    </div> */}
 
                 </div>
 
             </div>
+
+
 
 
             <div className='ml-5 py-4 secondary-col sm:text-center'>
