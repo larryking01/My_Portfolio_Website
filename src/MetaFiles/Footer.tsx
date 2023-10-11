@@ -39,6 +39,8 @@ const Footer: React.FC<FooterProp> = ({ ScrollHomeDivIntoView, ScrollAboutDivInt
                         <ul className='text-xl font_merriweather font-bold mb-3 secondary-col dark:dark-primary-text-col'>About</ul>
                         <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col' onClick={ ScrollHomeDivIntoView }>Home</li>
                         <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col' onClick={ ScrollAboutDivIntoView }>About</li>
+                        <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col' onClick={ ScrollEducationDivIntoView }>Education</li>
+                        <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col' onClick={ ScrollSkillsDivIntoVIew }>Skills</li>
                         <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col' onClick={ ScrollServicesDivIntoVIew }>Services</li>
                         <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col' onClick={ ScrollContactDivIntoView }>Contact</li>
                         <li className='text-md ml-3 font-semibold hover:cursor-pointer mb-1 footer-link-transition dark:dark-secondary-text-col' onClick={ ScrollProjectsDivIntoView }>Projects</li>
