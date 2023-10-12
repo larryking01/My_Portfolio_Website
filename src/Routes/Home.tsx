@@ -9,13 +9,7 @@ import GoToTopBtn from '../MetaFiles/GoToTopBtn'
 import mobile1 from '../StaticFiles/mobile1.png'
 import website1 from '../StaticFiles/website1.png'
 import website2 from '../StaticFiles/website2.png'
-// import cover1 from '../StaticFiles/cover1.jpg'
-// import cover2 from '../StaticFiles/cover2.jpg'
-// import cover3 from '../StaticFiles/cover3.jpg'
-// import cover4 from '../StaticFiles/cover4.jpg'
-// import cover5 from '../StaticFiles/cover5.jpg'
 import cover6 from '../StaticFiles/cover6.jpg'
-// import cover7 from '../StaticFiles/cover7.jpg'
 import js_logo from '../StaticFiles/js_logo.png'
 import ts_logo from '../StaticFiles/ts_logo.png'
 import graphql_logo from '../StaticFiles/graphql_logo.png'
@@ -29,7 +23,6 @@ import mongo_logo from '../StaticFiles/mongo_image.png'
 import firebase_logo from '../StaticFiles/firebase_logo.png'
 import supabase_logo from '../StaticFiles/supabase_logo.png'
 import hotel_finder_cover1 from '../StaticFiles/hotel_finder_cover1.png'
-// import hotel_finder_cover2 from '../StaticFiles/hotel_finder_cover2.png'
 import grad_cap2 from '../StaticFiles/grad_cap2.png'
 import address_icon from '../StaticFiles/address.png'
 import email_icon from '../StaticFiles/email.png'
@@ -40,7 +33,7 @@ import git_hub from '../StaticFiles/github.png'
 // for typed js
 import Typed from 'typed.js'
 
-
+// AOS animation
 import AOS from 'aos'
 import 'aos/dist/aos.css' // You can also use <link> for styles
 AOS.init()
@@ -369,23 +362,7 @@ const Home: React.FC = ( ) => {
                         <p className='font_merriweather dark:dark-secondary-text-col mt-2'>
                             Here are a few extra information about myself:
                         </p>
-
-
-                        {/*
-                            aboutMeInfoArray.map( ( infoLine: aboutMeInfoSub ) => {
-                                return   <div className='my-2 font-semibold pt-3 space-x-8'> 
-                                            <div className='secondary-col'>
-                                                <h3 className='font_lora dark:dark-primary-text-col'>{ infoLine.target }</h3>
-                                            </div>
-                            
-                                            <div className='text-black'>
-                                                <h3 className='font_roboto_slabs dark:dark-secondary-text-col'>{ infoLine.answer }</h3>
-                                            </div>
-                                        </div>
-                
-                            })
-                        */}
-
+                        
 
                         <ul>
                         {
