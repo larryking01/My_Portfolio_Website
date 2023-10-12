@@ -272,17 +272,19 @@ const Home: React.FC = ( ) => {
         icon: string,
         title: string,
         detail: string,
-        hover?: string
+        url: string,
+        hover?: string,
+        target?: string
     }
 
 
     // contact me array.
     const contactMeArray: contact_me[] = [
-        { icon: phone_icon, title: 'Contact Number', detail: '+233-(0)55-253-1004'},
-        { icon: address_icon, title: 'Address', detail: 'Lakeside Estate, Accra'},
-        { icon: email_icon, title: 'Email Address', detail: 'larryking8118@gmail.com'},
-        { icon: git_hub, title: 'Git hub', detail: 'https://github.com/larryking01', hover: 'cursor'},
-        { icon: linked_in, title: 'LinkedIn', detail: 'www.linkedin.com/in/larry-williams8118', hover: 'cursor'},
+        { icon: phone_icon, title: 'Contact Number', detail: '+233-(0)55-253-1004', url:'#', target: '' },
+        { icon: address_icon, title: 'Address', detail: 'Lakeside Estate, Accra', url:'#', target:'' },
+        { icon: email_icon, title: 'Email Address', detail: 'larryking8118@gmail.com', url:'#', target:'' },
+        { icon: git_hub, title: 'Git hub', detail: 'https://github.com/larryking01', url:'https://github.com/larryking01', hover: 'cursor', target:'_blank' },
+        { icon: linked_in, title: 'LinkedIn', detail: 'https://linkedin.com/in/larry-williams8118', url:'https://linkedin.com/in/larry-williams8118', hover: 'cursor', target:'_blank' },
 
     ]
 
@@ -362,7 +364,7 @@ const Home: React.FC = ( ) => {
                         <p className='font_merriweather dark:dark-secondary-text-col mt-2'>
                             Here are a few extra information about myself:
                         </p>
-                        
+
 
                         <ul>
                         {
@@ -402,7 +404,7 @@ const Home: React.FC = ( ) => {
                                     </div>
 
                                     <h3 className='font_lora text-[#10285d] font-semibold text-xl text-center mb-2'>{ contact_me.title }</h3>
-                                    <Link to={ contact_me.detail }>
+                                    <Link to={ contact_me.url } target={ contact_me.target }>
                                         <h3 className='font-md text-center text-[#ec5b53] font-semibold cursor-pointer dark:text-black'>{ contact_me.detail }</h3>
                                     </Link>
                                </div>

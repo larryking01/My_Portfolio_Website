@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 import { AiOutlinePhone, 
          AiOutlineGithub, 
          AiOutlineMail, 
@@ -61,13 +61,17 @@ const Footer: React.FC<FooterProp> = ({ ScrollHomeDivIntoView, ScrollAboutDivInt
                                 <AiOutlineMail size={ 20 } className='mr-2' />  <span>larryking8118@gmail.com</span>
                             </li>
 
-                            <li className='text-md ml-3 font-semibold hover:cursor-pointer my-3 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col flex flex-row'>
-                                <AiOutlineGithub size={ 20 } className='mr-2' /> <span>https://github.com/larryking01</span>
-                            </li>
+                            <Link to='https://github.com/larryking01' target='_blank'>
+                                <li className='text-md ml-3 font-semibold hover:cursor-pointer my-3 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col flex flex-row'>
+                                    <AiOutlineGithub size={ 20 } className='mr-2' /> <span>github.com/larryking01</span>
+                                </li>
+                            </Link>
 
-                            <li className='text-md ml-3 font-semibold hover:cursor-pointer my-3 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col flex flex-row'>
-                                <AiOutlineLinkedin size={ 23 } className='mr-2' /> <span>www.linkedin.com/in/larry-williams8118</span>
-                            </li>
+                            <Link to='https://www.linkedin.com/in/larry-williams8118' target='_blank'>
+                                <li className='text-md ml-3 font-semibold hover:cursor-pointer my-3 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col flex flex-row'>
+                                    <AiOutlineLinkedin size={ 23 } className='mr-2' /> <span>linkedin.com/in/larry-williams8118</span>
+                                </li>
+                            </Link>
 
                     </div>
 
