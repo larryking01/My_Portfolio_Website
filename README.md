@@ -1,2 +1,2 @@
 # My_Portfolio_Website
-A simple website where I display my skills and growth as a software engineer.
+A website where I tell you more about myself and my interest in software engineering.
