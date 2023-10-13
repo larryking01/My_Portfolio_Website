@@ -391,7 +391,7 @@ const Home: React.FC = ( ) => {
             <div className='container-x-margins container-y-margins sm:mx-28' ref={ contact_me_ref }>
                 <h2 className='text-2xl primary-col font_lora font-bold mb-2 mt-5 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Contact Me</h2>
                 <h2 className='text-slate-800 font_merriweather mb-3 mt-2 text-md dark:dark-secondary-text-col' /*data-aos={ child_animation } data-aos-duration={ child_timer }*/>
-                    Have any ideas you want to visualize in software?
+                    Have any ideas you want to visualize in software ?
                     Then get in touch with me via any of the platforms below:
                 </h2>
 
