@@ -15,6 +15,7 @@ import ts_logo from '../StaticFiles/ts_logo.png'
 import graphql_logo from '../StaticFiles/graphql_logo.png'
 import postgresql_logo from '../StaticFiles/postgresql_logo.png'
 import react_js_logo from '../StaticFiles/react_js_logo.png'
+import angular_js_logo from '../StaticFiles/angular_logo.png'
 import my_sql_logo from '../StaticFiles/my_sql_logo.png'
 import react_bootstrap_logo from '../StaticFiles/react_bootstrap_logo.png'
 import express_js_logo from '../StaticFiles/express_js_logo.png'
@@ -187,10 +188,11 @@ const Home: React.FC = ( ) => {
         { name: 'TypeScript', proficiency: 72, skill_logo: ts_logo },
         { name: 'GraphQL', proficiency: 78, skill_logo: graphql_logo },
         { name: 'PostgreSQL', proficiency: 82, skill_logo: postgresql_logo },
-        { name: 'ReactJS', proficiency: 88, skill_logo: react_js_logo },
+        { name: 'React JS', proficiency: 88, skill_logo: react_js_logo },
         { name: 'MySQL', proficiency: 80, skill_logo: my_sql_logo },
         { name: 'React-Bootstrap', proficiency: 87, skill_logo: react_bootstrap_logo },
         { name: 'Express JS', proficiency: 80, skill_logo: express_js_logo },
+        { name: 'Angular JS', proficiency: 69, skill_logo: angular_js_logo },
         { name: 'React Native', proficiency: 71, skill_logo: react_js_logo },
         { name: 'Tailwind CSS', proficiency: 94, skill_logo: tailwind_logo },
         { name: 'MongoDB', proficiency: 72, skill_logo: mongo_logo },
