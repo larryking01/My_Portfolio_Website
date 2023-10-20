@@ -189,13 +189,13 @@ const Home: React.FC = ( ) => {
         { name: 'GraphQL', proficiency: 78, skill_logo: graphql_logo },
         { name: 'PostgreSQL', proficiency: 82, skill_logo: postgresql_logo },
         { name: 'React JS', proficiency: 88, skill_logo: react_js_logo },
-        { name: 'MySQL', proficiency: 80, skill_logo: my_sql_logo },
+        { name: 'My SQL', proficiency: 80, skill_logo: my_sql_logo },
         { name: 'React-Bootstrap', proficiency: 87, skill_logo: react_bootstrap_logo },
         { name: 'Express JS', proficiency: 80, skill_logo: express_js_logo },
         { name: 'Angular JS', proficiency: 69, skill_logo: angular_js_logo },
         { name: 'React Native', proficiency: 71, skill_logo: react_js_logo },
         { name: 'Tailwind CSS', proficiency: 94, skill_logo: tailwind_logo },
-        { name: 'MongoDB', proficiency: 72, skill_logo: mongo_logo },
+        { name: 'Mongo DB', proficiency: 72, skill_logo: mongo_logo },
         { name: 'Firebase', proficiency: 71, skill_logo: firebase_logo },
         { name: 'Supabase', proficiency: 69, skill_logo: supabase_logo }
 
