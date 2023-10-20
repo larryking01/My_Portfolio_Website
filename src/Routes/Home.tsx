@@ -77,7 +77,7 @@ const Home: React.FC = ( ) => {
 
     useEffect(() => {
         const typed = new Typed( job_title_ref.current, {
-            strings: ['I am a software developer'],
+            strings: ['I am a software engineer'],
             typeSpeed: 80,
             backDelay: 1000,
             loop: false,
