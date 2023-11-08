@@ -192,7 +192,7 @@ const Home: React.FC = ( ) => {
         { name: 'My SQL', proficiency: 80, skill_logo: my_sql_logo },
         { name: 'React-Bootstrap', proficiency: 87, skill_logo: react_bootstrap_logo },
         { name: 'Express JS', proficiency: 80, skill_logo: express_js_logo },
-        { name: 'Angular JS', proficiency: 69, skill_logo: angular_js_logo },
+        { name: 'Angular', proficiency: 69, skill_logo: angular_js_logo },
         { name: 'React Native', proficiency: 71, skill_logo: react_js_logo },
         { name: 'Tailwind CSS', proficiency: 94, skill_logo: tailwind_logo },
         { name: 'Mongo DB', proficiency: 72, skill_logo: mongo_logo },
@@ -544,7 +544,9 @@ const Home: React.FC = ( ) => {
                     <h3 className='text-2xl font-semibold font_lora primary-col mb-1 dark:dark-primary-text-col'>Let's Work Together!</h3>
                 </div>
                 <p className='text-md font_merriweather dark:dark-secondary-text-col mb-3'>Get in touch with me and let us bring your wonderful ideas into life!</p>
-                <button className='bg-[#ec5b53] transition-all duration-200 hover:bg-[#c73a32] py-2 px-4 text-white rounded-lg ml-20 sm:ml-0'>Contact Me</button>
+                <button className='bg-[#ec5b53] transition-all duration-200 hover:bg-[#c73a32] py-2 px-4 text-white rounded-lg ml-20 sm:ml-0' onClick={ ScrollContactDivIntoView }>
+                    Contact Me
+                </button>
             </div>
             {/* end of if not now, then when? */}
 
