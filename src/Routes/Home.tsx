@@ -23,6 +23,8 @@ import tailwind_logo from '../StaticFiles/tailwind_logo.png'
 import mongo_logo from '../StaticFiles/mongo_image.png'
 import firebase_logo from '../StaticFiles/firebase_logo.png'
 import supabase_logo from '../StaticFiles/supabase_logo.png'
+import docker_logo from '../StaticFiles/docker_logo.png'
+import next_js_logo from '../StaticFiles/next_js logo.png'
 import hotel_finder_cover1 from '../StaticFiles/hotel_finder_cover1.png'
 import grad_cap2 from '../StaticFiles/grad_cap2.png'
 import address_icon from '../StaticFiles/address.png'
@@ -197,7 +199,9 @@ const Home: React.FC = ( ) => {
         { name: 'Tailwind CSS', proficiency: 94, skill_logo: tailwind_logo },
         { name: 'Mongo DB', proficiency: 72, skill_logo: mongo_logo },
         { name: 'Firebase', proficiency: 71, skill_logo: firebase_logo },
-        { name: 'Supabase', proficiency: 69, skill_logo: supabase_logo }
+        { name: 'Supabase', proficiency: 69, skill_logo: supabase_logo },
+        { name: 'Docker', proficiency: 69, skill_logo: docker_logo },
+        { name: 'Next JS', proficiency: 69, skill_logo: next_js_logo }
 
     ]
 
