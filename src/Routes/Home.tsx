@@ -526,7 +526,7 @@ const Home: React.FC = ( ) => {
                                         <h3 className='text-lg primary-col font_lora font-semibold text-center secondary-col mb-2 sm:mb-3'>{ project.projectTitle }</h3>
                                         <h3 className='text-sm text-center font_merriweather mx-1 mb-2'>{ project.projectDescription }</h3>
                                         <h3 className='text-sm text-center mb-4'>Built with { project.projectTechnologies }</h3>
-                                        <Link to='https://hotel-finder-app-client-react.onrender.com'>
+                                        <Link to={ project.projectLink }>
                                             <button className='bg-[#ec5b53] transition-all duration-200 hover:bg-[#c73a32] 
                                                                py-2 px-6 text-white rounded-lg ml-24 sm:ml-28'>See Demo</button>
                                         </Link>
