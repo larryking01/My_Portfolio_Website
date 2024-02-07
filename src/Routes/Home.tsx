@@ -251,7 +251,7 @@ const Home: React.FC = ( ) => {
           projectDescription: 'A simple online application that allows users to find hotels and book their stay',
           projectCoverImage: hotel_finder_cover1,
           projectTechnologies: 'JavaScript, ReactJS, MongoDB, React-Bootstrap',
-          projectLink: 'https://hotel-finder-app-client-react.onrender.com'
+          projectLink: 'https://swiftstay-rovw.onrender.com/'
         }
 
     ]
