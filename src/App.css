@@ -118,6 +118,20 @@
     }
 
 
+    .contact-me-textarea {
+        width: 60%;
+        border: 1px solid grey;
+
+    }
+
+
+    .contact-me-email {
+        width: 60%;
+        border: 1px solid grey;
+        height: 40px;
+    }
+
+
 
 
 
@@ -172,6 +186,27 @@
             /* display: none; */
             visibility: hidden;
         }
+
+        .contact-me-textarea {
+            width: 94%;
+            border: 1px solid grey;
+    
+        }
+    
+    
+        .contact-me-email {
+            width: 94%;
+            border: 1px solid grey;
+            height: 40px;
+        }
+
+
+        .user-contact-me-error-text {
+            font-style: italic;
+            color: red;
+            
+        }
+    
 
 
     }

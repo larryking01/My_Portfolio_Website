@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { Form, Row } from 'react-bootstrap'
 
 import NavbarComponent from '../MetaFiles/Navbar'
 import Footer from '../MetaFiles/Footer'
@@ -32,6 +33,8 @@ import email_icon from '../StaticFiles/email.png'
 import phone_icon from '../StaticFiles/phone.png'
 import linked_in from '../StaticFiles/linkedIn.png'
 import git_hub from '../StaticFiles/github.png'
+import graphql_server_cover_image from '../StaticFiles/graphql_server_cover_image.png'
+
 
 // for typed js
 import Typed from 'typed.js'
@@ -176,6 +179,38 @@ const Home: React.FC = ( ) => {
         setDarkMode( !darkMode )
         setIsExpanded( false )
     }
+
+
+    // contact me input controls state.
+    const [ contactMeUserEmail, setContactMeUserEmail ] = useState('')
+    const [ contactMeUserMessage, setContactMeUserMessage ] = useState('')
+    const [ userContactMeError, setUserContactMeError ] = useState('')
+
+
+    const UpdateContactMeUserEmail = ( event: any ) => {
+        setContactMeUserEmail( event.target.value )
+    }
+
+    const UpdateContactMeUserMessage = ( event: any ) => {
+        setContactMeUserMessage( event.target.value )
+    }
+
+
+    const HandleUserContactMeSubmit = ( event: any ) => {
+        event.preventDefault()
+        if( contactMeUserEmail.length === 0 ) {
+            setUserContactMeError('Your email is required')
+        }
+        else if( contactMeUserMessage.length === 0 ) {
+            setUserContactMeError('Your message is required')
+        }
+        else {
+            alert("Thank you for your message. I'll reach you back soon..")
+            setUserContactMeError('')
+            setContactMeUserEmail('')
+            setContactMeUserMessage('')
+        }
+    }
     
 
     // my skills interface.
@@ -242,17 +277,28 @@ const Home: React.FC = ( ) => {
         projectDescription: string,
         projectCoverImage: string,
         projectTechnologies: string,
-        projectLink: string
+        projectLink: string,
+        buttonText: string
     }
 
     // my projects array.
     let myProjectsArray: my_projects[] = [
         { projectTitle: 'SwiftStay accommodation platform', 
-          projectDescription: 'A simple online application that allows users to find hotels and book their stay',
+          projectDescription: 'An online application that allows users to find hotels and book their stay',
           projectCoverImage: hotel_finder_cover1,
           projectTechnologies: 'JavaScript, ReactJS, MongoDB, React-Bootstrap',
-          projectLink: 'https://swiftstay-rovw.onrender.com/'
-        }
+          projectLink: 'https://swiftstay-rovw.onrender.com/',
+          buttonText: 'See Live Demo'
+        },
+        { projectTitle: 'E-commerce platform backend/server', 
+          projectDescription: 'Github repository link for e-commerce server/backend',
+          projectCoverImage: graphql_server_cover_image,
+          projectTechnologies: 'JavaScript, ApolloGraphQL, MongoDB, Firebase',
+          projectLink: 'https://github.com/larryking01/E-Commerce-App-Server-GraphQL/tree/master',
+          buttonText: 'View Repository'
+        },
+
+
 
     ]
 
@@ -289,7 +335,7 @@ const Home: React.FC = ( ) => {
         { icon: phone_icon, title: 'Contact Number', detail: '+233-(0)55-253-1004', url:'#', target: '' },
         { icon: address_icon, title: 'Address', detail: 'Lakeside Estate, Accra', url:'#', target:'' },
         { icon: email_icon, title: 'Email Address', detail: 'larryking8118@gmail.com', url:'#', target:'' },
-        { icon: git_hub, title: 'Git hub', detail: 'https://github.com/larryking01', url:'https://github.com/larryking01', hover: 'cursor', target:'_blank' },
+        { icon: git_hub, title: 'Github', detail: 'https://github.com/larryking01', url:'https://github.com/larryking01', hover: 'cursor', target:'_blank' },
         { icon: linked_in, title: 'LinkedIn', detail: 'https://linkedin.com/in/larry-williams8118', url:'https://linkedin.com/in/larry-williams8118', hover: 'cursor', target:'_blank' },
 
     ]
@@ -404,7 +450,7 @@ const Home: React.FC = ( ) => {
                 <div className='sm:grid sm:grid-cols-3 sm:gap-5 sm:mx-6'>
                 {
                     contactMeArray.map(( contact_me: contact_me ) => {
-                        return  <div className='bg-[#F5F5F5] my-4 shadow-lg py-12 dark:rounded-lg dark:dark-card-bg-col' data-aos={ child_animation } data-aos-duration={ child_timer }>
+                        return  <div className='bg-[#F5F5F5] my-4 shadow-lg py-12 transition-all duration-200 hover:bg-slate-300 dark:rounded-lg dark:dark-card-bg-col' data-aos={ child_animation } data-aos-duration={ child_timer }>
                                     <div className='bg-[#ec5b53] w-24 rounded-full p-6 ml-28 sm:ml-32 mb-3'>
                                         <img className='w-20' src={ contact_me.icon } alt='address' />
                                     </div>
@@ -473,7 +519,7 @@ const Home: React.FC = ( ) => {
                             <p className='text-lg font_lora font-semibold mb-3 secondary-col'>{ skill.name }</p>
                             <div className='w-14 ml-8 sm:ml-24'>
                                 {/* <CircularProgressbar value={ skill.proficiency } text={ `${ skill.proficiency }%` } /> */}
-                                <img src={ skill.skill_logo } className='rounded-none' />
+                                <img src={ skill.skill_logo } className='rounded-none' alt='' />
                             </div>
                         </div>
                     ))
@@ -517,18 +563,21 @@ const Home: React.FC = ( ) => {
                 {
                     myProjectsArray.map(( project: my_projects ) => {
                         return  <div className='bg-[#F5F5F5] my-4 pb-3 shadow-lg transition-all duration-500 
-                                                    hover:cursor-pointer rounded-lg hover:bg-slate-300 
+                                                    rounded-lg hover:bg-slate-300 
                                                     dark:dark-card-bg-col' 
                                                 data-aos={ child_animation } data-aos-duration={ child_timer }
                                                 >
-                                    <img className='h-48' src={ project.projectCoverImage } alt='cover' />
+                                    <img className='h-48 w-full' src={ project.projectCoverImage } alt='cover' />
                                     <div className='p-2'>
                                         <h3 className='text-lg primary-col font_lora font-semibold text-center secondary-col mb-2 sm:mb-3'>{ project.projectTitle }</h3>
                                         <h3 className='text-sm text-center font_merriweather mx-1 mb-2'>{ project.projectDescription }</h3>
                                         <h3 className='text-sm text-center mb-4'>Built with { project.projectTechnologies }</h3>
-                                        <Link to={ project.projectLink }>
+                                        <Link to={ project.projectLink } target='_blank'>
                                             <button className='bg-[#ec5b53] transition-all duration-200 hover:bg-[#c73a32] 
-                                                               py-2 px-6 text-white rounded-lg ml-24 sm:ml-28'>See Demo</button>
+                                                               py-2 px-4 text-white rounded-lg ml-2 
+                                                               hover:cursor-pointer'>
+                                                { project.buttonText }
+                                            </button>
                                         </Link>
                                     </div>
                                 </div>
@@ -539,24 +588,47 @@ const Home: React.FC = ( ) => {
 
 
 
-
-
             {/* if not now, then when? section*/}
             <div className='container-x-margins container-y-margins mr-1 sm:mx-28' data-aos={ parent_animation } data-aos-duration={ parent_timer }>
                 <div className='sm:flex sm:flex-row'>
                     <h3 className='text-2xl font-semibold font_lora primary-col sm:mr-4 dark:dark-primary-text-col'>If Not Now, When?</h3>
                     <h3 className='text-2xl font-semibold font_lora primary-col mb-1 dark:dark-primary-text-col'>Let's Work Together!</h3>
                 </div>
-                <p className='text-md font_merriweather dark:dark-secondary-text-col mb-3'>Get in touch with me and let us bring your wonderful ideas into life!</p>
-                <button className='bg-[#ec5b53] transition-all duration-200 hover:bg-[#c73a32] py-2 px-4 text-white rounded-lg ml-20 sm:ml-0' onClick={ ScrollContactDivIntoView }>
-                    Contact Me
-                </button>
+                <p className='text-md font_merriweather dark:dark-secondary-text-col mb-5'>Get in touch with me and let us bring your wonderful ideas into life!</p>
+                
+               <Form>
+                    <Row className='mb-5'>
+                        <Form.Control type='email' placeholder='you@example.com' 
+                                      className='contact-me-email'
+                                      onChange={ UpdateContactMeUserEmail }
+                                      value={ contactMeUserEmail } />
+                    </Row>
+
+                    <Row className='mb-3'>
+                        <Form.Control as='textarea' rows={ 8 } placeholder='Message' 
+                                      className='contact-me-textarea'
+                                      onChange={ UpdateContactMeUserMessage }
+                                      value={ contactMeUserMessage } />
+                    </Row>
+
+                    <p className='text-red-700 mb-3'>{ userContactMeError }</p>
+
+                    <button type='submit' className='bg-[#ec5b53] transition-all duration-200 
+                                       hover:bg-[#c73a32] py-2 px-4 text-white rounded-lg 
+                                       ' onClick={ HandleUserContactMeSubmit }>
+                        Send Message
+                    </button>
+
+
+               </Form>
+
             </div>
             {/* end of if not now, then when? */}
 
 
             { /* go to top button */ }
             <GoToTopBtn />
+
 
             {/* footer section */}
             <Footer 
@@ -566,14 +638,14 @@ const Home: React.FC = ( ) => {
                 ScrollEducationDivIntoView={ ScrollEducationDivIntoView }
                 ScrollSkillsDivIntoVIew={ ScrollSkillsDivIntoView }
                 ScrollServicesDivIntoVIew={ ScrollServicesDivIntoView }
-                ScrollProjectsDivIntoView={ ScrollProjectsDivIntoView } />
+                ScrollProjectsDivIntoView={ ScrollProjectsDivIntoView }
+             />
 
             </div>
         </div>
 
         </div>
     )
-
 
 }
 
