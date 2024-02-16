@@ -187,19 +187,14 @@
             visibility: hidden;
         }
 
-        .contact-me-textarea {
-            width: 94%;
-            border: 1px solid grey;
-    
-        }
-    
-    
         .contact-me-email {
             width: 94%;
-            border: 1px solid grey;
-            height: 40px;
+
         }
 
+        .contact-me-textarea {
+            width: 94%;
+        }
 
         .user-contact-me-error-text {
             font-style: italic;

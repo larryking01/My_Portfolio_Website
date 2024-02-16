@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Form, Row } from 'react-bootstrap'
+import { Form, Row, InputGroup } from 'react-bootstrap'
+import emailjs from '@emailjs/browser'
 
 import NavbarComponent from '../MetaFiles/Navbar'
 import Footer from '../MetaFiles/Footer'
@@ -198,6 +199,8 @@ const Home: React.FC = ( ) => {
 
     const HandleUserContactMeSubmit = ( event: any ) => {
         event.preventDefault()
+        let regex = /^(?:(?:[^<>()[\].,;:\s@\"]+(?:\.[^<>()[\].,;:\s@\"]+)*)|(\".+\"))@(?:(?:\[(?:[0-9]{1,3}\.){3}[0-9]{1,3}\])|(?:(?:[a-zA-Z0-9\-]+\.)+[a-zA-Z]{2,}))$/
+        
         if( contactMeUserEmail.length === 0 ) {
             setUserContactMeError('Your email is required')
         }
@@ -205,10 +208,34 @@ const Home: React.FC = ( ) => {
             setUserContactMeError('Your message is required')
         }
         else {
-            alert("Thank you for your message. I'll reach you back soon...")
-            setUserContactMeError('')
-            setContactMeUserEmail('')
-            setContactMeUserMessage('')
+            if( !contactMeUserEmail.match( regex )) {
+                setUserContactMeError('Invalid email...Provide a valid email to continue')
+            }
+            else {
+                alert("Thank you for your message. I'll reach you back soon...")
+                setUserContactMeError('')
+                setContactMeUserEmail('')
+                setContactMeUserMessage('')
+
+                // directing the user complaint to my own email.
+                let email_js_public_key = 'rVeEurkbv_iOtoRL1'
+                let email_js_service_id = 'service_xs6h5ng'
+                let email_js_template_id = 'template_pqqbmoz'
+                let email_js_dynamic_variables = {
+                    to_name: 'Larry',
+                    sender_email: contactMeUserEmail,
+                    message: contactMeUserMessage
+                }
+
+                try {
+                    emailjs.send( email_js_service_id, email_js_template_id, email_js_dynamic_variables, email_js_public_key )
+                }
+                catch( error ) {
+                    console.log(`emailjs error: ${ error }`)
+                }
+    
+            }
+
         }
     }
     
@@ -291,7 +318,7 @@ const Home: React.FC = ( ) => {
           buttonText: 'See Live Demo'
         },
         { projectTitle: 'E-commerce platform backend/server', 
-          projectDescription: 'Github repository link for e-commerce server/backend',
+          projectDescription: 'Github repository link for e-commerce graphql server/backend',
           projectCoverImage: graphql_server_cover_image,
           projectTechnologies: 'JavaScript, ApolloGraphQL, MongoDB, Firebase',
           projectLink: 'https://github.com/larryking01/E-Commerce-App-Server-GraphQL/tree/master',
@@ -369,11 +396,11 @@ const Home: React.FC = ( ) => {
 
         <div>
             {/* main page content */}
-            <div className='bg-[#F5F5F5] dark:dark-bg-col' ref={ home_ref }>
+            <div className='bg-[#F5F5F5] dark:dark-bg-col md:pb-20 pb-2' ref={ home_ref }>
                 <div className='my-1 sm:mx-16 sm:flex sm:flex-row sm:justify-evenly'>
                     <div className={ expanded === true? 'remove-cover-pic' : 'p-4 rounded-full basis-1/4 sm:py-16 sm:w-full sm:h-64' }>
-                        <img className='rounded-full w-full  brightness-90 shadow-md sm:w-full
-                                        hover:shadow-lg sm:rounded-lg' src={ cover6 } alt='designer' />
+                        <img className='rounded-full w-full brightness-90 shadow-md sm:w-full
+                                        hover:shadow-lg sm:rounded-lg' src={ cover6 } alt='software engineer' />
                     </div>
 
                     <div className='mt-2 sm:pt-52 basis-2/3'>
@@ -385,12 +412,10 @@ const Home: React.FC = ( ) => {
                             <span ref={ job_title_ref } className='text-md text-center mt-3 ml-5 sm:ml-12 sm:mt-5 font-merriweather font-semibold sm:text-lg dark:dark-primary-text-col'></span>
                         </div>
 
-                        <h3 className='container-x-margins container-y-margins text-md font-semibold italic dark:dark-secondary-text-col'>
-                            In our ever-growing world of technology, we are only limited by
-                            our creativity. As long as you can imagine it, software can bring it to life!
+                        <h3 className='container-x-margins container-y-margins font_merriweather text-md italic dark:dark-secondary-text-col'>
+                            Let's unlock the potential of your ideas with code....together!
                         </h3>
                     </div>
-
 
                 </div>
                 
@@ -407,13 +432,13 @@ const Home: React.FC = ( ) => {
                 
                 <div className='mb-3' data-aos={ child_animation } data-aos-duration={ child_timer }>
                     <>
-                        <p className='font_merriweather dark:dark-secondary-text-col'>
+                        <p className='font_poppins dark:dark-secondary-text-col'>
                             I am a driven and innovative person who loves to learn by getting my hands dirty.
                             I believe we grow by solving challenges and learning from them. No problem, however difficult
                             it may seem, is unsolvable if it is addressed with the right mind, attitude and tools.
                         </p>
 
-                        <p className='font_merriweather dark:dark-secondary-text-col mt-2'>
+                        <p className='font_poppins dark:dark-secondary-text-col mt-2'>
                             Here are a few extra information about myself:
                         </p>
 
@@ -421,7 +446,7 @@ const Home: React.FC = ( ) => {
                         <ul>
                         {
                             aboutMeInfoArray.map( ( infoLine: aboutMeInfoSub ) => {
-                                return   <li className='secondary-col my-2 font_merriweather font-normal pt-3 space-x-8 dark:dark-primary-text-col'>
+                                return   <li className='secondary-col my-2 font_poppins font-normal pt-3 space-x-8 dark:dark-primary-text-col'>
                                             - { infoLine.target }
                                          </li>
                             })
@@ -442,7 +467,7 @@ const Home: React.FC = ( ) => {
             {/* contact me section */}
             <div className='container-x-margins container-y-margins sm:mx-28' ref={ contact_me_ref }>
                 <h2 className='text-2xl primary-col font_lora font-bold mb-2 mt-5 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Contact Me</h2>
-                <h2 className='text-slate-800 font_merriweather mb-3 mt-2 text-md dark:dark-secondary-text-col' /*data-aos={ child_animation } data-aos-duration={ child_timer }*/>
+                <h2 className='text-slate-800 font_poppins mb-3 mt-2 text-md dark:dark-secondary-text-col' /*data-aos={ child_animation } data-aos-duration={ child_timer }*/>
                     Have any ideas you want to visualize in software ?
                     Then get in touch with me via any of the platforms below:
                 </h2>
@@ -487,8 +512,8 @@ const Home: React.FC = ( ) => {
 
                                         <div className='basis-2/3'>
                                             <h3 className='secondary-col font_lora font-bold text-lg mb-1'>{ education.school }</h3>
-                                            <h3 className='font_merriweather font-semibold text-md mb-1'>{ education.programme }</h3>
-                                            <h3 className='font-semibold text-md mb-2 font_merriweather'>{ education.study_period }</h3>
+                                            <h3 className='font_poppins font-semibold text-md mb-1'>{ education.programme }</h3>
+                                            <h3 className='font-semibold text-md mb-2 font_poppins'>{ education.study_period }</h3>
                                         </div>
                                     </div> 
                         })
@@ -506,7 +531,7 @@ const Home: React.FC = ( ) => {
             {/* skills section */ }
             <div  className='container-x-margins container-y-margins sm:mx-28' ref={ skills_ref }>
                 <h2 className='primary-col text-2xl font_lora font-bold mb-1 mt-5 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Skills</h2>
-                <p className='font_merriweather dark:dark-secondary-text-col'>Here are some of the technical skills I have in my arsenal to give you the best software experience possible</p>
+                <p className='font_poppins dark:dark-secondary-text-col'>Here are some of the technical skills I have in my arsenal to give you the best software experience possible</p>
             </div>
 
             <div className='grid grid-cols-2 mx-3 gap-3 hover:cursor-pointer
@@ -544,7 +569,7 @@ const Home: React.FC = ( ) => {
                                        data-aos={ child_animation } data-aos-duration={ child_timer }>
                                     <img className='mb-2 w-14 ml-4' src={ service.icon } alt='website' />
                                     <h3 className='text-lg font_lora secondary-col font-semibold mb-2'>{ service.serviceType }</h3>
-                                    <h3 className='text-sm sm:text-md px-3 font_merriweather'>{ service.serviceDetails }</h3>
+                                    <h3 className='text-sm sm:text-md px-3 font_poppins'>{ service.serviceDetails }</h3>
                                  </div>
 
                     })
@@ -570,7 +595,7 @@ const Home: React.FC = ( ) => {
                                     <img className='h-48 w-full' src={ project.projectCoverImage } alt='cover' />
                                     <div className='p-2'>
                                         <h3 className='text-lg primary-col font_lora font-semibold text-center secondary-col mb-2 sm:mb-3'>{ project.projectTitle }</h3>
-                                        <h3 className='text-sm text-center font_merriweather mx-1 mb-2'>{ project.projectDescription }</h3>
+                                        <h3 className='text-sm text-center font_poppins mx-1 mb-2'>{ project.projectDescription }</h3>
                                         <h3 className='text-sm text-center mb-4'>Built with { project.projectTechnologies }</h3>
                                         <Link to={ project.projectLink } target='_blank'>
                                             <button className='bg-[#ec5b53] transition-all duration-200 hover:bg-[#c73a32] 
@@ -594,19 +619,19 @@ const Home: React.FC = ( ) => {
                     <h3 className='text-2xl font-semibold font_lora primary-col sm:mr-4 dark:dark-primary-text-col'>If Not Now, When?</h3>
                     <h3 className='text-2xl font-semibold font_lora primary-col mb-1 dark:dark-primary-text-col'>Let's Work Together!</h3>
                 </div>
-                <p className='text-md font_merriweather dark:dark-secondary-text-col mb-5'>Get in touch with me and let us bring your wonderful ideas into life!</p>
+                <p className='text-md font_poppins dark:dark-secondary-text-col mb-5'>Get in touch with me and let us bring your wonderful ideas into life!</p>
                 
-               <Form>
+               <Form onSubmit={ HandleUserContactMeSubmit }>
                     <Row className='mb-5'>
-                        <Form.Control type='email' placeholder='you@example.com' 
-                                      className='contact-me-email'
+                        <Form.Control type='email' placeholder='Email' 
+                                      className='contact-me-email h-12 px-5'
                                       onChange={ UpdateContactMeUserEmail }
                                       value={ contactMeUserEmail } />
                     </Row>
 
                     <Row className='mb-3'>
                         <Form.Control as='textarea' rows={ 8 } placeholder='Message' 
-                                      className='contact-me-textarea'
+                                      className='contact-me-textarea p-5'
                                       onChange={ UpdateContactMeUserMessage }
                                       value={ contactMeUserMessage } />
                     </Row>
@@ -614,11 +639,10 @@ const Home: React.FC = ( ) => {
                     <p className='text-red-700 mb-3'>{ userContactMeError }</p>
 
                     <button type='submit' className='bg-[#ec5b53] transition-all duration-200 
-                                       hover:bg-[#c73a32] py-2 px-4 text-white rounded-lg 
-                                       ' onClick={ HandleUserContactMeSubmit }>
+                                       hover:bg-[#c73a32] py-2 px-4 text-white rounded-lg' 
+                    >
                         Send Message
                     </button>
-
 
                </Form>
 
