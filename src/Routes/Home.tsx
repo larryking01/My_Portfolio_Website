@@ -205,7 +205,7 @@ const Home: React.FC = ( ) => {
             setUserContactMeError('Your message is required')
         }
         else {
-            alert("Thank you for your message. I'll reach you back soon..")
+            alert("Thank you for your message. I'll reach you back soon...")
             setUserContactMeError('')
             setContactMeUserEmail('')
             setContactMeUserMessage('')
