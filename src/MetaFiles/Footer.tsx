@@ -29,7 +29,7 @@ const Footer: React.FC<FooterProp> = ({ ScrollHomeDivIntoView, ScrollAboutDivInt
 
 
     return (
-        <footer className='bg-slate-200 dark:bg-slate-800 pt-6'>
+        <footer className='container-bg dark:bg-slate-800 pt-6'>
             <div className='mx-5 sm:flex sm:flex-row sm:justify-evenly'>
 
                 <div className='mb-9 mt-3 basis-1/4'>
@@ -47,13 +47,13 @@ const Footer: React.FC<FooterProp> = ({ ScrollHomeDivIntoView, ScrollAboutDivInt
                     <li className='text-md ml-3 list-none font-semibold italic hover:cursor-pointer mb-1 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col' onClick={ ScrollEducationDivIntoView }>Education</li>
                     <li className='text-md ml-3 list-none font-semibold italic hover:cursor-pointer mb-1 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col' onClick={ ScrollSkillsDivIntoVIew }>Skills</li>
                     <li className='text-md ml-3 list-none font-semibold italic hover:cursor-pointer mb-1 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col' onClick={ ScrollServicesDivIntoVIew }>Services</li>
-                    <li className='text-md ml-3 list-none font-semibold italic hover:cursor-pointer mb-1 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col' onClick={ ScrollContactDivIntoView }>Contact</li>
+                    <li className='text-md ml-3 list-none font-semibold italic hover:cursor-pointer mb-1 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col' onClick={ ScrollContactDivIntoView }>Contact Me</li>
                     <li className='text-md ml-3 list-none font-semibold italic hover:cursor-pointer mb-1 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col' onClick={ ScrollProjectsDivIntoView }>Projects</li>
                 </div>
 
 
                 <div className='mb-5 basis-1/4'>
-                    <ul className='text-xl font_merriweather font-bold mb-3 secondary-col dark:dark-primary-text-col'>Contact</ul>
+                    <ul className='text-xl font_merriweather font-bold mb-3 secondary-col dark:dark-primary-text-col'>Contact Me</ul>
                         <li className='text-md ml-3 font-semibold hover:cursor-pointer my-3 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col flex flex-row' >
                             <AiOutlinePhone size={ 20 } /> <span>+233-(0)55-253-1004</span>
                         </li>

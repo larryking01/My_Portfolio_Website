@@ -27,6 +27,10 @@
         @apply text-[#ec5b53];
     }
 
+    .container-bg {
+        @apply bg-slate-200;
+    }
+
     .secondary-col {
         @apply text-[#10285d];
     }

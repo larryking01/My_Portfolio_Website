@@ -25,6 +25,7 @@
     "react-scroll-to-top": "^3.0.0",
     "typed.js": "^2.0.16",
     "typescript": "^4.9.5",
+    "vercel": "^33.5.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

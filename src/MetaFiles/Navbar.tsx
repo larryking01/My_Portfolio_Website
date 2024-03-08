@@ -59,7 +59,7 @@ const NavbarComponent: React.FC<NavbarProp> = ( { expanded, ToggleNavbarExpanded
             } */}
             <li onClick={ ScrollHomeDivIntoView }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>Home</a></li>
             <li onClick={ ScrollAboutDivIntoView }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>About</a></li>
-            <li onClick={ ScrollContactDivIntoView }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>Contact</a></li>
+            <li onClick={ ScrollContactDivIntoView }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>Contact Me</a></li>
             <li onClick={ ScrollEducationDivIntoView }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>Education</a></li>
             <li onClick={ ScrollSkillsDivIntoVIew }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>Skills</a></li>
             <li onClick={ ScrollServicesDivIntoVIew }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>Services</a></li>

@@ -29,7 +29,7 @@ import docker_logo from '../StaticFiles/docker_logo.png'
 import next_js_logo from '../StaticFiles/next_js logo.png'
 import hotel_finder_cover1 from '../StaticFiles/hotel_finder_cover1.png'
 import grad_cap2 from '../StaticFiles/grad_cap2.png'
-import address_icon from '../StaticFiles/address.png'
+// import address_icon from '../StaticFiles/address.png'
 import email_icon from '../StaticFiles/email.png'
 import phone_icon from '../StaticFiles/phone.png'
 import linked_in from '../StaticFiles/linkedIn.png'
@@ -268,19 +268,27 @@ const Home: React.FC = ( ) => {
     ]
 
 
-    // about me info interface.
-    interface aboutMeInfoSub {
-        target: string,
-        answer: string
-    }
-
-
-    let aboutMeInfoArray: aboutMeInfoSub[ ] = [
-        { target: 'I am a technology enthusiast. I love to explore the limitless possibilities in technology.', answer: 'Larry N. N. Williams' }, 
-        { target: 'I am flexible and I can adapt to various roles as is required.', answer: 'Larry N. N. Williams' }, 
-        { target: 'I am a great team player.', answer: 'Lakeside Estate, Accra' },
-        { target: 'I also pride myself in giving my utmost best to whatever task I am assigned.', answer: 'larryking8118@gmail.com' },
+    // about me intro array.
+    let aboutMeIntroArray: string[ ] = [
+        "I am a skilled and passionate web developer proficient in a range of technologies and programming languages. From JavaScript, TypeScript to popular web development frameworks like Node, React and Angular, I have the expertise to create innovative and user-friendly online experiences... Let's collaborate to bring your digital vision to life using cutting-edge technologies!",
+        "Hey, I'm Larry, a software engineer with a passion for clean code, elegant design, and pushing the boundaries of what's possible in the digital realm",
+        "Hey there! I'm Larry, a problem-solving enthusiast fueled by my love for software development and a passion for creating meaningful digital experiences."
     ]
+
+
+    // about me info interface.
+    // interface aboutMeInfoSub {
+    //     target: string,
+    //     answer: string
+    // }
+
+
+    // let aboutMeInfoArray: aboutMeInfoSub[ ] = [
+    //     { target: 'I am a technology enthusiast. I love to explore the limitless possibilities in technology.', answer: 'Larry N. N. Williams' }, 
+    //     { target: 'I am flexible and I can adapt to various roles as is required.', answer: 'Larry N. N. Williams' }, 
+    //     { target: 'I am a great team player.', answer: 'Lakeside Estate, Accra' },
+    //     { target: 'I also pride myself in giving my utmost best to whatever task I am assigned.', answer: 'larryking8118@gmail.com' },
+    // ]
 
     
     // my services provided interface.
@@ -323,9 +331,7 @@ const Home: React.FC = ( ) => {
           projectTechnologies: 'JavaScript, ApolloGraphQL, MongoDB, Firebase',
           projectLink: 'https://github.com/larryking01/E-Commerce-App-Server-GraphQL/tree/master',
           buttonText: 'View Repository'
-        },
-
-
+        }
 
     ]
 
@@ -342,7 +348,6 @@ const Home: React.FC = ( ) => {
     // my education array.
     let myEducationArray: my_education[] = [
         { school: 'University of Ghana, Legon', programme: 'BSc. Computer Science', study_period: '2017 - 2021', school_icon: grad_cap2 },
-        // { school: 'Okuapemman School', programme: 'General Arts', study_period: '2014 - 2017', school_icon: grad_cap2 }      
     ]
 
 
@@ -360,7 +365,6 @@ const Home: React.FC = ( ) => {
     // contact me array.
     const contactMeArray: contact_me[] = [
         { icon: phone_icon, title: 'Contact Number', detail: '+233-(0)55-253-1004', url:'#', target: '' },
-        { icon: address_icon, title: 'Address', detail: 'Lakeside Estate, Accra', url:'#', target:'' },
         { icon: email_icon, title: 'Email Address', detail: 'larryking8118@gmail.com', url:'#', target:'' },
         { icon: git_hub, title: 'Github', detail: 'https://github.com/larryking01', url:'https://github.com/larryking01', hover: 'cursor', target:'_blank' },
         { icon: linked_in, title: 'LinkedIn', detail: 'https://linkedin.com/in/larry-williams8118', url:'https://linkedin.com/in/larry-williams8118', hover: 'cursor', target:'_blank' },
@@ -433,25 +437,8 @@ const Home: React.FC = ( ) => {
                 <div className='mb-3' data-aos={ child_animation } data-aos-duration={ child_timer }>
                     <>
                         <p className='font_poppins dark:dark-secondary-text-col'>
-                            I am a driven and innovative person who loves to learn by getting my hands dirty.
-                            I believe we grow by solving challenges and learning from them. No problem, however difficult
-                            it may seem, is unsolvable if it is addressed with the right mind, attitude and tools.
+                            { aboutMeIntroArray[ 0 ]}
                         </p>
-
-                        <p className='font_poppins dark:dark-secondary-text-col mt-2'>
-                            Here are a few extra information about myself:
-                        </p>
-
-
-                        <ul>
-                        {
-                            aboutMeInfoArray.map( ( infoLine: aboutMeInfoSub ) => {
-                                return   <li className='secondary-col my-2 font_poppins font-normal pt-3 space-x-8 dark:dark-primary-text-col'>
-                                            - { infoLine.target }
-                                         </li>
-                            })
-                        }
-                        </ul>
 
                     </>
                 </div>
@@ -463,38 +450,6 @@ const Home: React.FC = ( ) => {
 
 
 
-
-            {/* contact me section */}
-            <div className='container-x-margins container-y-margins sm:mx-28' ref={ contact_me_ref }>
-                <h2 className='text-2xl primary-col font_lora font-bold mb-2 mt-5 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Contact Me</h2>
-                <h2 className='text-slate-800 font_poppins mb-3 mt-2 text-md dark:dark-secondary-text-col' /*data-aos={ child_animation } data-aos-duration={ child_timer }*/>
-                    Have any ideas you want to visualize in software ?
-                    Then get in touch with me via any of the platforms below:
-                </h2>
-
-                <div className='sm:grid sm:grid-cols-3 sm:gap-5 sm:mx-6'>
-                {
-                    contactMeArray.map(( contact_me: contact_me ) => {
-                        return  <div className='bg-[#F5F5F5] my-4 shadow-lg py-12 transition-all duration-200 hover:bg-slate-300 dark:rounded-lg dark:dark-card-bg-col' data-aos={ child_animation } data-aos-duration={ child_timer }>
-                                    <div className='bg-[#ec5b53] w-24 rounded-full p-6 ml-28 sm:ml-32 mb-3'>
-                                        <img className='w-20' src={ contact_me.icon } alt='address' />
-                                    </div>
-
-                                    <h3 className='font_lora text-[#10285d] font-semibold text-xl text-center mb-2'>{ contact_me.title }</h3>
-                                    <Link to={ contact_me.url } target={ contact_me.target }>
-                                        <h3 className='font-md text-center text-[#ec5b53] font-semibold cursor-pointer dark:text-black'>{ contact_me.detail }</h3>
-                                    </Link>
-                               </div>
-                    })
-                }
-                </div>
-
-            
-            </div>
-
-
-
-
             {/* education section */}
             <div className='container-x-margins container-y-margins sm:mx-28' ref={ education_ref }>
                 <div>
@@ -502,7 +457,7 @@ const Home: React.FC = ( ) => {
                 </div>
 
 
-                <div className='bg-[#F5F5F5] mx-1 shadow-lg sm:p-3 dark:dark-card-bg-col sm:rounded-lg'>
+                <div className='container-bg mx-1 shadow-lg sm:p-3 dark:dark-card-bg-col sm:rounded-lg'>
                     {
                         myEducationArray.map(( education: my_education ) => {
                             return <div className='flex flex-row justify-between mx-3 my-3 divide-y-2' data-aos={ child_animation } data-aos-duration={ child_timer }>
@@ -539,7 +494,7 @@ const Home: React.FC = ( ) => {
                
                {
                     skillsArray.map( ( skill: skill ) => (
-                        <div className='my-1 p-3 text-center bg-slate-200 rounded-lg transition-all 
+                        <div className='my-1 p-3 text-center container-bg rounded-lg transition-all 
                                         duration-500 hover:shadow-lg hover:bg-slate-300 dark:dark-card-bg-col' data-aos={ child_animation } data-aos-duration={ child_timer }>
                             <p className='text-lg font_lora font-semibold mb-3 secondary-col'>{ skill.name }</p>
                             <div className='w-14 ml-8 sm:ml-24'>
@@ -563,7 +518,7 @@ const Home: React.FC = ( ) => {
                 <div className='sm:grid sm:grid-flow-row sm:grid-cols-3 sm:gap-5'>
                 {
                     myServicesArray.map(( service: myService ) => {
-                        return   <div className='bg-[#F5F5F5] border-0 rounded-lg shadow-lg pt-2 pb-8 text-center mb-4 
+                        return   <div className='container-bg border-0 rounded-lg shadow-lg pt-2 pb-8 text-center mb-4 
                                                  transition-all duration-700 hover:cursor-pointer
                                                  hover:shadow-lg hover:skew-x-6 hover:bg-slate-300 dark:dark-card-bg-col' 
                                        data-aos={ child_animation } data-aos-duration={ child_timer }>
@@ -587,7 +542,7 @@ const Home: React.FC = ( ) => {
                 <div className='sm:grid sm:grid-flow-row sm:grid-cols-3 sm:gap-5'>
                 {
                     myProjectsArray.map(( project: my_projects ) => {
-                        return  <div className='bg-[#F5F5F5] my-4 pb-3 shadow-lg transition-all duration-500 
+                        return  <div className='container-bg my-4 pb-3 shadow-lg transition-all duration-500 
                                                     rounded-lg hover:bg-slate-300 
                                                     dark:dark-card-bg-col' 
                                                 data-aos={ child_animation } data-aos-duration={ child_timer }
@@ -596,7 +551,7 @@ const Home: React.FC = ( ) => {
                                     <div className='p-2'>
                                         <h3 className='text-lg primary-col font_lora font-semibold text-center secondary-col mb-2 sm:mb-3'>{ project.projectTitle }</h3>
                                         <h3 className='text-sm text-center font_poppins mx-1 mb-2'>{ project.projectDescription }</h3>
-                                        <h3 className='text-sm text-center mb-4'>Built with { project.projectTechnologies }</h3>
+                                        <h3 className='text-sm text-center italic secondary-col mb-4'>Stack: { project.projectTechnologies }</h3>
                                         <Link to={ project.projectLink } target='_blank'>
                                             <button className='bg-[#ec5b53] transition-all duration-200 hover:bg-[#c73a32] 
                                                                py-2 px-4 text-white rounded-lg ml-2 
@@ -610,6 +565,37 @@ const Home: React.FC = ( ) => {
                 }
                 </div>
             </div>
+
+
+
+            {/* contact me section */}
+            <div className='container-x-margins container-y-margins sm:mx-28' ref={ contact_me_ref }>
+                <h2 className='text-2xl primary-col font_lora font-bold mb-2 mt-5 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Contact Me</h2>
+                <h2 className='text-slate-800 font_poppins mb-3 mt-2 text-md dark:dark-secondary-text-col' /*data-aos={ child_animation } data-aos-duration={ child_timer }*/>
+                    Have any ideas you want to visualize in software ?
+                    Then get in touch with me via any of the platforms below:
+                </h2>
+
+                <div className='sm:grid sm:grid-flow-row sm:grid-cols-3 sm:gap-5 '>
+                {
+                    contactMeArray.map(( contact_me: contact_me ) => {
+                        return  <div className='container-bg my-4 shadow-lg py-12 transition-all duration-200 rounded-lg hover:bg-slate-300 dark:rounded-lg dark:dark-card-bg-col' data-aos={ child_animation } data-aos-duration={ child_timer }>
+                                    <div className='bg-[#ec5b53] w-24 rounded-full p-6 ml-28 sm:ml-32 mb-3'>
+                                        <img className='w-20' src={ contact_me.icon } alt='address' />
+                                    </div>
+
+                                    <h3 className='font_lora text-[#10285d] font-semibold text-xl text-center mb-2'>{ contact_me.title }</h3>
+                                    <Link to={ contact_me.url } target={ contact_me.target }>
+                                        <h3 className='font-md text-center text-[#ec5b53] font-semibold cursor-pointer dark:text-black'>{ contact_me.detail }</h3>
+                                    </Link>
+                               </div>
+                    })
+                }
+                </div>
+
+            
+            </div>
+
 
 
 
