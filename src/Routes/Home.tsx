@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Form, Row, InputGroup } from 'react-bootstrap'
+import { Form, Row } from 'react-bootstrap'
 import emailjs from '@emailjs/browser'
 
 import NavbarComponent from '../MetaFiles/Navbar'
@@ -270,7 +270,7 @@ const Home: React.FC = ( ) => {
 
     // about me intro array.
     let aboutMeIntroArray: string[ ] = [
-        "I am a skilled and passionate web developer proficient in a range of technologies and programming languages. From JavaScript, TypeScript to popular web development frameworks like Node, React and Angular, I have the expertise to create innovative and user-friendly online experiences... Let's collaborate to bring your digital vision to life using cutting-edge technologies!",
+        "I am a skilled and passionate software engineer proficient in a range of programming languages and technologies. From JavaScript, TypeScript to popular development frameworks like Node, React, React-Native and Angular, I have the expertise to create innovative and user-friendly digital experiences... Let's collaborate to bring your digital vision to life using cutting-edge technologies!",
         "Hey, I'm Larry, a software engineer with a passion for clean code, elegant design, and pushing the boundaries of what's possible in the digital realm",
         "Hey there! I'm Larry, a problem-solving enthusiast fueled by my love for software development and a passion for creating meaningful digital experiences."
     ]
@@ -401,10 +401,10 @@ const Home: React.FC = ( ) => {
         <div>
             {/* main page content */}
             <div className='bg-[#F5F5F5] dark:dark-bg-col md:pb-20 pb-2' ref={ home_ref }>
-                <div className='my-1 sm:mx-16 sm:flex sm:flex-row sm:justify-evenly'>
+                <div className='my-1 sm:mx-16 md:mx-20 sm:flex sm:flex-row sm:justify-evenly'>
                     <div className={ expanded === true? 'remove-cover-pic' : 'p-4 rounded-full basis-1/4 sm:py-16 sm:w-full sm:h-64' }>
-                        <img className='rounded-full w-full brightness-90 shadow-md sm:w-full
-                                        hover:shadow-lg sm:rounded-lg' src={ cover6 } alt='software engineer' />
+                        <img className='rounded-full md:rounded-full md:w-full brightness-90 shadow-md sm:w-full
+                                        hover:shadow-lg sm:rounded-full' src={ cover6 } alt='software engineer' />
                     </div>
 
                     <div className='mt-2 sm:pt-52 basis-2/3'>
@@ -412,14 +412,15 @@ const Home: React.FC = ( ) => {
                             <span ref={ name_ref } className='text-xl font-bold mt-1 ml-3 text-center secondary-col sm:text-5xl font-playfair dark:dark-primary-text-col'></span>
                         </div>
 
-                        <div className='mt-1 sm:mt-4'>
-                            <span ref={ job_title_ref } className='text-md text-center mt-3 ml-5 sm:ml-12 sm:mt-5 font-merriweather font-semibold sm:text-lg dark:dark-primary-text-col'></span>
+                        <div className='mt-1 sm:mt-4 md:container-y-margins'>
+                            <span ref={ job_title_ref } className='text-md italic text-center mt-3 ml-5 sm:ml-12 sm:mt-5 font-merriweather font-semibold sm:text-lg dark:dark-primary-text-col'></span>
                         </div>
 
-                        <h3 className='container-x-margins container-y-margins font_merriweather text-md italic dark:dark-secondary-text-col'>
-                            Let's unlock the potential of your ideas with code....together!
-                        </h3>
+                        {/* <h3 className='container-x-margins container-y-margins font_merriweather text-md italic dark:dark-secondary-text-col'>
+                            "Clean code always looks like it was written by someone who cares" - Robert C. Martin
+                        </h3> */}
                     </div>
+                    
 
                 </div>
                 
@@ -428,8 +429,9 @@ const Home: React.FC = ( ) => {
 
 
 
+
             {/* about me section */} 
-            <div className='container-x-margins container-y-margins sm:mx-28' ref={ about_ref }>
+            <div className='container-x-margins container-y-margins sm:mx-28 md:mt-20' ref={ about_ref }>
                 <div>
                     <h2 className='text-2xl primary-col font_lora font-bold mb-3 mt-5 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>About Me</h2>
                 </div>
@@ -484,27 +486,28 @@ const Home: React.FC = ( ) => {
 
 
             {/* skills section */ }
-            <div  className='container-x-margins container-y-margins sm:mx-28' ref={ skills_ref }>
-                <h2 className='primary-col text-2xl font_lora font-bold mb-1 mt-5 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Skills</h2>
-                <p className='font_poppins dark:dark-secondary-text-col'>Here are some of the technical skills I have in my arsenal to give you the best software experience possible</p>
-            </div>
+            <div className='container-y-margins'>
+                <div  className='container-x-margins mb-4 sm:mx-28' ref={ skills_ref }>
+                    <h2 className='primary-col text-2xl font_lora font-bold mb-1 mt-5 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Skills</h2>
+                    <p className='font_poppins dark:dark-secondary-text-col'>Here are some of the technical skills I have in my arsenal to give you the best software experience possible:</p>
+                </div>
 
-            <div className='grid grid-cols-2 mx-3 gap-3 hover:cursor-pointer
-                            sm:mx-28 sm:grid-cols-4 '>
-               
-               {
-                    skillsArray.map( ( skill: skill ) => (
-                        <div className='my-1 p-3 text-center container-bg rounded-lg transition-all 
-                                        duration-500 hover:shadow-lg hover:bg-slate-300 dark:dark-card-bg-col' data-aos={ child_animation } data-aos-duration={ child_timer }>
-                            <p className='text-lg font_lora font-semibold mb-3 secondary-col'>{ skill.name }</p>
-                            <div className='w-14 ml-8 sm:ml-24'>
-                                {/* <CircularProgressbar value={ skill.proficiency } text={ `${ skill.proficiency }%` } /> */}
-                                <img src={ skill.skill_logo } className='rounded-none' alt='' />
+                <div className='grid grid-cols-2 mx-3 gap-3 hover:cursor-pointer
+                                sm:mx-28 sm:grid-cols-4 '>
+                
+                {
+                        skillsArray.map( ( skill: skill ) => (
+                            <div className='my-1 p-3 text-center container-bg rounded-lg transition-all 
+                                            duration-500 hover:shadow-lg hover:bg-slate-300 dark:dark-card-bg-col' data-aos={ child_animation } data-aos-duration={ child_timer }>
+                                <p className='text-lg font_lora font-semibold mb-3 secondary-col'>{ skill.name }</p>
+                                <div className='w-14 ml-8 sm:ml-28'>
+                                    <img src={ skill.skill_logo } className='rounded-none' alt='' />
+                                </div>
                             </div>
-                        </div>
-                    ))
-                } 
+                        ))
+                    } 
 
+                </div>
             </div>
             {/* end of skills section */ }
 

@@ -64,7 +64,7 @@
     }
 
     .container-y-margins {
-        @apply my-14;
+        @apply my-16;
     }
 
     /* dark mode themes */
