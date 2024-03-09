@@ -42,34 +42,34 @@ const Footer: React.FC<FooterProp> = ({ ScrollHomeDivIntoView, ScrollAboutDivInt
 
                 <div className='mb-10 sm:mb-5 basis-1/4'>
                     <ul className='text-xl font_merriweather font-bold mb-3 secondary-col dark:dark-primary-text-col'>Menu</ul>
-                    <li className='text-md ml-3 list-none font-semibold italic hover:cursor-pointer mb-1 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col' onClick={ ScrollHomeDivIntoView }>Home</li>
-                    <li className='text-md ml-3 list-none font-semibold italic hover:cursor-pointer mb-1 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col' onClick={ ScrollAboutDivIntoView }>About</li>
-                    <li className='text-md ml-3 list-none font-semibold italic hover:cursor-pointer mb-1 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col' onClick={ ScrollEducationDivIntoView }>Education</li>
-                    <li className='text-md ml-3 list-none font-semibold italic hover:cursor-pointer mb-1 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col' onClick={ ScrollSkillsDivIntoVIew }>Skills</li>
-                    <li className='text-md ml-3 list-none font-semibold italic hover:cursor-pointer mb-1 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col' onClick={ ScrollServicesDivIntoVIew }>Services</li>
-                    <li className='text-md ml-3 list-none font-semibold italic hover:cursor-pointer mb-1 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col' onClick={ ScrollContactDivIntoView }>Contact Me</li>
-                    <li className='text-md ml-3 list-none font-semibold italic hover:cursor-pointer mb-1 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col' onClick={ ScrollProjectsDivIntoView }>Projects</li>
+                    <li className='text-md ml-3 list-none font-normal italic hover:cursor-pointer mb-1 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col' onClick={ ScrollHomeDivIntoView }>Home</li>
+                    <li className='text-md ml-3 list-none font-normal italic hover:cursor-pointer mb-1 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col' onClick={ ScrollAboutDivIntoView }>About</li>
+                    <li className='text-md ml-3 list-none font-normal italic hover:cursor-pointer mb-1 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col' onClick={ ScrollEducationDivIntoView }>Education</li>
+                    <li className='text-md ml-3 list-none font-normal italic hover:cursor-pointer mb-1 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col' onClick={ ScrollSkillsDivIntoVIew }>Skills</li>
+                    <li className='text-md ml-3 list-none font-normal italic hover:cursor-pointer mb-1 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col' onClick={ ScrollServicesDivIntoVIew }>Services</li>
+                    <li className='text-md ml-3 list-none font-normal italic hover:cursor-pointer mb-1 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col' onClick={ ScrollContactDivIntoView }>Contact Me</li>
+                    <li className='text-md ml-3 list-none font-normal italic hover:cursor-pointer mb-1 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col' onClick={ ScrollProjectsDivIntoView }>Projects</li>
                 </div>
 
 
                 <div className='mb-5 basis-1/4'>
                     <ul className='text-xl font_merriweather font-bold mb-3 secondary-col dark:dark-primary-text-col'>Contact Me</ul>
-                        <li className='text-md ml-3 font-semibold hover:cursor-pointer my-3 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col flex flex-row' >
+                        <li className='text-md ml-3 font-normal hover:cursor-pointer my-3 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col flex flex-row' >
                             <AiOutlinePhone size={ 20 } /> <span>+233-(0)55-253-1004</span>
                         </li>
 
-                        <li className='text-md ml-3 font-semibold hover:cursor-pointer my-3 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col flex flex-row'>
+                        <li className='text-md ml-3 font-normal hover:cursor-pointer my-3 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col flex flex-row'>
                             <AiOutlineMail size={ 20 } className='mr-2' />  <span>larryking8118@gmail.com</span>
                         </li>
 
                         <Link to='https://github.com/larryking01' target='_blank'>
-                            <li className='text-md ml-3 font-semibold hover:cursor-pointer my-3 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col flex flex-row'>
+                            <li className='text-md ml-3 font-normal hover:cursor-pointer my-3 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col flex flex-row'>
                                 <AiOutlineGithub size={ 20 } className='mr-2' /> <span>github.com/larryking01</span>
                             </li>
                         </Link>
 
                         <Link to='https://www.linkedin.com/in/larry-williams8118' target='_blank'>
-                            <li className='text-md ml-3 font-semibold hover:cursor-pointer my-3 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col flex flex-row'>
+                            <li className='text-md ml-3 font-normal hover:cursor-pointer my-3 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col flex flex-row'>
                                 <AiOutlineLinkedin size={ 23 } className='mr-2' /> <span>linkedin.com/in/larry-williams8118</span>
                             </li>
                         </Link>
