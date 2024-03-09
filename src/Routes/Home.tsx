@@ -500,7 +500,7 @@ const Home: React.FC = ( ) => {
                             <div className='my-1 p-3 text-center container-bg rounded-lg transition-all 
                                             duration-500 hover:shadow-lg hover:bg-slate-300 dark:dark-card-bg-col' data-aos={ child_animation } data-aos-duration={ child_timer }>
                                 <p className='text-lg font_lora font-semibold mb-3 secondary-col'>{ skill.name }</p>
-                                <div className='w-14 ml-8 sm:ml-28'>
+                                <div className='w-14 ml-8 sm:ml-20'>
                                     <img src={ skill.skill_logo } className='rounded-none' alt='' />
                                 </div>
                             </div>
