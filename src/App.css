@@ -1,0 +1,218 @@
+/* google fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
+
+
+
+/* importing tailwind css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+/* customizing tailwind */
+@layer base {
+    .primary-col {
+        /* @apply text-[#b1b493]; */
+        /* @apply text-[#ec5b53]; */
+        @apply text-[#ec5b53];
+    }
+
+    .container-bg {
+        @apply bg-slate-200;
+    }
+
+    .secondary-col {
+        @apply text-[#10285d];
+    }
+
+    .font_roboto_slab {
+        @apply font-robotoslab;
+    }
+
+    .font_poppins {
+        @apply font-poppins;
+    }
+
+    .font_merriweather {
+        @apply font-merriweather;
+    }
+
+    .font_lora {
+        @apply font-lora;
+    }
+
+    .font_inter {
+        @apply font-inter;
+    }
+
+    .footer-link-transition {
+        @apply transition-all duration-300 hover:ml-5 hover:text-[#10285d];
+    }
+
+    .container-x-margins {  
+        @apply mx-4;
+    }
+
+    .container-y-margins {
+        @apply my-16;
+    }
+
+    /* dark mode themes */
+    .dark-bg-col {
+        /* @apply bg-black; */
+        @apply bg-slate-950;
+        /* @apply bg-[#63e]; */
+    }
+
+    .dark-primary-text-col {
+        @apply text-[#63e];
+    }
+
+    .dark-secondary-text-col {
+        @apply text-slate-300;
+        /* @apply text-slate-400; */
+    }
+
+    .dark-card-bg-col {
+        @apply bg-slate-400;
+    }
+
+    
+
+    /* navbar styling */
+    .navigation {
+        height: 80px;
+        width: 100%;
+        display: flex;
+        position: relative;
+        padding: 1.2rem 1.3rem
+
+    }
+
+    .navbar-menu {
+        margin-left: auto;
+    }
+
+    .navbar-menu ul {
+        display: flex;
+    }
+
+
+    .navbar-menu li {
+        list-style-type: none;
+        margin: 0rem 1rem;
+    }
+
+
+    .hamburger {
+        position: absolute;
+        right: 25px;
+        display: none;
+        margin-left: 1rem;
+    }
+
+
+    .contact-me-textarea {
+        width: 60%;
+        border: 1px solid grey;
+
+    }
+
+
+    .contact-me-email {
+        width: 60%;
+        border: 1px solid grey;
+        height: 40px;
+    }
+
+
+
+
+
+
+    /* for responsive */
+    @media screen and ( max-width: 768px ) {
+        /* .no-scroll {
+            overflow: hidden;
+        } */
+
+        .dark-moon-icon {
+            margin-left: 2%;
+        }
+
+        .light-sun-icon {
+            margin-left: 2%;
+        }
+ 
+        .hamburger {
+            display: block;
+            cursor: pointer;
+        }
+
+        .navbar-menu ul {
+            display: none;
+        }
+
+        .expanded {
+            @apply bg-slate-400;
+            flex-direction: column;
+            position: absolute;
+            left: 0;
+            top: 75px;
+            color: black;
+            width: 100%;
+            height: calc(100vh - 75px);
+            /* overflow-y: hidden; */
+        }
+
+        .expanded li {
+            text-align: center;
+            margin: 1.7rem 1.2rem;
+            cursor: pointer;
+            font-style: italic;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #10285d;
+            text-decoration: underline;
+        }
+
+        .remove-cover-pic {
+            /* display: none; */
+            visibility: hidden;
+        }
+
+        .contact-me-email {
+            width: 94%;
+
+        }
+
+        .contact-me-textarea {
+            width: 94%;
+        }
+
+        .user-contact-me-error-text {
+            font-style: italic;
+            color: red;
+            
+        }
+    
+
+
+    }
+
+
+
+
+
+
+}
