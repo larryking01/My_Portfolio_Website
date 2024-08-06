@@ -331,7 +331,7 @@ const Home: React.FC = ( ) => {
           projectCoverImage: hotel_finder_cover1,
           projectTechnologies: 'JavaScript, ReactJS, MongoDB, React-Bootstrap',
           projectLink: 'https://swiftstay-rovw.onrender.com/',
-          buttonText: 'Check It Out Live'
+          buttonText: 'Check It Out Now'
         },
         {
             projectTitle: 'TeamTide - HR Assistant',
@@ -339,14 +339,14 @@ const Home: React.FC = ( ) => {
             projectCoverImage: vag_ems_cover3,
             projectTechnologies: 'TypeScript, ReactJS, PostgreSQL, Tailwind CSS',
             projectLink: 'https://vag-ems.vercel.app/',
-            buttonText: 'Check It Out Live'
+            buttonText: 'Check It Out Now'
         },
         { projectTitle: 'SneakerZone E-commerce Server', 
           projectDescription: 'Github repository link for e-commerce graphql server/backend',
           projectCoverImage: graphql_server_cover_image,
           projectTechnologies: 'JavaScript, ApolloGraphQL, MongoDB, Firebase',
           projectLink: 'https://github.com/larryking01/E-Commerce-App-Server-GraphQL/tree/master',
-          buttonText: 'Check It Out Live'
+          buttonText: 'Check It Out Now'
         }
 
     ]
@@ -382,7 +382,7 @@ const Home: React.FC = ( ) => {
         { 
             course_title: 'Artificial Intelligence Career Essentials', 
             issuing_organization: 'Alx Africa',
-            issue_date: 'June, 2024',
+            issue_date: 'July, 2024',
             cover_image: aice_cert_cover,
             course_description: "This hands-on course transformed my approach to software development, equipping me with advanced AI knowledge and practical skills in prompt engineering. I now leverage tools like ChatGPT, Github Copilot, Uizard, DeepCodeAG, Tabnine, etc to significantly boost my coding efficiency and problem-solving abilities. By integrating AI into my workflow, I am able to enhance my productivity and code quality, and position myself as a forward-thinking developer ready to excel in the AI-driven tech landscape.",
         }
@@ -439,19 +439,19 @@ const Home: React.FC = ( ) => {
         <div>
             {/* main page content */}
             <div className='bg-[#F5F5F5] dark:dark-bg-col md:pb-20 pb-2' ref={ home_ref }>
-                <div className='my-1 sm:mx-16 md:mx-20 sm:flex sm:flex-row sm:justify-evenly'>
-                    <div className={ expanded === true? 'remove-cover-pic' : 'p-4 rounded-full basis-1/4 sm:py-16 sm:w-full sm:h-64' }>
+                <div className='my-1 sm:mx-16 md:mx-20 text-center sm:flex sm:flex-row sm:justify-evenly'>
+                    <div className={ expanded === true? 'remove-cover-pic' : 'px-1 mx-4 md:mx-0 md:py-10 md:rounded-none rounded-full basis-1/4 sm:py-16 sm:w-full sm:h-64' }>
                         <img className='rounded-full md:rounded-full md:w-full brightness-90 shadow-md sm:w-full
                                         hover:shadow-lg sm:rounded-full' src={ cover6 } alt='software engineer' />
                     </div>
 
-                    <div className='mt-2 sm:pt-52 basis-2/3'>
+                    <div className='mt-2 sm:pt-52 basis-3/4'>
                         <div>
                             <span ref={ name_ref } className='text-xl font-bold mt-1 ml-3 text-center secondary-col sm:text-5xl font-playfair dark:dark-primary-text-col'></span>
                         </div>
 
                         <div className='mt-1 sm:mt-4 md:container-y-margins'>
-                            <span ref={ job_title_ref } className='text-md italic text-center mt-3 ml-5 sm:ml-12 sm:mt-5 font-merriweather font-semibold sm:text-lg dark:dark-primary-text-col'></span>
+                            <span ref={ job_title_ref } className='text-md italic text-center mt-3 md:ml-5 sm:ml-12 sm:mt-5 font-merriweather font-semibold sm:text-lg dark:dark-primary-text-col'></span>
                         </div>
 
                         {/* <h3 className='container-x-margins container-y-margins font_merriweather text-md italic dark:dark-secondary-text-col'>

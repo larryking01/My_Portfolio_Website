@@ -146,13 +146,15 @@
             overflow: hidden;
         } */
 
-        .dark-moon-icon {
-            margin-left: 2%;
+        .dark-mode-icon {
+            position: relative;
+            left: 35%;
         }
 
-        .light-sun-icon {
-            margin-left: 2%;
-        }
+        .light-mode-icon {
+            position: relative;
+            left: 35%;
+        } 
  
         .hamburger {
             display: block;
@@ -171,7 +173,7 @@
             top: 75px;
             color: black;
             width: 100%;
-            height: calc(100vh - 75px);
+            height: calc(100vh - 5px);
             /* overflow-y: hidden; */
         }
 
@@ -183,7 +185,7 @@
             font-weight: 700;
             font-size: 1.2rem;
             color: #10285d;
-            text-decoration: underline;
+            text-decoration: none;
         }
 
         .remove-cover-pic {

@@ -7,6 +7,8 @@ import closeIcon from '../StaticFiles/close-icon.png'
 import sun_filled from '../StaticFiles/sun_filled.png'
 import white_moon from '../StaticFiles/white_moon.png'
 
+
+
 // typing the props.
 interface NavbarProp {
   darkMode: boolean,
@@ -45,18 +47,6 @@ const NavbarComponent: React.FC<NavbarProp> = ( { expanded, ToggleNavbarExpanded
 
         <div className={ expanded === true ? 'expanded' : 'navbar-menu'}>
           <ul className='dark:text-slate-300'>
-            {/* {
-              darkMode === true?  
-                <li onClick={ ToggleDarkModeState } className='flex flex-row justify-center'>
-                  <h4 className='cursor-pointer'>Light</h4>
-                  <img src={ sun_filled } className='w-7 cursor-pointer light-sun-icon' alt='' />
-                </li>
-                  :
-                <li onClick={ ToggleDarkModeState } className='flex flex-row justify-center'>
-                  <h4 className='cursor-pointer'>Dark</h4>
-                  <img src={ moon } className='w-5 h-5 mt-2 sm:mt-1 sm:w-7 cursor-pointer dark-moon-icon' alt='' />
-                </li>
-            } */}
             <li onClick={ ScrollHomeDivIntoView }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>Home</a></li>
             <li onClick={ ScrollAboutDivIntoView }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>About</a></li>
             <li onClick={ ScrollContactDivIntoView }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>Contact Me</a></li>
@@ -66,14 +56,12 @@ const NavbarComponent: React.FC<NavbarProp> = ( { expanded, ToggleNavbarExpanded
             <li onClick={ ScrollProjectsDivIntoView }><a href='#' className='transition-all duration-201 hover:font-semibold hover:secondary-col'>Projects</a></li>
             {
               darkMode === true?  
-                <li onClick={ ToggleDarkModeState } className='flex flex-row bg-[#63e] justify-center rounded-lg p-2'>
-                  {/* <h4 className='cursor-pointer mr-1'>Light mode</h4> */}
-                  <img src={ sun_filled } className='w-7 cursor-pointer light-sun-icon' alt='' />
+                <li onClick={ ToggleDarkModeState } className='w-10 h-10 bg-[#63e] rounded-full p-2 light-mode-icon'>
+                  <img src={ sun_filled } className='w-7 h-6 sm:-mt-1 sm:w-7 cursor-pointer' alt='' />
                 </li>
                   :
-                <li onClick={ ToggleDarkModeState } className='flex flex-row justify-center bg-[#10285d] rounded-lg p-2'>
-                  {/* <h4 className='cursor-pointer mr-1 text-slate-400 sm:text-slate-300'>Dark mode</h4> */}
-                  <img src={ white_moon } className='w-7 h-6 mt-2 sm:-mt-1 sm:w-7 cursor-pointer dark-moon-icon' alt='' />
+                <li onClick={ ToggleDarkModeState } className='w-10 h-10 bg-[#10285d] rounded-full p-2 dark-mode-icon'>
+                  <img src={ white_moon } className='w-7 h-6 sm:-mt-1 sm:w-7 cursor-pointer' alt='' />
                 </li>
             }
           </ul>
