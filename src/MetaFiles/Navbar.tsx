@@ -21,7 +21,8 @@ interface NavbarProp {
   ScrollEducationDivIntoView: () => void,
   ScrollSkillsDivIntoVIew: () => void,
   ScrollServicesDivIntoVIew: () => void,
-  ScrollProjectsDivIntoView: () => void
+  ScrollProjectsDivIntoView: () => void,
+  ScrollCertificationsDivIntoView: () => void
   // about_ref: React.RefObject<HTMLDivElement | null>
 
 }
@@ -35,7 +36,7 @@ const NavbarComponent: React.FC<NavbarProp> = ( { expanded, ToggleNavbarExpanded
                                                   ScrollHomeDivIntoView, ScrollAboutDivIntoView,
                                                   ScrollContactDivIntoView, ScrollEducationDivIntoView,
                                                   ScrollSkillsDivIntoVIew, ScrollProjectsDivIntoView,
-                                                  ScrollServicesDivIntoVIew } ) => {
+                                                  ScrollServicesDivIntoVIew, ScrollCertificationsDivIntoView } ) => {
 
 
     return (
@@ -49,11 +50,12 @@ const NavbarComponent: React.FC<NavbarProp> = ( { expanded, ToggleNavbarExpanded
           <ul className='dark:text-slate-300'>
             <li onClick={ ScrollHomeDivIntoView }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>Home</a></li>
             <li onClick={ ScrollAboutDivIntoView }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>About</a></li>
-            <li onClick={ ScrollContactDivIntoView }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>Contact Me</a></li>
-            <li onClick={ ScrollEducationDivIntoView }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>Education</a></li>
             <li onClick={ ScrollSkillsDivIntoVIew }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>Skills</a></li>
-            <li onClick={ ScrollServicesDivIntoVIew }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>Services</a></li>
             <li onClick={ ScrollProjectsDivIntoView }><a href='#' className='transition-all duration-201 hover:font-semibold hover:secondary-col'>Projects</a></li>
+            <li onClick={ ScrollCertificationsDivIntoView }><a href='#' className='transition-all duration-201 hover:font-semibold hover:secondary-col'>Certifications</a></li>
+            <li onClick={ ScrollEducationDivIntoView }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>Education</a></li>
+            <li onClick={ ScrollServicesDivIntoVIew }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>Services</a></li>
+            <li onClick={ ScrollContactDivIntoView }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>Contact Me</a></li>
             {
               darkMode === true?  
                 <li onClick={ ToggleDarkModeState } className='w-10 h-10 bg-[#63e] rounded-full p-2 light-mode-icon'>

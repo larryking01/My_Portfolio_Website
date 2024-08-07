@@ -16,7 +16,8 @@ interface FooterProp {
     ScrollEducationDivIntoView: () => void,
     ScrollSkillsDivIntoVIew: () => void,
     ScrollServicesDivIntoVIew: () => void,
-    ScrollProjectsDivIntoView: () => void
+    ScrollProjectsDivIntoView: () => void,
+    ScrollCertificationsDivIntoView: () => void
   
   }
   
@@ -25,7 +26,7 @@ interface FooterProp {
 const Footer: React.FC<FooterProp> = ({ ScrollHomeDivIntoView, ScrollAboutDivIntoView, 
                                         ScrollContactDivIntoView, ScrollSkillsDivIntoVIew,
                                         ScrollEducationDivIntoView, ScrollProjectsDivIntoView,
-                                        ScrollServicesDivIntoVIew }) => {
+                                        ScrollServicesDivIntoVIew, ScrollCertificationsDivIntoView }) => {
 
 
     return (
@@ -47,8 +48,9 @@ const Footer: React.FC<FooterProp> = ({ ScrollHomeDivIntoView, ScrollAboutDivInt
                     <li className='text-md ml-3 list-none font-normal italic hover:cursor-pointer mb-1 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col' onClick={ ScrollEducationDivIntoView }>Education</li>
                     <li className='text-md ml-3 list-none font-normal italic hover:cursor-pointer mb-1 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col' onClick={ ScrollSkillsDivIntoVIew }>Skills</li>
                     <li className='text-md ml-3 list-none font-normal italic hover:cursor-pointer mb-1 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col' onClick={ ScrollServicesDivIntoVIew }>Services</li>
-                    <li className='text-md ml-3 list-none font-normal italic hover:cursor-pointer mb-1 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col' onClick={ ScrollContactDivIntoView }>Contact Me</li>
                     <li className='text-md ml-3 list-none font-normal italic hover:cursor-pointer mb-1 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col' onClick={ ScrollProjectsDivIntoView }>Projects</li>
+                    <li className='text-md ml-3 list-none font-normal italic hover:cursor-pointer mb-1 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col' onClick={ ScrollCertificationsDivIntoView }>Certifications</li>
+                    <li className='text-md ml-3 list-none font-normal italic hover:cursor-pointer mb-1 footer-link-transition dark:hover:text-blue-700 dark:dark-secondary-text-col' onClick={ ScrollContactDivIntoView }>Contact Me</li>
                 </div>
 
 

@@ -180,6 +180,16 @@ const Home: React.FC = ( ) => {
     }
 
 
+    const ScrollCertificationsDivIntoView = ( ) => {
+        setIsExpanded( false )
+        setTimeout(() => {
+            certifications_ref.current?.scrollIntoView({
+                behavior: 'smooth'
+            })
+        }, 300 )
+    }
+
+
 
     // toggling darkmode.
     const [ darkMode, setDarkMode ] = useState( false )
@@ -278,25 +288,12 @@ const Home: React.FC = ( ) => {
 
     // about me intro array.
     let aboutMeIntroArray: string[ ] = [
+        "Welcome to my corner of the web! I am a committed software developer with a love for creating elegant, efficient, and user-friendly digital experiences. Ever since I wrote my first line of code, I've been fascinated by the endless possibilities technology offers to solve real-world problems and make a positive impact. I believe in the power of tech to drive change and improve lives, and I'm on a mission to contribute to this transformative journey.Whether it's crafting intuitive user interfaces, developing seamless user experiences, or pushing the boundaries of software development, I'm dedicated to honing my skills and delivering excellence in every project.",
         "I am a skilled and passionate software engineer proficient in a range of programming languages and technologies. From JavaScript, TypeScript to popular development frameworks like Node, React, React-Native and Angular, I have the expertise to create innovative and user-friendly digital experiences... Let's collaborate to bring your digital vision to life using cutting-edge technologies!",
         "Hey, I'm Larry, a software engineer with a passion for clean code, elegant design, and pushing the boundaries of what's possible in the digital realm",
         "Hey there! I'm Larry, a problem-solving enthusiast fueled by my love for software development and a passion for creating meaningful digital experiences."
     ]
 
-
-    // about me info interface.
-    // interface aboutMeInfoSub {
-    //     target: string,
-    //     answer: string
-    // }
-
-
-    // let aboutMeInfoArray: aboutMeInfoSub[ ] = [
-    //     { target: 'I am a technology enthusiast. I love to explore the limitless possibilities in technology.', answer: 'Larry N. N. Williams' }, 
-    //     { target: 'I am flexible and I can adapt to various roles as is required.', answer: 'Larry N. N. Williams' }, 
-    //     { target: 'I am a great team player.', answer: 'Lakeside Estate, Accra' },
-    //     { target: 'I also pride myself in giving my utmost best to whatever task I am assigned.', answer: 'larryking8118@gmail.com' },
-    // ]
 
     
     // my services provided interface.
@@ -433,6 +430,7 @@ const Home: React.FC = ( ) => {
                              ScrollSkillsDivIntoVIew={ ScrollSkillsDivIntoView }
                              ScrollProjectsDivIntoView={ ScrollProjectsDivIntoView }
                              ScrollServicesDivIntoVIew={ ScrollServicesDivIntoView }
+                             ScrollCertificationsDivIntoView={ ScrollCertificationsDivIntoView }
                              />
 
 
@@ -454,12 +452,11 @@ const Home: React.FC = ( ) => {
                             <span ref={ job_title_ref } className='text-md italic text-center mt-3 md:ml-5 sm:ml-12 sm:mt-5 font-merriweather font-semibold sm:text-lg dark:dark-primary-text-col'></span>
                         </div>
 
-                        {/* <h3 className='container-x-margins container-y-margins font_merriweather text-md italic dark:dark-secondary-text-col'>
+                        <h3 className='container-x-margins container-y-margins font_merriweather text-md italic dark:dark-secondary-text-col md:text-md text-sm'>
                             "Clean code always looks like it was written by someone who cares" - Robert C. Martin
-                        </h3> */}
+                        </h3>
                     </div>
                     
-
                 </div>
                 
             </div>
@@ -471,12 +468,12 @@ const Home: React.FC = ( ) => {
             {/* about me section */} 
             <div className='container-x-margins container-y-margins sm:mx-28 md:mt-20' ref={ about_ref }>
                 <div>
-                    <h2 className='text-2xl primary-col font_lora font-bold mb-3 mt-5 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>About Me</h2>
+                    <h2 className='sm:text-xl md:text-2xl primary-col font_lora font-bold mb-3 mt-5 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>My Tech Journey: Passion, Purpose, and Progress</h2>
                 </div>
                 
                 <div className='mb-3' data-aos={ child_animation } data-aos-duration={ child_timer }>
                     <>
-                        <p className='font_poppins dark:dark-secondary-text-col'>
+                        <p className='text-sm md:text-base font_poppins dark:dark-secondary-text-col'>
                             { aboutMeIntroArray[ 0 ]}
                         </p>
 
@@ -489,99 +486,44 @@ const Home: React.FC = ( ) => {
 
 
 
-
-            {/* education section */}
-            <div className='container-x-margins container-y-margins sm:mx-28' ref={ education_ref }>
-                <div>
-                    <h2 className='text-2xl primary-col font_lora font-bold mb-3 mt-5 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Education</h2>
-                </div>
-
-
-                <div className='container-bg mx-1 shadow-lg sm:p-3 dark:dark-card-bg-col sm:rounded-lg'>
-                    {
-                        myEducationArray.map(( education: my_education ) => {
-                            return <div className='flex flex-row justify-between mx-3 my-3 divide-y-2' data-aos={ child_animation } data-aos-duration={ child_timer }>
-                                        <div className='mr-3 mt-2 basis-1/3'>
-                                            <img className='w-12' src={ education.school_icon } alt='cover' />
-                                        </div>
-
-                                        <div className='basis-2/3'>
-                                            <h3 className='secondary-col font_lora font-bold text-lg mb-1'>{ education.school }</h3>
-                                            <h3 className='font_poppins font-semibold text-md mb-1'>{ education.programme }</h3>
-                                            <h3 className='font-semibold text-md mb-2 font_poppins'>{ education.study_period }</h3>
-                                        </div>
-                                    </div> 
-                        })
-                }
-
-                </div>
-
-            </div>
-            {/* end of education section */}
-
-
-
-
-
             {/* skills section */ }
             <div className='container-y-margins'>
                 <div  className='container-x-margins mb-4 sm:mx-28' ref={ skills_ref }>
-                    <h2 className='primary-col text-2xl font_lora font-bold mb-1 mt-5 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Skills</h2>
-                    <p className='font_poppins dark:dark-secondary-text-col'>Here are some of the technical skills I have in my arsenal to give you the best software experience possible:</p>
+                    <h2 className='primary-col sm:text-xl md:text-2xl font_lora font-bold mb-1 mt-5 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>My Development Arsenal: Skills & Technologies</h2>
+                    <p className='text-sm md:text-base font_poppins dark:dark-secondary-text-col'>
+                        I've spent countless hours mastering these technologies, and I continue to stay on the cutting edge to ensure I can deliver the best possible results. 
+                    </p>
                 </div>
 
                 <div className='grid grid-cols-2 mx-3 gap-3 hover:cursor-pointer
                                 sm:mx-28 sm:grid-cols-4 '>
                 
                 {
-                        skillsArray.map( ( skill: skill ) => (
-                            <div className='my-1 p-3 text-center container-bg rounded-lg transition-all 
-                                            duration-500 hover:shadow-lg hover:bg-slate-300 dark:dark-card-bg-col' data-aos={ child_animation } data-aos-duration={ child_timer }>
-                                <p className='text-lg font_lora font-semibold mb-3 secondary-col'>{ skill.name }</p>
-                                <div className='w-14 ml-8 sm:ml-24'>
-                                    <img src={ skill.skill_logo } className='rounded-none' alt='' />
-                                </div>
+                    skillsArray.map( ( skill: skill ) => (
+                        <div className='my-1 p-3 text-center container-bg rounded-lg transition-all 
+                                        duration-500 hover:shadow-lg hover:bg-slate-300 dark:dark-card-bg-col' data-aos={ child_animation } data-aos-duration={ child_timer }>
+                            <p className='text-lg font_lora font-semibold mb-3 secondary-col'>{ skill.name }</p>
+                            <div className='w-14 ml-8 sm:ml-24'>
+                                <img src={ skill.skill_logo } className='rounded-none' alt='' />
                             </div>
-                        ))
-                    } 
+                        </div>
+                    ))
+                } 
 
                 </div>
             </div>
             {/* end of skills section */ }
 
-            
-
-
-
-            {/* my software services section */}
-            <div className='container-x-margins container-y-margins sm:mx-28' ref={ services_ref }>
-                <h3 className='primary-col text-2xl font_lora font-bold mb-3 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>What services do I provide?</h3>
-                <div className='sm:grid sm:grid-flow-row sm:grid-cols-3 sm:gap-5'>
-                {
-                    myServicesArray.map(( service: myService ) => {
-                        return   <div className='container-bg border-0 rounded-lg shadow-lg pt-2 pb-8 text-center mb-4 
-                                                 transition-all duration-700 hover:cursor-pointer
-                                                 hover:shadow-lg hover:skew-x-6 hover:bg-slate-300 dark:dark-card-bg-col' 
-                                       data-aos={ child_animation } data-aos-duration={ child_timer }>
-                                    <img className='mb-2 w-14 ml-4' src={ service.icon } alt='website' />
-                                    <h3 className='text-lg font_lora secondary-col font-semibold mb-2'>{ service.serviceType }</h3>
-                                    <h3 className='text-sm sm:text-md px-3 font_poppins'>{ service.serviceDetails }</h3>
-                                 </div>
-
-                    })
-                }
-                </div>
-            </div>
-
-
-
 
 
             {/* list of best projects section */ }
             <div  className='container-x-margins container-y-margins sm:mx-28' ref={ projects_ref }>
-                <h3 className='primary-col text-2xl font_lora font-bold mt-3 mb-2 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>
-                    Projects: dive into my showcase, explore excellence and innovation
+                <h3 className='primary-col sm:text-xl md:text-2xl font_lora font-bold mt-3 mb-2 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>
+                    Real-World Solutions: My Project Portfolio
                 </h3>
+                <p className='text-sm md:text-base font_poppins dark:dark-secondary-text-col'>
+                    Dive in and explore the real-world applications of my skills, and see how I bring concepts to life through code.                
+                </p>
                 <div className='sm:grid sm:grid-flow-row sm:grid-cols-3 sm:gap-5'>
                 {
                     myProjectsArray.map(( project: my_projects ) => {
@@ -608,11 +550,16 @@ const Home: React.FC = ( ) => {
                 }
                 </div>
             </div>
+            {/* end of projects section */}
+
 
 
             {/* certifications section */}
             <div className='container-x-margins container-y-margins sm:mx-28' ref={ certifications_ref }>
-                <h3 className='primary-col text-2xl font_lora font-bold mt-3 mb-2 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>My Certifications</h3>
+                <h3 className='primary-col sm:text-xl md:text-2xl font_lora font-bold mt-3 mb-2 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Official Recognitions: My Certifications</h3>
+                <p className='text-sm md:text-base font_poppins dark:dark-secondary-text-col'>
+                    Every certification is a reflection of my continuous effort to learn, grow, and excel in my field.                
+                </p>
                 <div className='sm:grid sm:grid-flow-row sm:grid-cols-3 sm:gap-5'>
                     {
                         myCertificationArray.map(( certification: my_certification ) => {
@@ -633,19 +580,74 @@ const Home: React.FC = ( ) => {
                              })
                     }
                 </div>
+            </div>
+            {/* end of certifications section */ }
 
 
+
+
+            {/* education section */}
+            <div className='container-x-margins container-y-margins sm:mx-28' ref={ education_ref }>
+                <div>
+                    <h2 className='sm:text-xl md:text-2xl primary-col font_lora font-bold mb-3 mt-5 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Academic Journey: My Education</h2>
+                </div>
+
+
+                <div className='container-bg mx-1 shadow-lg sm:p-3 dark:dark-card-bg-col sm:rounded-lg'>
+                    {
+                        myEducationArray.map(( education: my_education ) => {
+                            return <div className='flex flex-row justify-between mx-3 my-3 divide-y-2' data-aos={ child_animation } data-aos-duration={ child_timer }>
+                                        <div className='mr-3 mt-2 basis-1/3'>
+                                            <img className='w-12' src={ education.school_icon } alt='cover' />
+                                        </div>
+
+                                        <div className='basis-2/3'>
+                                            <h3 className='secondary-col font_lora font-bold text-sm md:text-lg mb-1'>{ education.school }</h3>
+                                            <h3 className='font_poppins font-semibold text-sm md:text-lg mb-1'>{ education.programme }</h3>
+                                            <h3 className='font-semibold text-sm md:text-lg mb-2 font_poppins'>{ education.study_period }</h3>
+                                        </div>
+                                    </div> 
+                        })
+                }
+
+                </div>
+
+            </div>
+            {/* end of education section */}
+
+
+
+
+            {/* my software services section */}
+            <div className='container-x-margins container-y-margins sm:mx-28' ref={ services_ref }>
+                <h3 className='primary-col sm:text-xl md:text-2xl font_lora font-bold mb-3 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>What services do I provide?</h3>
+                <p className='text-sm md:text-base font_poppins dark:dark-secondary-text-col'>
+                    Discover the range of professional services I offer, designed to bring your vision to life with precision and creativity.                </p>
+                <div className='sm:grid sm:grid-flow-row sm:grid-cols-3 sm:gap-5'>
+                {
+                    myServicesArray.map(( service: myService ) => {
+                        return   <div className='container-bg border-0 rounded-lg shadow-lg pt-2 pb-8 text-center mb-4 
+                                                 transition-all duration-700 hover:cursor-pointer
+                                                 hover:shadow-lg hover:skew-x-6 hover:bg-slate-300 dark:dark-card-bg-col' 
+                                       data-aos={ child_animation } data-aos-duration={ child_timer }>
+                                    <img className='mb-2 w-14 ml-4' src={ service.icon } alt='website' />
+                                    <h3 className='text-lg font_lora secondary-col font-semibold mb-2'>{ service.serviceType }</h3>
+                                    <h3 className='text-sm sm:text-md px-3 font_poppins'>{ service.serviceDetails }</h3>
+                                 </div>
+
+                    })
+                }
+                </div>
             </div>
 
 
 
             {/* contact me section */}
             <div className='container-x-margins container-y-margins sm:mx-28' ref={ contact_me_ref }>
-                <h2 className='text-2xl primary-col font_lora font-bold mb-2 mt-5 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Contact Me</h2>
-                <h2 className='text-slate-800 font_poppins mb-3 mt-2 text-md dark:dark-secondary-text-col' /*data-aos={ child_animation } data-aos-duration={ child_timer }*/>
-                    Have any ideas you want to visualize in software ?
-                    Then get in touch with me via any of the platforms below:
-                </h2>
+                <h2 className='sm:text-xl md:text-2xl primary-col font_lora font-bold mb-2 mt-5 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Get in Touch: Contact Me</h2>
+                <p className='text-sm md:text-base font_poppins mb-3 mt-2 text-md dark:dark-secondary-text-col' /*data-aos={ child_animation } data-aos-duration={ child_timer }*/>
+                    I'm excited to connect with you and discuss potential job opportunities, collaborations, or any questions you may have.                
+                </p>
 
                 <div className='sm:grid sm:grid-flow-row sm:grid-cols-3 sm:gap-5 '>
                 {
@@ -673,10 +675,10 @@ const Home: React.FC = ( ) => {
             {/* if not now, then when? section*/}
             <div className='container-x-margins container-y-margins mr-1 sm:mx-28' data-aos={ parent_animation } data-aos-duration={ parent_timer }>
                 <div className='sm:flex sm:flex-row'>
-                    <h3 className='text-2xl font-semibold font_lora primary-col sm:mr-4 dark:dark-primary-text-col'>If Not Now, When?</h3>
-                    <h3 className='text-2xl font-semibold font_lora primary-col mb-1 dark:dark-primary-text-col'>Let's Work Together!</h3>
+                    <h3 className='sm:text-xl md:text-2xl font-semibold font_lora primary-col sm:mr-4 dark:dark-primary-text-col'>If Not Now, When?</h3>
+                    <h3 className='sm:text-xl md:text-2xl font-semibold font_lora primary-col mb-1 dark:dark-primary-text-col'>Let's Work Together!</h3>
                 </div>
-                <p className='text-md font_poppins dark:dark-secondary-text-col mb-5'>Get in touch with me and let us bring your wonderful ideas into life!</p>
+                <p className='text-sm md:text-base font_poppins dark:dark-secondary-text-col mb-5'>Get in touch with me and let us bring your wonderful ideas into life!</p>
                 
                <Form onSubmit={ HandleUserContactMeSubmit }>
                     <Row className='mb-5'>
@@ -720,6 +722,7 @@ const Home: React.FC = ( ) => {
                 ScrollSkillsDivIntoVIew={ ScrollSkillsDivIntoView }
                 ScrollServicesDivIntoVIew={ ScrollServicesDivIntoView }
                 ScrollProjectsDivIntoView={ ScrollProjectsDivIntoView }
+                ScrollCertificationsDivIntoView={ ScrollCertificationsDivIntoView }
              />
 
             </div>
