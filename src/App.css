@@ -28,7 +28,7 @@
     }
 
     .container-bg {
-        @apply bg-slate-200;
+        @apply bg-slate-300;
     }
 
     .secondary-col {
@@ -64,7 +64,7 @@
     }
 
     .container-y-margins {
-        @apply my-16;
+        @apply my-6 md:my-16 ;
     }
 
     /* dark mode themes */

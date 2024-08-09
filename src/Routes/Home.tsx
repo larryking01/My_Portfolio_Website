@@ -91,7 +91,7 @@ const Home: React.FC = ( ) => {
 
     useEffect(() => {
         const typed = new Typed( job_title_ref.current, {
-            strings: ['I am a software engineer'],
+            strings: ['I am a software developer'],
             typeSpeed: 80,
             backDelay: 1000,
             loop: false,
@@ -338,11 +338,11 @@ const Home: React.FC = ( ) => {
             projectLink: 'https://vag-ems.vercel.app/',
             buttonText: 'Check It Out Now'
         },
-        { projectTitle: 'SneakerZone E-commerce Server', 
-          projectDescription: 'Github repository link for e-commerce graphql server/backend',
+        { projectTitle: 'SneakerZone Server', 
+          projectDescription: 'The GraphQL backend of the SneakerZone e-commerce application',
           projectCoverImage: graphql_server_cover_image,
           projectTechnologies: 'JavaScript, ApolloGraphQL, MongoDB, Firebase',
-          projectLink: 'https://github.com/larryking01/E-Commerce-App-Server-GraphQL/tree/master',
+          projectLink: 'https://e-commerce-app-server-graphql.onrender.com/',
           buttonText: 'Check It Out Now'
         }
 
@@ -436,14 +436,14 @@ const Home: React.FC = ( ) => {
 
         <div>
             {/* main page content */}
-            <div className='bg-[#F5F5F5] dark:dark-bg-col md:pb-20 pb-2' ref={ home_ref }>
+            <div className='bg-slate-200 dark:dark-bg-col md:pb-20 pb-2' ref={ home_ref }>
                 <div className='my-1 sm:mx-16 md:mx-20 text-center sm:flex sm:flex-row sm:justify-evenly'>
                     <div className={ expanded === true? 'remove-cover-pic' : 'px-1 mx-4 md:mx-0 md:py-10 md:rounded-none rounded-full basis-1/4 sm:py-16 sm:w-full sm:h-64' }>
                         <img className='rounded-full md:rounded-full md:w-full brightness-90 shadow-md sm:w-full
                                         hover:shadow-lg sm:rounded-full' src={ cover6 } alt='software engineer' />
                     </div>
 
-                    <div className='mt-2 sm:pt-52 basis-3/4'>
+                    <div className='pt-2 md:pt-36 basis-3/4'>
                         <div>
                             <span ref={ name_ref } className='text-xl font-bold mt-1 ml-3 text-center secondary-col sm:text-5xl font-playfair dark:dark-primary-text-col'></span>
                         </div>
@@ -501,7 +501,7 @@ const Home: React.FC = ( ) => {
                 {
                     skillsArray.map( ( skill: skill ) => (
                         <div className='my-1 p-3 text-center container-bg rounded-lg transition-all 
-                                        duration-500 hover:shadow-lg hover:bg-slate-300 dark:dark-card-bg-col' data-aos={ child_animation } data-aos-duration={ child_timer }>
+                                        duration-500 hover:shadow-lg hover:bg-slate-400 dark:dark-card-bg-col' data-aos={ child_animation } data-aos-duration={ child_timer }>
                             <p className='text-lg font_lora font-semibold mb-3 secondary-col'>{ skill.name }</p>
                             <div className='w-14 ml-8 sm:ml-24'>
                                 <img src={ skill.skill_logo } className='rounded-none' alt='' />
@@ -528,7 +528,7 @@ const Home: React.FC = ( ) => {
                 {
                     myProjectsArray.map(( project: my_projects ) => {
                         return  <div className='container-bg my-4 pb-3 shadow-lg transition-all duration-500 
-                                                    rounded-lg hover:bg-slate-300 
+                                                    rounded-lg hover:bg-slate-400 
                                                     dark:dark-card-bg-col' 
                                                 data-aos={ child_animation } data-aos-duration={ child_timer }
                                                 >
@@ -564,7 +564,7 @@ const Home: React.FC = ( ) => {
                     {
                         myCertificationArray.map(( certification: my_certification ) => {
                             return  <div className='container-bg my-4 pb-3 shadow-lg transition-all duration-500 
-                                                        rounded-lg hover:bg-slate-300 
+                                                        rounded-lg hover:bg-slate-400 
                                                         dark:dark-card-bg-col' 
                                                     data-aos={ child_animation } data-aos-duration={ child_timer }
                                                     >
@@ -593,7 +593,7 @@ const Home: React.FC = ( ) => {
                 </div>
 
 
-                <div className='container-bg mx-1 shadow-lg sm:p-3 dark:dark-card-bg-col sm:rounded-lg'>
+                <div className='container-bg hover:bg-slate-400 mx-1 shadow-lg sm:p-3 dark:dark-card-bg-col sm:rounded-lg'>
                     {
                         myEducationArray.map(( education: my_education ) => {
                             return <div className='flex flex-row justify-between mx-3 my-3 divide-y-2' data-aos={ child_animation } data-aos-duration={ child_timer }>
@@ -628,7 +628,7 @@ const Home: React.FC = ( ) => {
                     myServicesArray.map(( service: myService ) => {
                         return   <div className='container-bg border-0 rounded-lg shadow-lg pt-2 pb-8 text-center mb-4 
                                                  transition-all duration-700 hover:cursor-pointer
-                                                 hover:shadow-lg hover:skew-x-6 hover:bg-slate-300 dark:dark-card-bg-col' 
+                                                 hover:shadow-lg hover:skew-x-6 hover:bg-slate-400 dark:dark-card-bg-col' 
                                        data-aos={ child_animation } data-aos-duration={ child_timer }>
                                     <img className='mb-2 w-14 ml-4' src={ service.icon } alt='website' />
                                     <h3 className='text-lg font_lora secondary-col font-semibold mb-2'>{ service.serviceType }</h3>
@@ -652,7 +652,7 @@ const Home: React.FC = ( ) => {
                 <div className='sm:grid sm:grid-flow-row sm:grid-cols-3 sm:gap-5 '>
                 {
                     contactMeArray.map(( contact_me: contact_me ) => {
-                        return  <div className='container-bg my-4 shadow-lg py-12 transition-all duration-200 rounded-lg hover:bg-slate-300 dark:rounded-lg dark:dark-card-bg-col' data-aos={ child_animation } data-aos-duration={ child_timer }>
+                        return  <div className='container-bg my-4 shadow-lg py-12 transition-all duration-200 rounded-lg hover:bg-slate-400 dark:rounded-lg dark:dark-card-bg-col' data-aos={ child_animation } data-aos-duration={ child_timer }>
                                     <div className='bg-[#ec5b53] w-24 rounded-full p-6 ml-28 sm:ml-32 mb-3'>
                                         <img className='w-20' src={ contact_me.icon } alt='address' />
                                     </div>
