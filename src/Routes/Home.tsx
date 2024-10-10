@@ -507,7 +507,7 @@ const Home: React.FC = ( ) => {
                         <div className='my-1 p-3 text-center container-bg rounded-lg transition-all 
                                         duration-500 hover:shadow-lg hover:bg-slate-400 dark:dark-card-bg-col' data-aos={ child_animation } data-aos-duration={ child_timer }>
                             <p className='text-lg font_lora font-semibold mb-3 secondary-col'>{ skill.name }</p>
-                            <div className='w-14 ml-16 md:ml-24'>
+                            <div className='w-14 ml-14 md:ml-24'>
                                 <img src={ skill.skill_logo } className='rounded-none' alt='' />
                             </div>
                         </div>
