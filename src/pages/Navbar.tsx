@@ -1,9 +1,7 @@
 import React from 'react'
 
-// static files.
 import hamburgerIcon from '../StaticFiles/hamburger-icon.png'
 import closeIcon from '../StaticFiles/close-icon.png'
-// import moon from '../StaticFiles/moon.png'
 import sun_filled from '../StaticFiles/sun_filled.png'
 import white_moon from '../StaticFiles/white_moon.png'
 
@@ -30,8 +28,6 @@ interface NavbarProp {
 
 
 
-
-
 const NavbarComponent: React.FC<NavbarProp> = ( { expanded, ToggleNavbarExpanded, ToggleDarkModeState, darkMode, 
                                                   ScrollHomeDivIntoView, ScrollAboutDivIntoView,
                                                   ScrollContactDivIntoView, ScrollEducationDivIntoView,
@@ -41,7 +37,7 @@ const NavbarComponent: React.FC<NavbarProp> = ( { expanded, ToggleNavbarExpanded
 
     return (
       <nav className='navigation shadow-lg'>
-        <a className='dark:text-slate-300 navbar-brand font-bold text-xl italic secondary-col'>Larry N. N. Williams</a>
+        <a href="#" className='dark:text-slate-300 navbar-brand font-bold text-xl italic secondary-col'>Larry N. N. Williams</a>
 
         <img className='w-7 h-7 hamburger' src={ expanded === true ? closeIcon : hamburgerIcon } alt='navbar-img'
              onClick={ ToggleNavbarExpanded } />
@@ -72,9 +68,6 @@ const NavbarComponent: React.FC<NavbarProp> = ( { expanded, ToggleNavbarExpanded
       </nav>
     )
 }
-
-
-
 
 
 export default NavbarComponent

@@ -7,7 +7,6 @@ import { AiOutlinePhone,
 
 
 
-
 // typing the props.
 interface FooterProp {
     ScrollHomeDivIntoView: () => void,
