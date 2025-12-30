@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import arrow_up3 from '../StaticFiles/arrow_up3.png'
-// import arrow_up_orange from '../StaticFiles/arrow_up_orange.png'
-// import arrow_up1 from '../StaticFiles/arrow_up1.png'
-// import arrow_up2 from '../StaticFiles/arrow_up2.png'
 
 
 
@@ -24,15 +21,6 @@ const GoToTopBtn = ( ) => {
             setShowScrollTopBtn( false )
         }
     })
-
-    // useEffect(() => {
-    //     if( window.scrollY > 1224 ) {
-    //         setShowScrollTopBtn( true )
-    //     }
-    //     else {
-    //         setShowScrollTopBtn( false )
-    //     }
-    // }, [ showScrollTopBtn ])
 
 
     // scroll to top function.
