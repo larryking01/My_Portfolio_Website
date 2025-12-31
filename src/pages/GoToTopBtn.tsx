@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import arrow_up3 from '../StaticFiles/arrow_up3.png'
+import arrow_up3 from '../assets/arrow_up3.png'
 
 
 

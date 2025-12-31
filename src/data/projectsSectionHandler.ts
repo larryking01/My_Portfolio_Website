@@ -1,6 +1,6 @@
-import hotel_finder_cover1 from '../StaticFiles/hotel_finder_cover1.png'
-import vag_ems_cover3 from '../StaticFiles/vag_ems3.jpg'
-import graphql_server_cover_image from '../StaticFiles/graphql_server_cover_image.png'
+import hotel_finder_cover1 from '../assets/hotel_finder_cover1.png'
+import vag_ems_cover3 from '../assets/vag_ems3.jpg'
+import graphql_server_cover_image from '../assets/graphql_server_cover_image.png'
 
 
 export interface ProjectItem {

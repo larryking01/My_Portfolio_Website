@@ -1,4 +1,4 @@
-import grad_cap2 from '../StaticFiles/grad_cap2.png'
+import grad_cap2 from '../assets/grad_cap2.png'
 
 
 export interface EducationItem {

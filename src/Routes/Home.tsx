@@ -13,9 +13,10 @@ import { ProjectItem, projectsArray } from '../data/projectsSectionHandler'
 import { EducationItem, educationArray } from '../data/educationSectionHandler'
 import { CertificationItem, certificationsArray } from '../data/certificationsSectionHandler'
 import { ContactMeItem, contactMeArray } from '../data/contactMeSectionHandler'
+import { ExperienceItem, experienceArray } from '../data/experienceSectionHandler'
 import { aboutMeIntroArray } from '../data/aboutMeSectionHandler'
 
-import cover6 from '../StaticFiles/cover6.jpg'
+import cover6 from '../assets/cover6.jpg'
 
 
 // for typed js
@@ -34,6 +35,7 @@ const Home: React.FC = ( ) => {
 
     const home_ref = useRef<HTMLDivElement | null>(null)
     const about_ref = useRef<HTMLDivElement | null>(null)
+    const experience_ref = useRef<HTMLDivElement | null>(null)
     const education_ref = useRef<HTMLDivElement | null>(null)
     const projects_ref = useRef<HTMLDivElement | null>(null)
     const contact_me_ref = useRef<HTMLDivElement | null>(null)
@@ -104,6 +106,15 @@ const Home: React.FC = ( ) => {
         setIsExpanded( false )
         setTimeout(() => {
             about_ref.current?.scrollIntoView({
+                behavior: 'smooth'
+            })
+        }, 300 )
+    }
+
+    const ScrollExperienceDivIntoView = ( ) => {
+        setIsExpanded( false )
+        setTimeout(() => {
+            experience_ref.current?.scrollIntoView({
                 behavior: 'smooth'
             })
         }, 300 )
@@ -238,6 +249,7 @@ const Home: React.FC = ( ) => {
                              ScrollProjectsDivIntoView={ ScrollProjectsDivIntoView }
                              ScrollServicesDivIntoVIew={ ScrollServicesDivIntoView }
                              ScrollCertificationsDivIntoView={ ScrollCertificationsDivIntoView }
+                             ScrollExperiencesDivIntoView={ ScrollExperienceDivIntoView }
                              />
 
 
@@ -284,9 +296,78 @@ const Home: React.FC = ( ) => {
 
                     </>
                 </div>
-    
+
+
             </div>
             {/* end of about section */}
+
+
+            {/* experience section */}
+            <div className='container-x-margins container-y-margins sm:mx-28' ref={ experience_ref }>
+                <div>
+                    <h2 className='sm:text-xl md:text-2xl primary-col font_lora font-bold mb-3 mt-5 dark:dark-primary-text-col' data-aos={ parent_animation } data-aos-duration={ parent_timer }>Professional Journey: My Experience</h2>
+                </div>
+
+
+                <div className='container-bg hover:bg-slate-400 mx-1 shadow-lg sm:p-3 dark:dark-card-bg-col sm:rounded-lg'>
+                    {
+                        experienceArray.map(( experience: ExperienceItem ) => {
+                            return <div className='flex flex-row justify-between mx-3 my-3' data-aos={ child_animation } data-aos-duration={ child_timer }>
+                                        <div className='mr-3 mt-2'>
+                                            <img className='w-48 mb-4' src={ experience.companyIcon } alt='cover' />
+                                            <h3 className='text-md primary-col font_lora font-semibold secondary-col mb-2 sm:mb-3'>{ experience.role }</h3>
+                                            <h3 className='text-md primary-col font_lora font-semibold secondary-col mb-2 sm:mb-3'>{ experience.workPeriod }</h3>
+                                        </div>
+
+                                        <div className=' mt-3'>
+                                            <div className='text-md font_lora font-semibold secondary-col mb-2 sm:mb-3'>
+                                                <h3>Technologies Used</h3>
+                                                <ul className="list-disc list-inside space-y-2">
+                                                    { experience.technologiesUsed.map((technology) => 
+                                                    (
+                                                        <li className="text-black font-normal leading-10">{technology}</li>
+                                                    )
+                                                    ) }
+                                                </ul>
+                                            </div>
+                                        </div>
+
+
+                                        <div className=' mt-3'>
+                                            <h3 className='text-md primary-col font_lora font-semibold secondary-col mb-2 sm:mb-3'>
+                                                Design Principles And Architectures
+                                                <ul className="list-disc list-inside space-y-2">
+                                                    { experience.designPrinciplesAndArchitectures.map( designPrinciple => 
+                                                    (
+                                                        <li className="text-black font-normal leading-10 ">{ designPrinciple }</li>
+                                                    ) 
+                                                )}
+                                                </ul>
+                                            </h3>
+                                        </div>
+
+
+                                        <div className=' mt-3'>
+                                            <h3 className='text-md primary-col font_lora font-semibold secondary-col mb-2 sm:mb-3'>
+                                                Soft Skills 
+                                                <ul className="list-disc list-inside space-y-2">
+                                                    { experience.nonTechnicalSkills.map((nonTechnicalSkill) => 
+                                                    (
+                                                        <li className="text-black font-normal leading-10">{nonTechnicalSkill}</li>
+                                                    )
+                                                    ) }
+                                                </ul>
+                                            </h3>
+                                        </div>
+
+                                    </div> 
+                        })
+                }
+
+                </div>
+
+            </div>
+            {/* end of experience section */}
 
 
             {/* skills section */ }
@@ -304,10 +385,10 @@ const Home: React.FC = ( ) => {
                 {
                     skillsArray.map( ( skill: SkillItem ) => (
                         <div className='my-1 p-3 text-center container-bg rounded-lg transition-all 
-                                        duration-500 hover:shadow-lg hover:bg-slate-400 dark:dark-card-bg-col' data-aos={ child_animation } data-aos-duration={ child_timer }>
+                                        duration-1000 hover:shadow-lg hover:bg-slate-400 dark:dark-card-bg-col' data-aos={ child_animation } data-aos-duration={ child_timer }>
                             <p className='text-lg font_lora font-semibold mb-3 secondary-col'>{ skill.name }</p>
-                            <div className='w-14 ml-14 md:ml-24'>
-                                <img src={ skill.skill_logo } className='rounded-none' alt='' />
+                            <div className='flex items-center justify-center'>
+                                <img src={ skill.skill_logo } className='w-14 rounded-none' alt='' />
                             </div>
                         </div>
                     ))
@@ -449,8 +530,10 @@ const Home: React.FC = ( ) => {
                 {
                     contactMeArray.map(( contact_me: ContactMeItem ) => {
                         return  <div className='container-bg my-4 shadow-lg py-12 transition-all duration-200 rounded-lg hover:bg-slate-400 dark:rounded-lg dark:dark-card-bg-col' data-aos={ child_animation } data-aos-duration={ child_timer }>
-                                    <div className='bg-[#ec5b53] w-24 rounded-full p-6 ml-28 sm:ml-32 mb-3'>
+                                    <div className="flex items-center justify-center">
+                                    <div className='bg-[#ec5b53] w-24 rounded-full p-6 mb-3'>
                                         <img className='w-20' src={ contact_me.icon } alt='address' />
+                                    </div>
                                     </div>
 
                                     <h3 className='font_lora text-[#10285d] font-semibold text-xl text-center mb-2'>{ contact_me.title }</h3>

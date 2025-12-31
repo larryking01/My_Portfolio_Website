@@ -1,6 +1,6 @@
-import mobile1 from '../StaticFiles/mobile1.png'
-import website1 from '../StaticFiles/website1.png'
-import website2 from '../StaticFiles/website2.png'
+import mobile1 from '../assets/mobile1.png'
+import website1 from '../assets/website1.png'
+import website2 from '../assets/website2.png'
 
 
 export interface ServiceItem {

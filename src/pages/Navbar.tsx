@@ -1,9 +1,9 @@
 import React from 'react'
 
-import hamburgerIcon from '../StaticFiles/hamburger-icon.png'
-import closeIcon from '../StaticFiles/close-icon.png'
-import sun_filled from '../StaticFiles/sun_filled.png'
-import white_moon from '../StaticFiles/white_moon.png'
+import hamburgerIcon from '../assets/hamburger-icon.png'
+import closeIcon from '../assets/close-icon.png'
+import sun_filled from '../assets/sun_filled.png'
+import white_moon from '../assets/white_moon.png'
 
 
 
@@ -20,7 +20,8 @@ interface NavbarProp {
   ScrollSkillsDivIntoVIew: () => void,
   ScrollServicesDivIntoVIew: () => void,
   ScrollProjectsDivIntoView: () => void,
-  ScrollCertificationsDivIntoView: () => void
+  ScrollCertificationsDivIntoView: () => void,
+  ScrollExperiencesDivIntoView: () => void
   // about_ref: React.RefObject<HTMLDivElement | null>
 
 }
@@ -32,7 +33,7 @@ const NavbarComponent: React.FC<NavbarProp> = ( { expanded, ToggleNavbarExpanded
                                                   ScrollHomeDivIntoView, ScrollAboutDivIntoView,
                                                   ScrollContactDivIntoView, ScrollEducationDivIntoView,
                                                   ScrollSkillsDivIntoVIew, ScrollProjectsDivIntoView,
-                                                  ScrollServicesDivIntoVIew, ScrollCertificationsDivIntoView } ) => {
+                                                  ScrollServicesDivIntoVIew, ScrollCertificationsDivIntoView, ScrollExperiencesDivIntoView } ) => {
 
 
     return (
@@ -46,6 +47,7 @@ const NavbarComponent: React.FC<NavbarProp> = ( { expanded, ToggleNavbarExpanded
           <ul className='dark:text-slate-300'>
             <li onClick={ ScrollHomeDivIntoView }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>Home</a></li>
             <li onClick={ ScrollAboutDivIntoView }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>About</a></li>
+            <li onClick={ ScrollExperiencesDivIntoView }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>Experience</a></li>
             <li onClick={ ScrollSkillsDivIntoVIew }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>Skills</a></li>
             <li onClick={ ScrollProjectsDivIntoView }><a href='#' className='transition-all duration-201 hover:font-semibold hover:secondary-col'>Projects</a></li>
             <li onClick={ ScrollCertificationsDivIntoView }><a href='#' className='transition-all duration-201 hover:font-semibold hover:secondary-col'>Certifications</a></li>

@@ -1,4 +1,4 @@
-import aice_cert_cover from '../StaticFiles/aice_cert_cover.png'
+import aice_cert_cover from '../assets/aice_cert_cover.png'
 
 export interface CertificationItem {
     course_title: string,

@@ -1,7 +1,7 @@
-import email_icon from '../StaticFiles/email.png'
-import phone_icon from '../StaticFiles/phone.png'
-import linked_in from '../StaticFiles/linkedIn.png'
-import git_hub from '../StaticFiles/github.png'
+import email_icon from '../assets/email.png'
+import phone_icon from '../assets/phone.png'
+import linked_in from '../assets/linkedIn.png'
+import git_hub from '../assets/github.png'
 
 
 export interface ContactMeItem {
