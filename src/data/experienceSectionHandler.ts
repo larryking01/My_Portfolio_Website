@@ -32,8 +32,7 @@ export const experienceArray: ExperienceItem[] = [
       'Model–View–Controller (MVC)',
       'Singleton Design Pattern',
       'Server-Side Rendering (SSR)',
-      'Micro-frontend Architecture',   
-      'Separation of Concerns',
+      'Separation of Concerns/Modularity',
       'Test Driven Development'
     ],
 
