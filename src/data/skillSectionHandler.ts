@@ -32,7 +32,7 @@ export let skillsArray: SkillItem[] = [
     { name: 'React', proficiency: 88, skill_logo: react_js_logo },
     { name: 'GraphQL', proficiency: 78, skill_logo: graphql_logo },
     { name: 'RXJS', proficiency: 69, skill_logo: rxjs_logo },
-    { name: 'AWS', proficiency: 82, skill_logo: aws_logo },
+    { name: 'Amazon Web Services', proficiency: 82, skill_logo: aws_logo },
     { name: 'MySQL', proficiency: 74, skill_logo: my_sql_logo },
     { name: 'React Native', proficiency: 71, skill_logo: react_native_logo },
     { name: 'Jest', proficiency: 87, skill_logo: jest_logo },

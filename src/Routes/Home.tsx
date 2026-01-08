@@ -309,7 +309,7 @@ const Home: React.FC = ( ) => {
                 </div>
 
 
-                <div className='container-bg hover:bg-slate-400 mx-1 shadow-lg sm:p-3 dark:dark-card-bg-col sm:rounded-lg'>
+                <div className='container-bg hover:bg-slate-300 mx-1 shadow-lg sm:p-3 dark:dark-card-bg-col sm:rounded-lg'>
                     {
                         experienceArray.map(( experience: ExperienceItem ) => {
                             return <div className='flex flex-row justify-between mx-3 my-3' data-aos={ child_animation } data-aos-duration={ child_timer }>
@@ -319,7 +319,7 @@ const Home: React.FC = ( ) => {
                                             <h3 className='text-md primary-col font_lora font-semibold secondary-col mb-2 sm:mb-3'>{ experience.workPeriod }</h3>
                                         </div>
 
-                                        <div className=' mt-3'>
+                                        <div className='mt-3'>
                                             <div className='text-md font_lora font-semibold secondary-col mb-2 sm:mb-3'>
                                                 <h3>Technologies Used</h3>
                                                 <ul className="list-disc list-inside space-y-2">
@@ -385,7 +385,7 @@ const Home: React.FC = ( ) => {
                 {
                     skillsArray.map( ( skill: SkillItem ) => (
                         <div className='my-1 p-3 text-center container-bg rounded-lg transition-all 
-                                        duration-1000 hover:shadow-lg hover:bg-slate-400 dark:dark-card-bg-col' data-aos={ child_animation } data-aos-duration={ child_timer }>
+                                        duration-1000 hover:shadow-lg hover:bg-slate-300 dark:dark-card-bg-col' data-aos={ child_animation } data-aos-duration={ child_timer }>
                             <p className='text-lg font_lora font-semibold mb-3 secondary-col'>{ skill.name }</p>
                             <div className='flex items-center justify-center'>
                                 <img src={ skill.skill_logo } className='w-14 rounded-none' alt='' />
@@ -411,21 +411,24 @@ const Home: React.FC = ( ) => {
                 {
                     projectsArray.map(( project: ProjectItem ) => {
                         return  <div className='container-bg my-4 pb-3 shadow-lg transition-all duration-500 
-                                                    rounded-lg hover:bg-slate-400 
+                                                    rounded-lg hover:bg-slate-300 
                                                     dark:dark-card-bg-col' 
                                                 data-aos={ child_animation } data-aos-duration={ child_timer }
                                                 >
-                                    <img className='h-48 w-full' src={ project.projectCoverImage } alt='cover' />
+                                    <img className='h-56 w-full' src={ project.projectCoverImage } alt='cover' />
                                     <div className='p-2'>
-                                        <h3 className='text-lg primary-col font_lora font-semibold text-center secondary-col mb-2 sm:mb-3'>{ project.projectTitle }</h3>
-                                        <h3 className='text-sm text-center font_poppins mx-1 mb-2'>{ project.projectDescription }</h3>
-                                        <h3 className='text-sm text-center italic secondary-col mb-4'>Stack: { project.projectTechnologies }</h3>
+                                        <h3 className='text-lg primary-col font_lora font-semibold text-center secondary-col mb-6 sm:mb-3'>{ project.projectTitle }</h3>
+                                        <h3 className='text-sm text-center font_poppins mx-1 mb-6'>{ project.projectDescription }</h3>
+                                        <h3 className='text-sm text-center italic secondary-col mb-8'>Tech Stack: { project.projectTechnologies }</h3>
                                         <Link to={ project.projectLink } target='_blank'>
-                                            <button className='bg-[#ec5b53] transition-all duration-200 hover:bg-[#c73a32] 
-                                                               py-2 px-4 text-white rounded-lg ml-2 
-                                                               hover:cursor-pointer'>
-                                                { project.buttonText }
-                                            </button>
+                                            <div className="flex justify-center">
+                                                <button className='bg-[#ec5b53] transition-all duration-200 hover:bg-[#c73a32] 
+                                                                py-2 px-4 text-white rounded-lg 
+                                                                hover:cursor-pointer'>
+                                                    { project.buttonText }
+                                                </button>
+                                            </div>
+
                                         </Link>
                                     </div>
                                 </div>
@@ -446,7 +449,7 @@ const Home: React.FC = ( ) => {
                     {
                         certificationsArray.map(( certification: CertificationItem ) => {
                             return  <div className='container-bg my-4 pb-3 shadow-lg transition-all duration-500 
-                                                        rounded-lg hover:bg-slate-400 
+                                                        rounded-lg hover:bg-slate-300 
                                                         dark:dark-card-bg-col' 
                                                     data-aos={ child_animation } data-aos-duration={ child_timer }
                                                     >
@@ -473,7 +476,7 @@ const Home: React.FC = ( ) => {
                 </div>
 
 
-                <div className='container-bg hover:bg-slate-400 mx-1 shadow-lg sm:p-3 dark:dark-card-bg-col sm:rounded-lg'>
+                <div className='container-bg hover:bg-slate-300 mx-1 shadow-lg sm:p-3 dark:dark-card-bg-col sm:rounded-lg'>
                     {
                         educationArray.map(( education: EducationItem ) => {
                             return <div className='flex flex-row justify-between mx-3 my-3 divide-y-2' data-aos={ child_animation } data-aos-duration={ child_timer }>
@@ -506,7 +509,7 @@ const Home: React.FC = ( ) => {
                     servicesArray.map(( service: ServiceItem ) => {
                         return   <div className='container-bg border-0 rounded-lg shadow-lg pt-2 pb-8 text-center mb-4 
                                                  transition-all duration-700 hover:cursor-pointer
-                                                 hover:shadow-lg hover:skew-x-6 hover:bg-slate-400 dark:dark-card-bg-col' 
+                                                 hover:shadow-lg hover:skew-x-6 hover:bg-slate-300 dark:dark-card-bg-col' 
                                        data-aos={ child_animation } data-aos-duration={ child_timer }>
                                     <img className='mb-2 w-14 ml-4' src={ service.icon } alt='website' />
                                     <h3 className='text-lg font_lora secondary-col font-semibold mb-2'>{ service.serviceType }</h3>
@@ -529,7 +532,7 @@ const Home: React.FC = ( ) => {
                 <div className='sm:grid sm:grid-flow-row sm:grid-cols-3 sm:gap-5 '>
                 {
                     contactMeArray.map(( contact_me: ContactMeItem ) => {
-                        return  <div className='container-bg my-4 shadow-lg py-12 transition-all duration-200 rounded-lg hover:bg-slate-400 dark:rounded-lg dark:dark-card-bg-col' data-aos={ child_animation } data-aos-duration={ child_timer }>
+                        return  <div className='container-bg my-4 shadow-lg py-12 transition-all duration-200 rounded-lg hover:bg-slate-300 dark:rounded-lg dark:dark-card-bg-col' data-aos={ child_animation } data-aos-duration={ child_timer }>
                                     <div className="flex items-center justify-center">
                                     <div className='bg-[#ec5b53] w-24 rounded-full p-6 mb-3'>
                                         <img className='w-20' src={ contact_me.icon } alt='address' />
