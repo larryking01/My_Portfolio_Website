@@ -3,7 +3,7 @@ import React from 'react'
 import hamburgerIcon from '../assets/hamburger-icon.png'
 import closeIcon from '../assets/close-icon.png'
 import sun_filled from '../assets/sun_filled.png'
-import white_moon from '../assets/white_moon.png'
+import moon from '../assets/moon.png'
 
 
 
@@ -35,10 +35,9 @@ const NavbarComponent: React.FC<NavbarProp> = ( { expanded, ToggleNavbarExpanded
                                                   ScrollSkillsDivIntoVIew, ScrollProjectsDivIntoView,
                                                   ScrollServicesDivIntoVIew, ScrollCertificationsDivIntoView, ScrollExperiencesDivIntoView } ) => {
 
-
     return (
       <nav className='navigation shadow-lg'>
-        <a href="#" className='dark:text-slate-300 navbar-brand font-bold text-xl italic secondary-col'>Larry N. N. Williams</a>
+        <a href="#" className='dark:text-slate-300 font-bold text-xl italic secondary-col'>Larry N. N. Williams</a>
 
         <img className='w-7 h-7 hamburger' src={ expanded === true ? closeIcon : hamburgerIcon } alt='navbar-img'
              onClick={ ToggleNavbarExpanded } />
@@ -56,12 +55,12 @@ const NavbarComponent: React.FC<NavbarProp> = ( { expanded, ToggleNavbarExpanded
             <li onClick={ ScrollContactDivIntoView }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>Contact Me</a></li>
             {
               darkMode === true?  
-                <li onClick={ ToggleDarkModeState } className='w-10 h-10 bg-[#63e] rounded-full flex justify-center items-center light-mode-icon'>
-                  <img src={ sun_filled } className='w-7 h-6 sm:-mt-1 sm:w-7 cursor-pointer' alt='' />
+                <li onClick={ ToggleDarkModeState } className='w-8 h-8 rounded-full flex justify-center items-center light-mode-icon transition-all duration-200 hover:bg-slate-500'>
+                  <img src={ sun_filled } className='w-7 h-7 sm:-mt-1 sm:w-7 cursor-pointer' alt='' />
                 </li>
                   :
-                <li onClick={ ToggleDarkModeState } className='w-10 h-10 bg-[#10285d] rounded-full flex justify-center items-center dark-mode-icon'>
-                  <img src={ white_moon } className='w-7 h-6 sm:-mt-1 sm:w-7 cursor-pointer' alt='' />
+                <li onClick={ ToggleDarkModeState } className='w-8 h-8 rounded-full flex justify-center items-center dark-mode-icon transition-all duration-200 hover:bg-slate-200'>
+                  <img src={ moon } className='w-5 h-6 sm:-mt-1 sm:w-7 cursor-pointer' alt='' />
                 </li>
             }
           </ul>

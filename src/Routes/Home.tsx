@@ -237,20 +237,21 @@ const Home: React.FC = ( ) => {
     return (
         <div className={ darkMode? 'dark': '' }>
             <div className='dark:dark-bg-col'>
-            <NavbarComponent expanded={ expanded } 
-                             darkMode={ darkMode }
-                             ToggleNavbarExpanded={ ToggleExpandedState }
-                             ToggleDarkModeState={ ToggleDarkModeState }
-                             ScrollHomeDivIntoView={ ScrollHomeDivIntoView }
-                             ScrollAboutDivIntoView={ ScrollAboutDivIntoView }
-                             ScrollContactDivIntoView={ ScrollContactDivIntoView }
-                             ScrollEducationDivIntoView={ ScrollEducationDivIntoView }
-                             ScrollSkillsDivIntoVIew={ ScrollSkillsDivIntoView }
-                             ScrollProjectsDivIntoView={ ScrollProjectsDivIntoView }
-                             ScrollServicesDivIntoVIew={ ScrollServicesDivIntoView }
-                             ScrollCertificationsDivIntoView={ ScrollCertificationsDivIntoView }
-                             ScrollExperiencesDivIntoView={ ScrollExperienceDivIntoView }
-                             />
+                <NavbarComponent 
+                    expanded={ expanded } 
+                    darkMode={ darkMode }
+                    ToggleNavbarExpanded={ ToggleExpandedState }
+                    ToggleDarkModeState={ ToggleDarkModeState }
+                    ScrollHomeDivIntoView={ ScrollHomeDivIntoView }
+                    ScrollAboutDivIntoView={ ScrollAboutDivIntoView }
+                    ScrollContactDivIntoView={ ScrollContactDivIntoView }
+                    ScrollEducationDivIntoView={ ScrollEducationDivIntoView }
+                    ScrollSkillsDivIntoVIew={ ScrollSkillsDivIntoView }
+                    ScrollProjectsDivIntoView={ ScrollProjectsDivIntoView }
+                    ScrollServicesDivIntoVIew={ ScrollServicesDivIntoView }
+                    ScrollCertificationsDivIntoView={ ScrollCertificationsDivIntoView }
+                    ScrollExperiencesDivIntoView={ ScrollExperienceDivIntoView }
+                />
 
 
         <div>
