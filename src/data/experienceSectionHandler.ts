@@ -1,17 +1,16 @@
-import amalitechLogo from '../assets/AmaliTech Logo.png'
-import amalitechLogo2 from '../assets/AmaliTech Logo2.png'
+import amalitechLogo from '../assets/AmaliTech Logo.png';
+import amalitechLogo2 from '../assets/AmaliTech Logo2.png';
 
 export interface ExperienceItem {
-  company: string
-  role: string
-  workPeriod: string
-  responsibilities?: string[]
-  companyIcon: string
-  technologiesUsed: string[],
-  designPrinciplesAndArchitectures: string[],
-  nonTechnicalSkills: string[]
+  company: string;
+  role: string;
+  workPeriod: string;
+  responsibilities?: string[];
+  companyIcon: string;
+  technologiesUsed: string[];
+  designPrinciplesAndArchitectures: string[];
+  nonTechnicalSkills: string[];
 }
-
 
 export const experienceArray: ExperienceItem[] = [
   {
@@ -25,7 +24,7 @@ export const experienceArray: ExperienceItem[] = [
       'Angular',
       'AWS (Solutions Architect)',
       'Jest',
-      'Git'
+      'Git',
     ],
 
     designPrinciplesAndArchitectures: [
@@ -33,7 +32,7 @@ export const experienceArray: ExperienceItem[] = [
       'Singleton Design Pattern',
       'Server-Side Rendering (SSR)',
       'Separation of Concerns/Modularity',
-      'Test Driven Development'
+      'Test Driven Development',
     ],
 
     nonTechnicalSkills: [
@@ -41,7 +40,7 @@ export const experienceArray: ExperienceItem[] = [
       'Team collaboration',
       'Problem-solving mindset',
       'Time management',
-      'Adaptability'
+      'Adaptability',
     ],
 
     responsibilities: [
@@ -49,7 +48,7 @@ export const experienceArray: ExperienceItem[] = [
       'Applied software design principles to structure scalable applications',
       'Collaborated within Agile teams and participated in code reviews',
       'Wrote and maintained unit tests using Jest',
-      'Communicated technical concepts clearly in a professional environment'
-    ]
-  }
-]
+      'Communicated technical concepts clearly in a professional environment',
+    ],
+  },
+];
