@@ -56,11 +56,11 @@ const NavbarComponent: React.FC<NavbarProp> = ( { expanded, ToggleNavbarExpanded
             <li onClick={ ScrollContactDivIntoView }><a href='#' className='transition-all duration-200 hover:font-semibold hover:secondary-col'>Contact Me</a></li>
             {
               darkMode === true?  
-                <li onClick={ ToggleDarkModeState } className='w-10 h-10 bg-[#63e] rounded-full p-2 light-mode-icon'>
+                <li onClick={ ToggleDarkModeState } className='w-10 h-10 bg-[#63e] rounded-full flex justify-center items-center light-mode-icon'>
                   <img src={ sun_filled } className='w-7 h-6 sm:-mt-1 sm:w-7 cursor-pointer' alt='' />
                 </li>
                   :
-                <li onClick={ ToggleDarkModeState } className='w-10 h-10 bg-[#10285d] rounded-full p-2 dark-mode-icon'>
+                <li onClick={ ToggleDarkModeState } className='w-10 h-10 bg-[#10285d] rounded-full flex justify-center items-center dark-mode-icon'>
                   <img src={ white_moon } className='w-7 h-6 sm:-mt-1 sm:w-7 cursor-pointer' alt='' />
                 </li>
             }
