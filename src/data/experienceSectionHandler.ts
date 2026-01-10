@@ -16,13 +16,13 @@ export const experienceArray: ExperienceItem[] = [
   {
     company: 'AmaliTech',
     role: 'Frontend Graduate Trainee',
-    workPeriod: 'April 2025 – December 2025',
+    workPeriod: 'Apr 2025 - Dec 2025',
     companyIcon: amalitechLogo2,
     technologiesUsed: [
       'JavaScript',
       'TypeScript',
       'Angular',
-      'AWS (Solutions Architect)',
+      'AWS',
       'Jest',
       'Git',
     ],
@@ -31,8 +31,9 @@ export const experienceArray: ExperienceItem[] = [
       'Model–View–Controller (MVC)',
       'Singleton Design Pattern',
       'Server-Side Rendering (SSR)',
-      'Separation of Concerns/Modularity',
+      'Separation of Concerns',
       'Test Driven Development',
+      
     ],
 
     nonTechnicalSkills: [
@@ -51,4 +52,85 @@ export const experienceArray: ExperienceItem[] = [
       'Communicated technical concepts clearly in a professional environment',
     ],
   },
+
+  {
+    company: 'AmaliTech',
+    role: 'Frontend Graduate Trainee',
+    workPeriod: 'Apr 2025 - Dec 2025',
+    companyIcon: amalitechLogo2,
+    technologiesUsed: [
+      'JavaScript',
+      'TypeScript',
+      'Angular',
+      'AWS',
+      'Jest',
+      'Git',
+    ],
+
+    designPrinciplesAndArchitectures: [
+      'Model–View–Controller (MVC)',
+      'Singleton Design Pattern',
+      'Server-Side Rendering (SSR)',
+      'Separation of Concerns',
+      'Test Driven Development',
+      
+    ],
+
+    nonTechnicalSkills: [
+      'Professional communication',
+      'Team collaboration',
+      'Problem-solving mindset',
+      'Time management',
+      'Adaptability',
+    ],
+
+    responsibilities: [
+      'Built and maintained frontend features using Angular and TypeScript',
+      'Applied software design principles to structure scalable applications',
+      'Collaborated within Agile teams and participated in code reviews',
+      'Wrote and maintained unit tests using Jest',
+      'Communicated technical concepts clearly in a professional environment',
+    ],
+  },
+
+    {
+    company: 'AmaliTech',
+    role: 'Frontend Graduate Trainee',
+    workPeriod: 'Apr 2025 - Dec 2025',
+    companyIcon: amalitechLogo2,
+    technologiesUsed: [
+      'JavaScript',
+      'TypeScript',
+      'Angular',
+      'AWS',
+      'Jest',
+      'Git',
+    ],
+
+    designPrinciplesAndArchitectures: [
+      'Model–View–Controller (MVC)',
+      'Singleton Design Pattern',
+      'Server-Side Rendering (SSR)',
+      'Separation of Concerns',
+      'Test Driven Development',
+      
+    ],
+
+    nonTechnicalSkills: [
+      'Professional communication',
+      'Team collaboration',
+      'Problem-solving mindset',
+      'Time management',
+      'Adaptability',
+    ],
+
+    responsibilities: [
+      'Built and maintained frontend features using Angular and TypeScript',
+      'Applied software design principles to structure scalable applications',
+      'Collaborated within Agile teams and participated in code reviews',
+      'Wrote and maintained unit tests using Jest',
+      'Communicated technical concepts clearly in a professional environment',
+    ],
+  },
+
 ];

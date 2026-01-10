@@ -227,8 +227,8 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className={darkMode ? 'dark' : ''}>
-      <div className="dark:dark-bg-col">
+    <main className={darkMode ? 'dark' : ''}>
+      <section className="dark:dark-bg-col">
         <NavbarComponent
           expanded={expanded}
           darkMode={darkMode}
@@ -247,7 +247,7 @@ const Home: React.FC = () => {
 
         <div>
           {/* main page content */}
-          <div
+          <article
             className="bg-slate-200 dark:dark-bg-col md:pb-20 pb-2"
             ref={home_ref}
           >
@@ -288,11 +288,11 @@ const Home: React.FC = () => {
                 </h3>
               </div>
             </div>
-          </div>
-          {/* end of main page content */}
+          </article>
 
-          {/* about me section */}
-          <div
+
+          {/* tech journey article */}
+          <article
             className="container-x-margins container-y-margins sm:mx-28 md:mt-20"
             ref={about_ref}
           >
@@ -317,11 +317,11 @@ const Home: React.FC = () => {
                 </p>
               </>
             </div>
-          </div>
-          {/* end of about section */}
+          </article>
 
-          {/* experience section */}
-          <div
+
+          {/* experience article */}
+          <article
             className="container-x-margins container-y-margins sm:mx-28"
             ref={experience_ref}
           >
@@ -335,79 +335,70 @@ const Home: React.FC = () => {
               </h2>
             </div>
 
-            <div className="container-bg hover:bg-slate-300 mx-1 shadow-lg sm:p-3 dark:dark-card-bg-col sm:rounded-lg">
+            <div className="container-bg experiences-container hover:bg-slate-300 mx-1 sm:p-3 dark:dark-card-bg-col sm:rounded-lg">
               {experienceArray.map((experience: ExperienceItem) => {
                 return (
-                  <div
-                    className="flex flex-row justify-between mx-3 my-3"
+                  <>
+                  <article
+                    className="flex flex-col md:flex-row min-w-0 justify-between mx-3 my-3 p-2 md:p-2 mb-4"
                     data-aos={child_animation}
                     data-aos-duration={child_timer}
                   >
-                    <div className="mr-3 mt-2">
-                      <img
-                        className="w-48 mb-4"
-                        src={experience.companyIcon}
-                        alt="cover"
-                      />
-                      <h3 className="text-md primary-col font_lora font-semibold secondary-col mb-2 sm:mb-3">
-                        {experience.role}
-                      </h3>
-                      <h3 className="text-md primary-col font_lora font-semibold secondary-col mb-2 sm:mb-3">
-                        {experience.workPeriod}
-                      </h3>
-                    </div>
+                    <div className="mb-2 sm:mb-1">
+                      <p className="text-xl primary-col font_lora font-semibold secondary-col mb-2">
+                        AmaliTech 
+                      </p>
 
-                    <div className="mt-3">
-                      <div className="text-md font_lora font-semibold secondary-col mb-2 sm:mb-3">
-                        <h3>Technologies Used</h3>
-                        <ul className="list-disc list-inside space-y-2">
-                          {experience.technologiesUsed.map((technology) => (
-                            <li className="text-black font-normal leading-10">
-                              {technology}
-                            </li>
-                          ))}
-                        </ul>
+                      <p className="text-sm md:text-base primary-col font_lora font-semibold secondary-col mb-2">
+                        {experience.role} ({ experience.workPeriod})
+                      </p>
+
+                      <p className="mb-6 text-sm md:text-base min-w-0 break-words overflow-wrap-anywhere">
+                        Led development of microservices architecture, 40% improvement in system performance.Led development of microservices architecture, 40% improvement in system performance
+                        Led development of microservices architecture, 40% improvement in system performance          
+                      </p>
+
+                      <p className="text-sm md:text-base primary-col font_lora font-semibold secondary-col mb-1">Technologies Used:</p>
+                      <div className="flex flex-col md:flex-row gap-3 mb-5">
+                        {experience.technologiesUsed.map((technology) => (
+                          <div className="text-sm md:text-base" key={technology}>
+                            {technology}
+                          </div>
+                        ))}
                       </div>
-                    </div>
 
-                    <div className=" mt-3">
-                      <h3 className="text-md primary-col font_lora font-semibold secondary-col mb-2 sm:mb-3">
-                        Design Principles And Architectures
-                        <ul className="list-disc list-inside space-y-2">
-                          {experience.designPrinciplesAndArchitectures.map(
-                            (designPrinciple) => (
-                              <li className="text-black font-normal leading-10 ">
-                                {designPrinciple}
-                              </li>
-                            )
-                          )}
-                        </ul>
-                      </h3>
-                    </div>
+                      <p className="text-sm md:text-base primary-col font_lora font-semibold secondary-col mb-1">Design Principles:</p>
+                      <div className="flex flex-col md:flex-row gap-3 mb-5">
+                        {experience.designPrinciplesAndArchitectures.map((designPrinciple) => (
+                          <div className="text-sm md:text-base" key={designPrinciple}>
+                            {designPrinciple}
+                          </div>
+                        ))}
+                      </div>
 
-                    <div className=" mt-3">
-                      <h3 className="text-md primary-col font_lora font-semibold secondary-col mb-2 sm:mb-3">
-                        Soft Skills
-                        <ul className="list-disc list-inside space-y-2">
-                          {experience.nonTechnicalSkills.map(
-                            (nonTechnicalSkill) => (
-                              <li className="text-black font-normal leading-10">
-                                {nonTechnicalSkill}
-                              </li>
-                            )
-                          )}
-                        </ul>
-                      </h3>
-                    </div>
-                  </div>
+                      <p className="text-sm md:text-base primary-col font_lora font-semibold secondary-col mb-1">Soft Skills:</p>
+                      <div className="flex flex-col md:flex-row gap-3">
+                        {experience.nonTechnicalSkills.map((softSKill) => (
+                          <div className="text-sm md:text-base" key={softSKill}>
+                            {softSKill}
+                          </div>
+                        ))}
+                      </div>
+
+                    </div>   
+
+                  </article>
+                  <hr className="border-gray-500" />
+
+                  </>
                 );
               })}
             </div>
-          </div>
-          {/* end of experience section */}
+          </article>
 
-          {/* skills section */}
-          <div className="container-y-margins">
+
+          {/* skills article */}
+          <article className="container-y-margins">
             <div className="container-x-margins mb-4 sm:mx-28" ref={skills_ref}>
               <h2
                 className="primary-col sm:text-xl md:text-2xl font_lora font-bold mb-1 mt-5 dark:dark-primary-text-col"
@@ -447,11 +438,11 @@ const Home: React.FC = () => {
                 </div>
               ))}
             </div>
-          </div>
-          {/* end of skills section */}
+          </article>
 
-          {/* list of best projects section */}
-          <div
+
+          {/* list of best projects article */}
+          <article
             className="container-x-margins container-y-margins sm:mx-28"
             ref={projects_ref}
           >
@@ -507,11 +498,11 @@ const Home: React.FC = () => {
                 );
               })}
             </div>
-          </div>
-          {/* end of projects section */}
+          </article>
 
-          {/* certifications section */}
-          <div
+
+          {/* certifications article */}
+          <article
             className="container-x-margins container-y-margins sm:mx-28"
             ref={certifications_ref}
           >
@@ -560,11 +551,11 @@ const Home: React.FC = () => {
                 );
               })}
             </div>
-          </div>
-          {/* end of certifications section */}
+          </article>
 
-          {/* education section */}
-          <div
+
+          {/* education article */}
+          <article
             className="container-x-margins container-y-margins sm:mx-28"
             ref={education_ref}
           >
@@ -609,11 +600,11 @@ const Home: React.FC = () => {
                 );
               })}
             </div>
-          </div>
-          {/* end of education section */}
+          </article>
 
-          {/* my software services section */}
-          <div
+
+          {/* my software services article */}
+          <article
             className="container-x-margins container-y-margins sm:mx-28"
             ref={services_ref}
           >
@@ -653,10 +644,10 @@ const Home: React.FC = () => {
                 );
               })}
             </div>
-          </div>
+          </article>
 
-          {/* contact me section */}
-          <div
+          {/* contact me article */}
+          <article
             className="container-x-margins container-y-margins sm:mx-28"
             ref={contact_me_ref}
           >
@@ -704,10 +695,10 @@ const Home: React.FC = () => {
                 );
               })}
             </div>
-          </div>
+          </article>
 
-          {/* if not now, then when? section*/}
-          <div
+          {/* if not now, then when? article*/}
+          <article
             className="container-x-margins container-y-margins mr-1 sm:mx-28"
             data-aos={parent_animation}
             data-aos-duration={parent_timer}
@@ -757,8 +748,7 @@ const Home: React.FC = () => {
                 Send Message
               </button>
             </Form>
-          </div>
-          {/* end of if not now, then when? */}
+          </article>
 
           <GoToTopBtn />
 
@@ -774,8 +764,8 @@ const Home: React.FC = () => {
             ScrollCertificationsDivIntoView={ScrollCertificationsDivIntoView}
           />
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 

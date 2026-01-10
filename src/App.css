@@ -111,6 +111,10 @@
     margin-left: 1rem;
   }
 
+  /* .experiences-container {
+    width: 90%;
+  } */
+
   .contact-me-textarea {
     width: 60%;
     border: 1px solid grey;
@@ -125,6 +129,9 @@
     background-color: #cbd5e1;
     border-radius: 0.625rem;
   }
+
+
+
 
   /* for responsive */
   @media screen and (max-width: 768px) {
