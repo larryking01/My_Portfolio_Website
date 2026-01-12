@@ -15,6 +15,7 @@ export let certificationsArray: CertificationItem[] = [
     issue_date: 'July, 2024',
     cover_image: aice_cert_cover,
     course_description:
-      'This hands-on course transformed my approach to software development, equipping me with advanced AI knowledge and practical skills in prompt engineering. I now leverage tools like ChatGPT, Github Copilot, Uizard, DeepCodeAG, Tabnine, etc to significantly boost my coding efficiency and problem-solving abilities. By integrating AI into my workflow, I am able to enhance my productivity and code quality, and position myself as a forward-thinking developer ready to excel in the AI-driven tech landscape.',
+      'This hands-on course transformed my approach to software development, equipping me with advanced AI knowledge and practical skills in prompt engineering. I now leverage tools like ChatGPT, Github Copilot, Cursor, AmazonQ, Claude, etc to significantly boost my coding efficiency and problem-solving abilities. By integrating AI into my workflow, I am able to enhance my productivity and code quality, and position myself as a forward-thinking developer ready to excel in the AI-driven tech landscape.',
   },
+  
 ];

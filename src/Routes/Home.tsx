@@ -345,20 +345,30 @@ const Home: React.FC = () => {
                     data-aos-duration={child_timer}
                   >
                     <div className="mb-2 sm:mb-1">
-                      <p className="text-xl primary-col font_lora font-semibold secondary-col mb-2">
-                        AmaliTech 
+                      <div className="flex flex-col md:flex-row items-start md:items-center gap-2 mb-4">
+                        <p className="text-xl font_poppins font-semibold secondary-col md:mb-2">
+                          { experience.company }
+                        </p>
+
+                        <p className="align text-sm md:text-base font_poppins font-semibold secondary-col mb-2">
+                          ({ experience.workPeriod })
+                        </p>
+                      </div>
+
+
+                      <p className="text-sm md:text-base font_poppins font-semibold secondary-col mb-2">
+                        { experience.role }
                       </p>
 
-                      <p className="text-sm md:text-base primary-col font_lora font-semibold secondary-col mb-2">
-                        {experience.role} ({ experience.workPeriod})
-                      </p>
+                      <div className="mb-6">
+                        {
+                          experience.description.map((descriptionItem) => ( 
+                            <p className="text-sm md:text-base mb-2">{ descriptionItem }</p>
+                          ))
+                        }
+                      </div>
 
-                      <p className="mb-6 text-sm md:text-base min-w-0 break-words overflow-wrap-anywhere">
-                        Led development of microservices architecture, 40% improvement in system performance.Led development of microservices architecture, 40% improvement in system performance
-                        Led development of microservices architecture, 40% improvement in system performance          
-                      </p>
-
-                      <p className="text-sm md:text-base primary-col font_lora font-semibold secondary-col mb-1">Technologies Used:</p>
+                      <p className="text-sm md:text-base font_poppins font-semibold secondary-col mb-1">Technologies Used:</p>
                       <div className="flex flex-col md:flex-row gap-3 mb-5">
                         {experience.technologiesUsed.map((technology) => (
                           <div className="text-sm md:text-base" key={technology}>
@@ -367,7 +377,7 @@ const Home: React.FC = () => {
                         ))}
                       </div>
 
-                      <p className="text-sm md:text-base primary-col font_lora font-semibold secondary-col mb-1">Design Principles:</p>
+                      <p className="text-sm md:text-base font_poppins font-semibold secondary-col mb-1">Design Principles:</p>
                       <div className="flex flex-col md:flex-row gap-3 mb-5">
                         {experience.designPrinciplesAndArchitectures.map((designPrinciple) => (
                           <div className="text-sm md:text-base" key={designPrinciple}>
@@ -376,9 +386,9 @@ const Home: React.FC = () => {
                         ))}
                       </div>
 
-                      <p className="text-sm md:text-base primary-col font_lora font-semibold secondary-col mb-1">Soft Skills:</p>
+                      <p className="text-sm md:text-base font_poppins font-semibold secondary-col mb-1">Soft Skills:</p>
                       <div className="flex flex-col md:flex-row gap-3">
-                        {experience.nonTechnicalSkills.map((softSKill) => (
+                        {experience.softSkills.map((softSKill) => (
                           <div className="text-sm md:text-base" key={softSKill}>
                             {softSKill}
                           </div>
@@ -386,10 +396,9 @@ const Home: React.FC = () => {
                       </div>
 
                     </div>   
-
+                    
                   </article>
                   <hr className="border-gray-500" />
-
                   </>
                 );
               })}
