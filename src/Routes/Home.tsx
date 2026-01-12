@@ -298,7 +298,7 @@ const Home: React.FC = () => {
           >
             <div>
               <h2
-                className="sm:text-xl md:text-2xl primary-col font_lora font-bold mb-3 mt-5 dark:dark-primary-text-col"
+                className="text-lg md:text-2xl primary-col font_poppins font-bold mb-3 mt-5 dark:dark-primary-text-col"
                 data-aos={parent_animation}
                 data-aos-duration={parent_timer}
               >
@@ -327,7 +327,7 @@ const Home: React.FC = () => {
           >
             <div>
               <h2
-                className="sm:text-xl md:text-2xl primary-col font_lora font-bold mb-3 mt-5 dark:dark-primary-text-col"
+                className="text-lg md:text-2xl primary-col font_poppins font-bold mb-3 mt-5 dark:dark-primary-text-col"
                 data-aos={parent_animation}
                 data-aos-duration={parent_timer}
               >
@@ -410,7 +410,7 @@ const Home: React.FC = () => {
           <article className="container-y-margins">
             <div className="container-x-margins mb-4 sm:mx-28" ref={skills_ref}>
               <h2
-                className="primary-col sm:text-xl md:text-2xl font_lora font-bold mb-1 mt-5 dark:dark-primary-text-col"
+                className="text-lg md:text-2xl primary-col font_poppins font-bold mb-1 mt-5 dark:dark-primary-text-col"
                 data-aos={parent_animation}
                 data-aos-duration={parent_timer}
               >
@@ -434,7 +434,7 @@ const Home: React.FC = () => {
                   data-aos={child_animation}
                   data-aos-duration={child_timer}
                 >
-                  <p className="text-lg font_lora font-semibold mb-3 secondary-col">
+                  <p className="text-md md:text-lg font_poppins font-semibold mb-3 secondary-col">
                     {skill.name}
                   </p>
                   <div className="flex items-center justify-center">
@@ -456,7 +456,7 @@ const Home: React.FC = () => {
             ref={projects_ref}
           >
             <h3
-              className="primary-col sm:text-xl md:text-2xl font_lora font-bold mt-3 mb-2 dark:dark-primary-text-col"
+              className="text-lg md:text-2xl primary-col font_poppins font-bold mt-3 mb-2 dark:dark-primary-text-col"
               data-aos={parent_animation}
               data-aos-duration={parent_timer}
             >
@@ -482,13 +482,13 @@ const Home: React.FC = () => {
                       alt="cover"
                     />
                     <div className="p-2">
-                      <h3 className="text-lg primary-col font_lora font-semibold text-center secondary-col mb-6 sm:mb-3">
+                      <h3 className="text-md md:text-lg primary-col font_poppins font-semibold text-center secondary-col mb-6 sm:mb-3">
                         {project.projectTitle}
                       </h3>
                       <h3 className="text-sm text-center font_poppins mx-1 mb-6">
                         {project.projectDescription}
                       </h3>
-                      <h3 className="text-sm text-center italic secondary-col mb-8">
+                      <h3 className="text-sm text-center italic  secondary-col mb-8">
                         Tech Stack: {project.projectTechnologies}
                       </h3>
                       <Link to={project.projectLink} target="_blank">
@@ -515,13 +515,13 @@ const Home: React.FC = () => {
             className="container-x-margins container-y-margins sm:mx-28"
             ref={certifications_ref}
           >
-            <h3
-              className="primary-col sm:text-xl md:text-2xl font_lora font-bold mt-3 mb-2 dark:dark-primary-text-col"
+            <h2
+              className="text-lg md:text-2xl primary-col font_poppins font-bold mt-3 mb-2 dark:dark-primary-text-col"
               data-aos={parent_animation}
               data-aos-duration={parent_timer}
             >
               Official Recognitions: My Certifications
-            </h3>
+            </h2>
             <p className="text-sm md:text-base font_poppins dark:dark-secondary-text-col">
               Every certification is a reflection of my continuous effort to
               learn, grow, and excel in my field.
@@ -542,7 +542,7 @@ const Home: React.FC = () => {
                       alt="cover"
                     />
                     <div className="p-2">
-                      <h3 className="text-lg primary-col font_lora font-semibold text-center secondary-col mb-2 sm:mb-3">
+                      <h3 className="text-md md:text-lg primary-col font_poppins font-semibold text-center secondary-col mb-2 sm:mb-3">
                         {certification.course_title}
                       </h3>
                       <h3 className="text-sm text-center secondary-col font_poppins mx-1 mb-2">
@@ -570,7 +570,7 @@ const Home: React.FC = () => {
           >
             <div>
               <h2
-                className="sm:text-xl md:text-2xl primary-col font_lora font-bold mb-3 mt-5 dark:dark-primary-text-col"
+                className="text-lg md:text-2xl primary-col font_poppins font-bold mb-3 mt-5 dark:dark-primary-text-col"
                 data-aos={parent_animation}
                 data-aos-duration={parent_timer}
               >
@@ -595,13 +595,13 @@ const Home: React.FC = () => {
                     </div>
 
                     <div className="basis-2/3">
-                      <h3 className="secondary-col font_lora font-bold text-sm md:text-lg mb-1">
+                      <h3 className="secondary-col font_poppins font-bold text-sm md:text-lg mb-1">
                         {education.school}
                       </h3>
-                      <h3 className="font_poppins font-semibold text-sm md:text-lg mb-1">
+                      <h3 className="font_poppins text-sm md:text-lg mb-1">
                         {education.programme}
                       </h3>
-                      <h3 className="font-semibold text-sm md:text-lg mb-2 font_poppins">
+                      <h3 className="text-sm md:text-lg mb-2 font_poppins">
                         {education.study_period}
                       </h3>
                     </div>
@@ -618,7 +618,7 @@ const Home: React.FC = () => {
             ref={services_ref}
           >
             <h3
-              className="primary-col sm:text-xl md:text-2xl font_lora font-bold mb-3 dark:dark-primary-text-col"
+              className="text-lg md:text-2xl primary-col font_poppins font-bold mb-3 dark:dark-primary-text-col"
               data-aos={parent_animation}
               data-aos-duration={parent_timer}
             >
@@ -643,7 +643,7 @@ const Home: React.FC = () => {
                       src={service.icon}
                       alt="website"
                     />
-                    <h3 className="text-lg font_lora secondary-col font-semibold mb-2">
+                    <h3 className="text-md sm:text-lg font_poppins secondary-col font-semibold mb-2">
                       {service.serviceType}
                     </h3>
                     <h3 className="text-sm sm:text-md px-3 font_poppins">
@@ -661,7 +661,7 @@ const Home: React.FC = () => {
             ref={contact_me_ref}
           >
             <h2
-              className="sm:text-xl md:text-2xl primary-col font_lora font-bold mb-2 mt-5 dark:dark-primary-text-col"
+              className="text-lg md:text-2xl primary-col font_poppins font-bold mb-2 mt-5 dark:dark-primary-text-col"
               data-aos={parent_animation}
               data-aos-duration={parent_timer}
             >
@@ -692,11 +692,11 @@ const Home: React.FC = () => {
                       </div>
                     </div>
 
-                    <h3 className="font_lora text-[#10285d] font-semibold text-xl text-center mb-2">
+                    <h3 className="font_poppins text-[#10285d] font-semibold text-md sm:text-lg text-center mb-2">
                       {contact_me.title}
                     </h3>
                     <Link to={contact_me.url} target={contact_me.target}>
-                      <h3 className="font-md text-center text-[#ec5b53] font-semibold cursor-pointer dark:text-black">
+                      <h3 className="text-md md:text-lg text-center text-[#ec5b53] cursor-pointer dark:text-black">
                         {contact_me.detail}
                       </h3>
                     </Link>
@@ -713,7 +713,7 @@ const Home: React.FC = () => {
             data-aos-duration={parent_timer}
           >
             <div className="sm:flex sm:flex-row">
-              <h3 className="sm:text-xl md:text-2xl font-semibold font_lora primary-col sm:mr-4 dark:dark-primary-text-col">
+              <h3 className="text-lg md:text-2xl font-semibold font_poppins primary-col sm:mr-4 dark:dark-primary-text-col">
                 If Not Now, When?
               </h3>
               <h3 className="sm:text-xl md:text-2xl font-semibold font_lora primary-col mb-1 dark:dark-primary-text-col">

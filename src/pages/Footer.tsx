@@ -33,7 +33,7 @@ const Footer: React.FC<FooterProp> = ({
     <footer className="container-bg dark:bg-slate-900 pt-6">
       <div className="mx-5 sm:flex sm:flex-row sm:justify-evenly">
         <div className="mb-9 mt-3 basis-1/4">
-          <h3 className="font_merriweather text-xl font-bold mb-3 secondary-col dark:dark-primary-text-col">
+          <h3 className="text-md md:text-xl font_poppins font-bold mb-3 secondary-col dark:dark-primary-text-col">
             Let's talk about
           </h3>
           <h3 className="text-sm font_merriweather dark:dark-secondary-text-col">
@@ -43,7 +43,7 @@ const Footer: React.FC<FooterProp> = ({
         </div>
 
         <div className="mb-10 sm:mb-5 basis-1/4">
-          <ul className="text-xl font_merriweather font-bold mb-3 secondary-col dark:dark-primary-text-col">
+          <ul className="text-md md:text-xl font_poppins font-bold mb-3 secondary-col dark:dark-primary-text-col">
             Menu
           </ul>
           <li
@@ -97,7 +97,7 @@ const Footer: React.FC<FooterProp> = ({
         </div>
 
         <div className="mb-5 basis-1/4">
-          <ul className="text-xl font_merriweather font-bold mb-3 secondary-col dark:dark-primary-text-col">
+          <ul className="text-md md:text-xl font_poppins font-bold mb-3 secondary-col dark:dark-primary-text-col">
             Contact Me
           </ul>
           <li className="text-md ml-3 font-normal hover:cursor-pointer my-3 footer-link-transition dark:hover:dark-primary-text-col dark:dark-secondary-text-col flex flex-row">
