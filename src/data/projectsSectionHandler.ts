@@ -2,6 +2,7 @@ import graphql_server_cover_image from '../assets/graphql_server_cover_image.png
 import notopia_cover_image from '../assets/notopia_cover.png';
 import smart_thermostat_simulator from '../assets/smart_thermostat_cover.png';
 import countries_explorer_cover from '../assets/countries_explorer_cover.png';
+import swift_stay_cover from '../assets/swiftstay_cover.png'
 
 export interface ProjectItem {
   projectTitle: string;
@@ -38,6 +39,15 @@ export let projectsArray: ProjectItem[] = [
     projectCoverImage: countries_explorer_cover,
     projectTechnologies: 'TypeScript, Angular, NgRx, RxJS',
     projectLink: 'https://rest-countries-api-two-henna.vercel.app/',
+    buttonText: 'View live app',
+  },
+  {
+    projectTitle: 'SwiftStay Hotel Booking',
+    projectDescription:
+      'A full-stack hotel booking platform for discovering and reserving hotels within Accra. Built with React and a REST API backend, leveraging Supabase authentication and Row Level Security for secure, user-specific data access.',
+    projectCoverImage: swift_stay_cover,
+    projectTechnologies: 'JavaScript, React, Tailwind, Supabase, Express(Backend)',
+    projectLink: 'https://swiftstay-rovw.onrender.com/',
     buttonText: 'View live app',
   },
   {
