@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+
 import React from 'react';
 
 import hamburgerIcon from '../assets/hamburger-icon.png';
