@@ -1,8 +1,7 @@
-import graphql_server_cover_image from '../assets/graphql_server_cover_image.png';
-import notopia_cover_image from '../assets/notopia_cover.png';
 import smart_thermostat_simulator from '../assets/smart_thermostat_cover.png';
-import countries_explorer_cover from '../assets/countries_explorer_cover.png';
-import swift_stay_cover from '../assets/swiftstay_cover.png'
+import stay_finder from '../assets/stayfinder_cover.png'
+
+
 
 export interface ProjectItem {
   projectTitle: string;
@@ -15,6 +14,15 @@ export interface ProjectItem {
 
 export let projectsArray: ProjectItem[] = [
   {
+    projectTitle: 'StayFinder Hotel Booking',
+    projectDescription:
+    'A full-stack hotel booking platform for discovering hotels and making reservations. Built with React, Express REST API, Supabase authentication, PostgreSQL, Redux and protected booking flows.',
+    projectCoverImage: stay_finder,
+    projectTechnologies: 'TypeScript, React, Redux Toolkit, Supabase, PostgreSQL, Express',
+    projectLink: 'https://stay-finder-ruby.vercel.app/',
+    buttonText: 'View live app',
+  },
+  {
     projectTitle: 'Smart Thermostat Simulator',
     projectDescription:
       'A frontend simulation of a smart thermostat system that dynamically controls room temperature through heating and cooling modes using state-driven logic and responsive UI updates.',
@@ -22,42 +30,5 @@ export let projectsArray: ProjectItem[] = [
     projectTechnologies: 'HTML, CSS, Vanilla JavaScript (No frameworks)',
     projectLink: 'https://smart-thermostat-debugger.vercel.app/',
     buttonText: 'View live app',
-  },
-  {
-    projectTitle: 'Notopia - Note Taking Web App',
-    projectDescription:
-      'A fully interactive web app that allows users to create, view, edit, and delete personal notes. Notes persist online, delivering a personalized user experience across sessions.',
-    projectCoverImage: notopia_cover_image,
-    projectTechnologies: 'TypeScript, Angular, Firebase, SCSS',
-    projectLink: 'https://note-taking-web-app-xi.vercel.app/',
-    buttonText: 'View live app',
-  },
-  {
-    projectTitle: 'Countries Explorer',
-    projectDescription:
-      'A country exploration web app that allows users to browse and view country data, powered by REST API integration, NgRx state management, and RxJS for handling asynchronous data streams.',
-    projectCoverImage: countries_explorer_cover,
-    projectTechnologies: 'TypeScript, Angular, NgRx, RxJS',
-    projectLink: 'https://rest-countries-api-two-henna.vercel.app/',
-    buttonText: 'View live app',
-  },
-  {
-    projectTitle: 'SwiftStay Hotel Booking',
-    projectDescription:
-      'A full-stack hotel booking platform for discovering and reserving hotels within Accra. Built with React and a REST API backend, leveraging Supabase authentication and Row Level Security for secure, user-specific data access.',
-    projectCoverImage: swift_stay_cover,
-    projectTechnologies: 'JavaScript, React, Tailwind, Supabase, Express(Backend)',
-    projectLink: 'https://swiftstay-rovw.onrender.com/',
-    buttonText: 'View live app',
-  },
-  {
-    projectTitle: 'SneakerZone GraphQL API',
-    projectDescription:
-      'A GraphQL backend service for a sneaker e-commerce platform, implementing queries and mutations for product management and user operations, with a schema designed for scalability and frontend consumption.',
-    projectCoverImage: graphql_server_cover_image,
-    projectTechnologies:
-      'Node.js, JavaScript, ApolloGraphQL, MongoDB, Firebase',
-    projectLink: 'https://e-commerce-app-server-graphql.onrender.com/',
-    buttonText: 'GraphQL Playground',
-  },
+  }
 ];
