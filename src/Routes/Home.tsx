@@ -23,6 +23,9 @@ import {
 import { aboutMeIntroArray } from '../data/aboutMeSectionHandler';
 
 import cover6 from '../assets/cover6.jpg';
+import profile1 from '../assets/profile1.png'
+import profile2 from '../assets/profile2.png'
+import profile3 from '../assets/profile3.jpg'
 
 // for typed js
 import Typed from 'typed.js';
@@ -262,7 +265,7 @@ const Home: React.FC = () => {
                 <img
                   className="rounded-full md:rounded-full md:w-full brightness-90 shadow-md sm:w-full
                                         hover:shadow-lg sm:rounded-full"
-                  src={cover6}
+                  src={profile2}
                   alt="software engineer"
                 />
               </div>
