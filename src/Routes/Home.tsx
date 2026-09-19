@@ -22,7 +22,7 @@ import {
 } from '../data/experienceSectionHandler';
 import { aboutMeIntroArray } from '../data/aboutMeSectionHandler';
 
-import cover6 from '../assets/cover6.jpg';
+import profile2 from '../assets/profile2.png'
 
 // for typed js
 import Typed from 'typed.js';
@@ -246,12 +246,12 @@ const Home: React.FC = () => {
         />
 
         <div>
-          {/* main page content */}
+          {/* main page content  */}
           <article
             className="bg-slate-200 dark:dark-bg-col md:pb-20 pb-2"
             ref={home_ref}
           >
-            <div className="my-1 sm:mx-16 md:mx-20 text-center sm:flex sm:flex-row sm:justify-evenly">
+            <div className="my-1 sm:mx-16 md:mx-20 text-center sm:flex sm:flex-row sm:justify-evenly sm:items-center">              
               <div
                 className={
                   expanded === true
@@ -261,8 +261,8 @@ const Home: React.FC = () => {
               >
                 <img
                   className="rounded-full md:rounded-full md:w-full brightness-90 shadow-md sm:w-full
-                                        hover:shadow-lg sm:rounded-full"
-                  src={cover6}
+                                        hover:shadow-lg sm:rounded-full object-contain"
+                  src={profile2}
                   alt="software engineer"
                 />
               </div>
