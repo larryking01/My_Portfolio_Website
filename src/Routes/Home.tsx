@@ -26,6 +26,7 @@ import cover6 from '../assets/cover6.jpg';
 import profile1 from '../assets/profile1.png'
 import profile2 from '../assets/profile2.png'
 import profile3 from '../assets/profile3.jpg'
+import profile4 from '../assets/profile4.jpg'
 
 // for typed js
 import Typed from 'typed.js';
@@ -249,12 +250,12 @@ const Home: React.FC = () => {
         />
 
         <div>
-          {/* main page content */}
+          {/* main page content  */}
           <article
             className="bg-slate-200 dark:dark-bg-col md:pb-20 pb-2"
             ref={home_ref}
           >
-            <div className="my-1 sm:mx-16 md:mx-20 text-center sm:flex sm:flex-row sm:justify-evenly">
+            <div className="my-1 sm:mx-16 md:mx-20 text-center sm:flex sm:flex-row sm:justify-evenly sm:items-center">              
               <div
                 className={
                   expanded === true
@@ -264,7 +265,7 @@ const Home: React.FC = () => {
               >
                 <img
                   className="rounded-full md:rounded-full md:w-full brightness-90 shadow-md sm:w-full
-                                        hover:shadow-lg sm:rounded-full"
+                                        hover:shadow-lg sm:rounded-full object-contain"
                   src={profile2}
                   alt="software engineer"
                 />
