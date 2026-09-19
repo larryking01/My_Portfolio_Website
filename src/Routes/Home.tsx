@@ -22,11 +22,7 @@ import {
 } from '../data/experienceSectionHandler';
 import { aboutMeIntroArray } from '../data/aboutMeSectionHandler';
 
-import cover6 from '../assets/cover6.jpg';
-import profile1 from '../assets/profile1.png'
 import profile2 from '../assets/profile2.png'
-import profile3 from '../assets/profile3.jpg'
-import profile4 from '../assets/profile4.jpg'
 
 // for typed js
 import Typed from 'typed.js';
